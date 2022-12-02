@@ -1,0 +1,43 @@
+openapi: 3.0.3
+info:
+  title: "Example - API"
+  description: "Simple API example"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  version: "1.0.0"
+servers:
+  - url: "https://swagger.io/api/v3"
+paths:
+  /Bookstore:
+    description: "Everything in your bookstore"
+    get:
+      description: "Operation to fetch book"
+      parameters:
+        in: "query"
+        name: "Book"
+        required: "true"
+        schema:
+          type: "string"
+          example: "Lord of the rings"
+      responses:
+        200:
+          description: "Success Response"
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  properties:
+                    BookID:
+                      type: "string"
+                      example: "bk100"
+                    BookName:
+                      type: "string"
+                      example: "Lotr"
+                    BookTitle:
+                      type: "string"
+                      example: "Maeve Ascendant"

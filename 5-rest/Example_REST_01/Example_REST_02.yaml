@@ -1,0 +1,39 @@
+  # CMS OpenAPI
+
+  openapi: 3.0.3
+
+  info:
+    title: OpenAPI Specification for CMS
+    version: '1.2'
+
+  externalDocs:
+    description: More information about CMS API
+    url: htto://mycollege.com/api
+
+  servers:
+    - url: http://localhost:44333/api
+    - url: http://localhost:{port}/stagingapi
+      variables:
+        port:
+          enum:
+            - "44333"
+            - '8990'
+          default: !!str 44333
+  tags:
+    - name: course
+      description: Operations about Courses
+
+  paths:
+    /courses:
+      summary: Operation about Courses
+      get:
+        tags:
+          - course
+        summary: Get all the courses
+        responses:
+          200:
+            description: Success
+          400:
+            description: Incorrect input
+          default:
+            description: Success

@@ -1,0 +1,36 @@
+
+Local-name
+
+<xsl:value-of select="local-name(/pets/Pet)"/>
+
+
+
+
+Pozice 1-10
+./pets/Pet[position()&lt;=10]
+
+ID - name
+
+./pets/Pet/concat(./id," - ", ./name)
+
+Všechny Pet bez elementu "category"
+
+./pets/Pet[not(category)]
+
+Vsechny Pet, ktere nemaji status "available"
+
+./pets/Pet[status!="available"]
+
+Vsechny Pet, ktere nemaji category/name "string"
+
+/pets/Pet[./category/name!='string']
+
+Vybere vsechny kategory nachazejici se v elementu /pets/Pet a vsechny tag v celem dokumentu, ktere obsahuji nazev 'Mouse'
+
+/pets/Pet/category|//tag[name='Mouse']
+
+
+
+
+
+<idName><xsl:value-of select="concat(./id," - ", ./name)"/></idName>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WorkshopRes xmlns="http://jpower8.com/workshop/soap"
+             xsi:schemaLocation="http://jpower8.com/workshop/soap"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <flat>
+        <item>
+            <name>nVidia (graphic card / nVidia) - Some description stuff</name>
+            <price>4999CZK</price>
+            <params>sn: 879843265716054, speed: 5GHz,</params>
+        </item>
+        <item>
+            <name>nVidia (graphic card / nVidia) - Some description stuff</name>
+            <price>380EUR</price>
+            <params>capacity: 2x16GB, sn: 1489526889755645,</params>
+        </item>
+        <item>
+            <name>židle ( / ) - Spinalis</name>
+            <price>380EUR</price>
+            <params></params>
+        </item>
+    </flat>
+    <sorted>
+        <name>Corsair memory</name>
+        <name>monitor</name>
+    </sorted>
+    <sorted2>
+        <name>Seagate</name>
+        <name>židle</name>
+        <name>židle</name>
+        <name>Intel Pentium</name>
+        <name>monitor</name>
+    </sorted2>
+    <filtered_by_price>
+        <name>Intel Pentium - 4999</name>
+    </filtered_by_price>
+    <filtered_by_char>
+        <name>Corsair memory</name>
+        <name>Corsair memory</name>
+        <name>Seagate</name>
+        <name>Seagate</name>
+        <name>Seagate</name>
+    </filtered_by_char>
+    <filtered_by_char_extended>
+        <name>židle</name>
+        <name>Intel Pentium</name>
+        <name>Intel Pentium</name>
+        <name>židle</name>
+    </filtered_by_char_extended>
+</WorkshopRes>

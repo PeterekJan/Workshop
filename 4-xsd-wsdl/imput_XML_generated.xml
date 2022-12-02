@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WorkshopReq xmlns="http://jpower8.com/workshop/soap"
+             xsi:schemaLocation="http://jpower8.com/workshop/soap schema.xsd"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <components>
+        <component>
+            <type>graphic card</type>
+            <name>Corsair memory</name>
+            <description>string</description>
+            <brand>Corsair</brand>
+            <price>8410</price>
+            <currency>string</currency>
+            <params>
+                <sn>string</sn>
+            </params>
+        </component>
+        <component>
+            <type>processor</type>
+            <name>Seagate</name>
+            <description>string</description>
+            <brand>Corsair</brand>
+            <price>2500</price>
+            <currency>string</currency>
+            <params>
+                <sn>string</sn>
+            </params>
+        </component>
+        <component>
+            <type>graphic card</type>
+            <name>Corsair memory</name>
+            <description>string</description>
+            <brand>nVidia</brand>
+            <price>2500</price>
+            <currency>string</currency>
+            <params>
+                <sn>string</sn>
+            </params>
+        </component>
+    </components>
+    <accessories>
+        <accesory>
+            <name>monitor</name>
+            <description>Spinalis</description>
+            <price>380</price>
+            <currency>EUR</currency>
+        </accesory>
+        <accesory>
+            <name>monitor</name>
+            <description>Spinalis</description>
+            <price>34000</price>
+            <currency>EUR</currency>
+        </accesory>
+        <accesory>
+            <name>monitor</name>
+            <description>Dell</description>
+            <price>34000</price>
+            <currency>EUR</currency>
+        </accesory>
+        <accesory>
+            <name>židle</name>
+            <description>Spinalis</description>
+            <price>34000</price>
+            <currency>EUR</currency>
+        </accesory>
+    </accessories>
+</WorkshopReq>

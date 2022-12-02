@@ -1,0 +1,72 @@
+<katalog>
+    <kniha>
+        <id>bk101</id>
+        <autor>Gambardella, Matthew</autor>
+        <zanr>Computer</zanr>
+        <cena>44.95</cena>
+        <publikovano>2000-10-01</publikovano>
+    </kniha>
+    <kniha>
+        <id>bk102</id>
+        <autor>Ralls, Kim</autor>
+        <zanr>Fantasy</zanr>
+        <cena>5.95</cena>
+        <publikovano>2000-12-16</publikovano>
+    </kniha>
+    <kniha>
+        <id>bk103</id>
+        <autor>Corets, Eva</autor>
+        <zanr>Fantasy</zanr>
+        <cena>5.95</cena>
+        <publikovano>2000-11-17</publikovano>
+    </kniha>
+    <kniha>
+        <id>bk104</id>
+        <autor>Corets, Eva</autor>
+        <zanr>Fantasy</zanr>
+        <cena>5.95</cena>
+        <publikovano>2001-03-10</publikovano>
+    </kniha>
+    <kniha>
+        <id>bk105</id>
+        <autor>Corets, Eva</autor>
+        <zanr>Fantasy</zanr>
+        <cena>5.95</cena>
+        <publikovano>2001-09-10</publikovano>
+    </kniha>
+    <kniha>
+        <id>bk108</id>
+        <autor>Knorr, Stefan</autor>
+        <zanr>Horror</zanr>
+        <cena>4.95</cena>
+        <publikovano>2000-12-06</publikovano>
+    </kniha>
+    <kniha>
+        <id>bk109</id>
+        <autor>Kress, Peter</autor>
+        <zanr>Science Fiction</zanr>
+        <cena>6.95</cena>
+        <publikovano>2000-11-02</publikovano>
+    </kniha>
+    <kniha>
+        <id>bk110</id>
+        <autor>O'Brien, Tim</autor>
+        <zanr>Computer</zanr>
+        <cena>36.95</cena>
+        <publikovano>2000-12-09</publikovano>
+    </kniha>
+    <kniha>
+        <id>bk111</id>
+        <autor>O'Brien, Tim</autor>
+        <zanr>Computer</zanr>
+        <cena>36.95</cena>
+        <publikovano>2000-12-01</publikovano>
+    </kniha>
+    <kniha>
+        <id>bk112</id>
+        <autor>Galos, Mike</autor>
+        <zanr>Computer</zanr>
+        <cena>49.95</cena>
+        <publikovano>2001-04-16</publikovano>
+    </kniha>
+</katalog>

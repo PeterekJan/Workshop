@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+        attributeFormDefault="unqualified"
+        elementFormDefault="qualified"
+        xmlns="http://jpower8.com/workshop/soap"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://jpower8.com/workshop/soap">
+
+    <xs:element name="katalog">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="kniha">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" minOccurs="1" maxOccurs="1"/>
+                            <xs:element name="autor" minOccurs="1" maxOccurs="1"/>
+                            <xs:element name="zanr" minOccurs="1" maxOccurs="1"/>
+                            <xs:element name="cena" minOccurs="1" maxOccurs="1"/>
+                            <xs:element name="publikovano" minOccurs="1" maxOccurs="1"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+</xs:schema>

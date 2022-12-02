@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="3bf16c57-a6e9-496d-b077-a0987dbad983" activeEnvironment="Default" name="Example_WSDL" resourceRoot="" soapui-version="5.7.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a7d8d3aa-1450-433b-8eaa-1df7cb8f7cac" wsaVersion="NONE" name="petsBinding" type="wsdl" bindingName="{http://jpower8.com/workshop}petsBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/Dokumenty/Workshop/4-xsd-wsdl/XSD_WSDL_Example/Example_WSDL.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\Dokumenty\Workshop\4-xsd-wsdl\XSD_WSDL_Example\Example_WSDL.wsdl"><con:part><con:url>file:\D:\Dokumenty\Workshop\4-xsd-wsdl\XSD_WSDL_Example\Example_WSDL.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://jpower8.com/workshop" name="Workshop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:jp8="http://jpower8.com/workshop/soap" xmlns:tns="http://jpower8.com/workshop" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://jpower8.com/workshop">
+      <xs:import schemaLocation="./Input_XSD.xsd" namespace="http://jpower8.com/workshop/soap"/>
+      <xs:import schemaLocation="./Output_XSD.xsd" namespace="http://jpower8.com/workshop/soap"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="petsRequest">
+    <wsdl:part name="pets" element="jp8:pets"/>
+  </wsdl:message>
+  <wsdl:message name="petsResponse">
+    <part name="zoo" element="jp8:zoo"/>
+  </wsdl:message>
+  <wsdl:portType name="petsPortType">
+    <wsdl:operation name="getData">
+      <wsdl:input message="tns:petsRequest" name="pets"/>
+      <wsdl:output message="tns:petsResponse" name="zoo"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="petsBinding" type="tns:petsPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http/"/>
+    <wsdl:operation name="getData">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="pets">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="zoo">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="petsService">
+    <wsdl:port binding="tns:petsBinding" name="petsPortSoap">
+      <soap:address location="http://localhost:8080/workshop/4-xsd-wsdl\XSD_WSDL_Example"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\D:\Dokumenty\Workshop\4-xsd-wsdl\XSD_WSDL_Example\Input_XSD.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://jpower8.com/workshop/soap" xmlns="http://jpower8.com/workshop/soap" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="pets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Pet" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="category" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:int"/>
+                    <xs:element name="name" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="id" type="xs:int"/>
+              <xs:element name="name" type="xs:string"/>
+              <xs:element name="photoUrls">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="photoUrl" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="status" type="xs:string"/>
+              <xs:element name="tags" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="tag" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="id" type="xs:int"/>
+                          <xs:element name="name" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\Dokumenty\Workshop\4-xsd-wsdl\XSD_WSDL_Example\Output_XSD.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://jpower8.com/workshop/soap" xmlns="http://jpower8.com/workshop/soap" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="zoo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="animals">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="animal" minOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" minOccurs="1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="doesntHaveCategory">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="animal" minOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="idName" minOccurs="1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="notAvailable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="animal" minOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="position" minOccurs="1"/>
+                    <xs:element name="id" minOccurs="1"/>
+                    <xs:element name="photoUrls" minOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="url" minOccurs="1"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="customCategory">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="animal" minOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="category" minOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="id" type="xs:int" minOccurs="1"/>
+                          <xs:element name="name" type="xs:string" minOccurs="1"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="id" type="xs:int" minOccurs="1"/>
+                    <xs:element name="name" type="xs:string" minOccurs="1"/>
+                    <xs:element name="photoUrls" minOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="photoUrl" type="xs:string" minOccurs="1"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="status" type="xs:string" minOccurs="1"/>
+                    <xs:element name="tags" minOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="tag" minOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:int" minOccurs="1"/>
+                                <xs:element name="name" type="xs:string" minOccurs="1"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/workshop/4-xsd-wsdl\XSD_WSDL_Example</con:endpoint></con:endpoints><con:operation id="c6414f26-36fd-41b8-bf68-787404c85e15" isOneWay="false" action="" name="getData" bindingOperationName="getData" type="Request-Response" outputName="zoo" inputName="pets" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fc1cb9e5-826d-46eb-a4c8-8fa357dcf6da" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/workshop/4-xsd-wsdl\XSD_WSDL_Example</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://jpower8.com/workshop/soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <soap:pets>\r
+         <!--Zero or more repetitions:-->\r
+         <soap:Pet>\r
+            <!--Optional:-->\r
+            <soap:category>\r
+               <soap:id>?</soap:id>\r
+               <soap:name>?</soap:name>\r
+            </soap:category>\r
+            <soap:id>?</soap:id>\r
+            <soap:name>?</soap:name>\r
+            <soap:photoUrls>\r
+               <!--Zero or more repetitions:-->\r
+               <soap:photoUrl>?</soap:photoUrl>\r
+            </soap:photoUrls>\r
+            <soap:status>?</soap:status>\r
+            <soap:tags>\r
+               <!--Zero or more repetitions:-->\r
+               <soap:tag>\r
+                  <soap:id>?</soap:id>\r
+                  <soap:name>?</soap:name>\r
+               </soap:tag>\r
+            </soap:tags>\r
+         </soap:Pet>\r
+      </soap:pets>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jpower8.com/workshop/petsPortType/pets"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

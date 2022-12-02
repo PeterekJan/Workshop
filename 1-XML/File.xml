@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pets>
+    <pet>
+        <category>
+            <id>000001</id>
+            <name>Dodge</name>
+        </category>
+        <id>01000</id>
+        <name>spider</name>
+        <photoUrls>
+            <url></url>
+        </photoUrls>
+        <status></status>
+        <tags>
+            <tag></tag>
+        </tags>
+    </pet>
+</pets>

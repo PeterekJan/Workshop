@@ -1,0 +1,44 @@
+
+
+5)
+    1)./pets/Pet/id
+    2)./pets/Pet[4]/name
+    3)./pets/Pet[last()]/name
+    4)./pets/Pet[last()-1]/id
+    5)./pets/Pet[5]/name
+    6)./pets/Pet[status="available"]/id
+    7)./pets/Pet[name="jimmy"][ status="available"]/status
+    7)./pets/Pet[name="jimmy" and status="available"]/status
+    8)./pets/Pet[position()mod 2 = 0]   !!!
+    9)./pets/Pet[position()mod 2 = 1]   !!!
+    10)count(./pets/Pet[name="doggie"])
+    11)./pets/Pet/concat(./id," - ", ./name)
+    11)./pets/Pet/concat(id," - ", name)
+
+
+
+
+
+
+./pets/Pet/category/*[local-name() = "id"]
+
+vypis vsechny Url na 1. pozici, ze vsech elementu pets mimo 2. elementu
+
+/pets/Pet[position()<2 or position()>2]/photoUrls/photoUrl[1]
+
+Vyberte vsechny name z elementu tag, ktere se shoduji s name 'sint'
+
+/pets/Pet/tags/tag[name='sint']/name
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<wsdl:definitions
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+        targetNamespace="http://jpower8.com/workshop"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:jp8="http://jpower8.com/workshop/soap"
+        xmlns:tns="http://jpower8.com/workshop"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns="http://schemas.xmlsoap.org/wsdl/"
+        name="Workshop">
+
+
+
+    <wsdl:types>
+        <xs:schema targetNamespace="http://jpower8.com/workshop">
+            <xs:import schemaLocation="./Input_XSD.xsd" namespace="http://jpower8.com/workshop/soap"/>
+            <xs:import schemaLocation="./Output_XSD.xsd" namespace="http://jpower8.com/workshop/soap"/>
+        </xs:schema>
+    </wsdl:types>
+
+    <wsdl:message name="petsRequest">
+        <wsdl:part name="pets" element="jp8:pets"/>
+    </wsdl:message>
+
+    <wsdl:message name="petsResponse">
+        <part name="zoo" element="jp8:zoo"/>
+    </wsdl:message>
+
+    <wsdl:portType name="petsPortType">
+        <wsdl:operation name="getData">
+            <wsdl:input message="tns:petsRequest" name="pets"/>
+            <wsdl:output message="tns:petsResponse" name="zoo"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="petsBinding" type="tns:petsPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http/"/>
+
+        <wsdl:operation name="getData">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="pets">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="zoo">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="petsService">
+        <wsdl:port binding="tns:petsBinding" name="petsPortSoap">
+            <soap:address location="http://localhost:8080/workshop/4-xsd-wsdl\XSD_WSDL_Example"/>
+        </wsdl:port>
+
+    </wsdl:service>
+</wsdl:definitions>

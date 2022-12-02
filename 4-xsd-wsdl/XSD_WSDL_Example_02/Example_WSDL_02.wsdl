@@ -1,0 +1,51 @@
+<wsdl:definitions
+        xmlns="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:jp8="http://jpower8.com/workshop/soap"
+        xmlns:tns="http://jpower8.com/workshop"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+        targetNamespace="http://jpower8.com/workshop"
+        >
+
+    <wsdl:types>
+        <xs:schema targetNamespace="http://jpower8.com/workshop">
+            <xs:import schemaLocation="./input_XSD_02.xsd" namespace="http://jpower8.com/workshop"/>
+            <xs:import schemaLocation="./output_XSD_02.xsd" namespace="http://jpower8.com/workshop"/>
+        </xs:schema>
+    </wsdl:types>
+
+    <wsdl:message name="CatalogRequest">
+        <part name="catalog" element="jp8:catalog"/>
+    </wsdl:message>
+
+    <wsdl:message name="KatalogResponse">
+        <part name="katalog" element="jp8:katalog"/>
+    </wsdl:message>
+
+    <wsdl:portType name="CatalogPortType">
+        <operation name="getDATA">
+            <input message="tns:CatalogRequest" name="catalog"/>
+            <output message="tns:KatalogResponse" name="katalog"/>
+        </operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="CatalogBinding" type="tns:CatalogPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http/"/>
+        <wsdl:operation name="getDATA">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="catalog">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="katalog">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="CatalogService">
+        <wsdl:port binding="tns:CatalogBinding" name="CatalogPortSoap">
+            <soap:address location="http://localhost:8080/workshop/4-xsd-wsdl\XSD_WSDL_Example_02"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
