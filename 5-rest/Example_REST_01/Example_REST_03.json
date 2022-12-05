@@ -1,0 +1,72 @@
+{
+  "pets": {
+    "Pet": [
+      {
+        "category": {
+          "id": 0,
+          "name": "string"
+        },
+        "id": 9223372016900023061,
+        "name": "fish",
+        "photoUrls": {
+          "photoUrl": ["string"]
+        },
+        "status": "available",
+        "tags": {
+          "tag": [
+            {
+              "id": 0,
+              "name": "string"
+            }
+          ]
+        }
+      },
+      {
+        "category": {
+          "id": 0,
+          "name": "Jerry"
+        },
+        "id": 9223372016900023062,
+        "name": "Mouse",
+        "photoUrls": {
+          "photoUrl": [
+            "string"
+          ]
+        },
+        "status": "available",
+        "tags": {
+          "tag": [
+            {
+              "id": 0,
+              "name": "Mouse"
+            }
+          ]
+        }
+      },
+      {
+        "category": {
+          "id": 83440528,
+          "name": "minim"
+        },
+        "id": 9223372016900023066,
+        "name": "doggie",
+        "photoUrls": {
+          "photoUrl": ["Lorem qui do","veniam in aute dolore"]
+        },
+        "status": "available",
+        "tags": {
+          "tag": [
+            {
+              "id": -45823716,
+              "name": "sint"
+            },
+            {
+              "id": 99213104,
+              "name": "anim ullamco dolore"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
