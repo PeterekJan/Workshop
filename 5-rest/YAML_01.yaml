@@ -1,0 +1,12 @@
+pets:
+  pet:
+    category:
+      id: '000001'
+      name: Dodge
+    id: '01000'
+    name: spider
+    photoUrls:
+      url: ''
+    status: ''
+    tags:
+      tag: ''

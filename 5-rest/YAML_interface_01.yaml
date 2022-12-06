@@ -1,0 +1,15 @@
+openapi: 3.0.3
+info:
+  title: "Example_04_01"
+  description: "Create Yaml interface from XML (File.xml)"
+  contact:
+    name: "JP"
+    url: "http://example.com"
+    email: "example@domain.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  version: "1.0.0"
+paths:
+  /pets:
+    description: "Everything necessary about your fake pets"
