@@ -1,0 +1,60 @@
+---
+"$schema": http://json-schema.org/draft-07/schema#
+title: Generated schema for Root
+type: object
+properties:
+  pets:
+    type: object
+    properties:
+      Pet:
+        type: object
+        properties:
+          category:
+            type: object
+            properties:
+              id:
+                type: number
+              name:
+                type: string
+            required:
+              - id
+              - name
+          id:
+            type: number
+          name:
+            type: string
+          photoUrls:
+            type: object
+            properties:
+              photoUrl:
+                type: string
+            required:
+              - photoUrl
+          status:
+            type: string
+          tags:
+            type: object
+            properties:
+              tag:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  name:
+                    type: string
+                required:
+                  - id
+                  - name
+            required:
+              - tag
+        required:
+          - category
+          - id
+          - name
+          - photoUrls
+          - status
+          - tags
+    required:
+      - Pet
+required:
+  - pets
