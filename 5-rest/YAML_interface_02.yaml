@@ -4,12 +4,19 @@ info:
   title: "Example API - YAML"
   description: "Create Yaml interface from XML (File.xml)"
 
-  servers:
-    - url: "https://example.com"
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+
   contact:
     name: "JP"
     url: "http://example.com"
     email: "example@domain.com"
+
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/peter.trahnyuk/testApi/1.0.0
 
 paths:
   /pets/pet:

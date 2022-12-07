@@ -11,7 +11,7 @@ info:
 servers:
   # Added by API Auto Mocking Plugin
   - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/peter.trahnyuk/testApi/1.0.0
+    url: https://virtserver.swaggerhub.com/smoula/testApi/1.0.0
 
 tags:
   - name: developer
@@ -36,7 +36,7 @@ paths:
         - in: query
           name: skip
           schema:
-            type: integer
+            type: integer/
             format: int32
             minimum: 0
 
