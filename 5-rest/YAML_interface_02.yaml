@@ -35,6 +35,58 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/pet'
+            application/yaml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/pet'
+    patch:
+      summary: Change pets information
+      tags:
+        - "Change information about pet"
+      description: Change information about pet
+      operationId: Change pets list
+      responses:
+        200:
+          description: success change information about pets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/pet'
+    put:
+      summary: Creating new pet to list
+      tags:
+        - "Create pet"
+      description: Everything necessary about your fake pets
+      responses:
+        200:
+          description: success create pet in the list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/pet'
+        404:
+          description: Pet is invisible
+
+
+    delete:
+      summary: Delete pet from list
+      tags:
+        - "Delete pet from list"
+      description: Delete your fake pet
+      responses:
+        200:
+          description: success delete pet from the list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/pet'
 
 
 
