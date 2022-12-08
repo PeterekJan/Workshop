@@ -1,0 +1,55 @@
+openapi: 3.0.0
+info:
+  title: Learn21.in API
+  description: Learn21.in API docs
+  version: 1.0.0
+  contact:
+    email: example@domain.com
+    name: JP
+
+
+paths:
+  /course/{course_id}:
+    get:
+      description: To fetch details of course
+      parameters:
+        - name: course_id
+          required: true
+          in: path
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: course created successfully #get
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/course"
+  /course:
+    post:
+      description: use this API to create course
+      requestBody:
+        description: Structure of a course
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/course"
+      responses:
+        "200":
+          description: successful response #post
+
+
+
+
+components:
+  schemas:
+    course:
+      type: object
+      properties:
+        title:
+          type: integer
+        description:
+          type: string
+        id:
+          type: integer

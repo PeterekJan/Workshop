@@ -15,9 +15,9 @@ paths:
     get:
       description: Operation to Fletch Student
       parameters:
-        - in: query
+        - in: query #header/path/cookie - urceni pro co je parameter
           name: studentname
-          required: true
+          required: true # jmeno se stava povinne
           schema:
             type: string
             example: JP

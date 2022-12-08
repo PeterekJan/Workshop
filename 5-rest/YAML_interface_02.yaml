@@ -19,13 +19,13 @@ servers:
     url: https://virtserver.swaggerhub.com
 
 paths:
-  /pets/pet:
+  /pets:
     get:
       summary: This is summary
       tags:
         - "Pets List"
       description: Everything necessary about your fake pets
-      operationId: getAllPetsInZoo
+      operationId: getAllPets
       responses:
         200:
           description: success response a list of pets
@@ -40,12 +40,15 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/pet'
+
+
+
     patch:
       summary: Change pets information
       tags:
         - "Change information about pet"
       description: Change information about pet
-      operationId: Change pets list
+      operationId: patchPetsList
       responses:
         200:
           description: success change information about pets
@@ -55,11 +58,22 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/pet'
-    put:
+
+
+
+    post:
       summary: Creating new pet to list
       tags:
         - "Create pet"
       description: Everything necessary about your fake pets
+      operationId: postPetsList
+      requestBody:
+        content:
+          application/json:
+            properties:
+              type: object
+              items:
+                $ref: '#/components/schemas/pet'
       responses:
         200:
           description: success create pet in the list
@@ -73,11 +87,13 @@ paths:
           description: Pet is invisible
 
 
+
     delete:
       summary: Delete pet from list
       tags:
         - "Delete pet from list"
       description: Delete your fake pet
+      operationId: deletePetsList
       responses:
         200:
           description: success delete pet from the list
@@ -87,7 +103,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/pet'
-
 
 
 components:
