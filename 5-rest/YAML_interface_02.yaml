@@ -16,7 +16,7 @@ info:
 servers:
   # Added by API Auto Mocking Plugin
   - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/peter.trahnyuk/testApi/1.0.0
+    url: https://virtserver.swaggerhub.com
 
 paths:
   /pets/pet:
