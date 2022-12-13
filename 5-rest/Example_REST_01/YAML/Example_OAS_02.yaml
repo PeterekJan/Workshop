@@ -1,0 +1,130 @@
+openapi: 3.0.0
+info:
+  title: SmartBear HR API
+  description: An API that allows users to obdain existing information of employees or post info of new employees
+  termOfService: http://smartbear.com/term-of-use
+  version: 1.0.0
+  contact:
+    email: example@domain.com
+    name: JP
+    url: domain.com
+  license:
+    name: SmartBear License
+    url: http://license.foo.com
+servers:
+  - url: http://dev.foo.com/v1
+    description: Dev Server
+
+  - url: http://prodo.foo.com/v1
+    description: Prod Server
+
+paths:
+  /employees:
+    get:
+      description: Obtain information about employees from the HR database
+      parameters:
+        - name: bodyLimit
+          in: query
+          description: The amount of employees returned
+          schema:
+            type: integer
+            minimum: 10
+            maximum: 20
+            example: 15
+
+        - name: pageLimit
+          in: query
+          description: Tha page to return employees info
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 5
+            example: 2
+
+
+      responses:
+        200:
+          description: Successful pull of employee info
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/Employee'
+            application/xml:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Employee'
+    post:
+      description: Creates a new employee in the database
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: '#/components/schemas/Employee'
+
+          application/xml:
+            schema:
+              type: object
+              $ref: '#/components/schemas/Employee'
+          application/yaml:
+            schema:
+              type: object
+              $ref: '#/components/schemas/Employee'
+
+
+
+        responses:
+          200:
+            description: Successfully created a new employee
+  /employee/{id}: #informace o specifickem zamestnanci firmy
+    get:
+      description: Obdain information about specific employee
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: The ID of the employee
+          schema:
+            type: integer
+            description: 54
+
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Employee'
+            application/xml:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Employee'
+
+components:
+  schemas:
+
+    Employees:
+      description: Array of employee info
+      type: array
+      items:
+        $ref: '#/components/schemas/Employee'
+
+    Employee:
+      description: Model containing employee info
+      properties:
+        id:
+          type: integer
+          example: 4
+        employee name:
+          type: string
+          example: Ryan Pinkham
+        employee title:
+          type: string
+          example: Market Manager
+
+
+
+
+

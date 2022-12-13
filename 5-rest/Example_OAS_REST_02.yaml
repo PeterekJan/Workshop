@@ -14,21 +14,21 @@ info:
     email: "example@domain.com"
 
 servers:
-  # Added by API Auto Mocking Plugin
-  - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com
+    - url: https://virtserver.swaggerhub.com
+    - url: http://dev.example.com
+      description: Development Server
 
 paths:
   /pets:
     get:
-      summary: This is summary
+      summary: Get all pets from list
       tags:
         - "Pets List"
-      description: Everything necessary about your fake pets
-      operationId: getAllPets
+      description: Everything necessary about your pets
+      operationId: getAllPetsList
       responses:
-        200:
-          description: success response a list of pets
+        '200':
+          description: Get list of all pets
           content:
             application/json:
               schema:
@@ -40,7 +40,35 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/pet'
+      security: []
 
+    post:
+      summary: Creating a new pet
+      tags:
+        - "Create pet"
+      description: Everything necessary about your fake pets
+      operationId: CreatePet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array                       #Mozna smazat?
+              items:                            #Mozna smazat?
+                $ref: '#/components/schemas/pet'
+      responses:
+        '201':
+          description: Successfully created a new pet
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/pet'
+        '400':
+          description: Bad request
+        '409':
+          description: Conflict
 
 
     patch:
@@ -60,34 +88,6 @@ paths:
                   $ref: '#/components/schemas/pet'
 
 
-
-    post:
-      summary: Creating new pet to list
-      tags:
-        - "Create pet"
-      description: Everything necessary about your fake pets
-      operationId: postPetsList
-      requestBody:
-        content:
-          application/json:
-            properties:
-              type: object
-              items:
-                $ref: '#/components/schemas/pet'
-      responses:
-        200:
-          description: success create pet in the list
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/pet'
-        404:
-          description: Pet is invisible
-
-
-
     delete:
       summary: Delete pet from list
       tags:
@@ -104,8 +104,25 @@ paths:
                 items:
                   $ref: '#/components/schemas/pet'
 
+security:
+  - BasicAuth: []
+  - BearerAuth: []
+  - ApiKeyAuth: []
 
 components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+
   schemas:
     pet:
       description: One of the pets
