@@ -1,8 +1,8 @@
 openapi: 3.0.3
 info:
   version: "1.0.0"
-  title: "Example API - YAML"
-  description: "Create Yaml interface from XML (File.xml)"
+  title: "Petstore JP" #Example API - YAML
+  description: "Administration of pets in petstore" #Create Yaml interface from XML (File.xml)
 
   license:
     name: Apache 2.0
@@ -34,19 +34,20 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/pet'
+                  $ref: '#/components/schemas/pets'
             application/yaml:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/pet'
+                  $ref: '#/components/schemas/pets'
       security: []
 
+  /pet:
     post:
       summary: Creating a new pet
       tags:
         - "Create pet"
-      description: Everything necessary about your fake pets
+      description: Create new pet in Petstore
       operationId: CreatePet
       requestBody:
         required: true
@@ -67,42 +68,66 @@ paths:
                   $ref: '#/components/schemas/pet'
         '400':
           description: Bad request
+        '405':
+          description: Invalid input
         '409':
           description: Conflict
 
-
-    patch:
-      summary: Change pets information
+    put:
+      summary: Update a pet's information
       tags:
-        - "Change information about pet"
-      description: Change information about pet
-      operationId: patchPetsList
+        - "Change information about your pet"
+      description: Change information about your pet
+      operationId: updatePet
+
       responses:
-        200:
-          description: success change information about pets
+        '200':
+          description: success change information about a pet
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/pet'
-
-
-    delete:
-      summary: Delete pet from list
+        '404':
+          description: Pet not found
+        '405':
+          description: Invalid input
+    delete:                           #?????????
+      summary: Delete a pet from list
       tags:
         - "Delete pet from list"
-      description: Delete your fake pet
-      operationId: deletePetsList
+      description: Delete a pet from list
+      operationId: deletePet
+      produces:
+        - application/json
+        - application/xml
+      parameters:                      #??????schema->type
+        - name: api_key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: petID
+          in: path
+          description: Pet ID to delete
+          required: true
+          schema:
+            type: integer
+            format: int32
       responses:
-        200:
-          description: success delete pet from the list
+        '200':
+          description: Successfully delete a pet from the list
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/pet'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Pet not found
 
 security:
   - BasicAuth: []
@@ -124,6 +149,10 @@ components:
       name: X-API-Key
 
   schemas:
+    pets:
+      type: array
+      items:
+        $ref: '#/components/schemas/pet'
     pet:
       description: One of the pets
       type: object
