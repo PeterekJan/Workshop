@@ -14,9 +14,9 @@ info:
     email: "example@domain.com"
 
 servers:
-    - url: https://virtserver.swaggerhub.com
-    - url: http://dev.example.com
-      description: Development Server
+  - url: https://virtserver.swaggerhub.com
+  - url: http://dev.example.com
+    description: Development Server
 
 paths:
   /pets:
@@ -32,13 +32,9 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
                   $ref: '#/components/schemas/pets'
             application/yaml:
               schema:
-                type: array
-                items:
                   $ref: '#/components/schemas/pets'
       security: []
 
@@ -73,6 +69,7 @@ paths:
         '409':
           description: Conflict
 
+  /pet/{petID}:
     put:
       summary: Update a pet's information
       tags:
@@ -93,21 +90,13 @@ paths:
           description: Pet not found
         '405':
           description: Invalid input
-    delete:                           #?????????
+    delete:
       summary: Delete a pet from list
       tags:
         - "Delete pet from list"
       description: Delete a pet from list
       operationId: deletePet
-      produces:
-        - application/json
-        - application/xml
-      parameters:                      #??????schema->type
-        - name: api_key
-          in: path
-          required: true
-          schema:
-            type: string
+      parameters:
         - name: petID
           in: path
           description: Pet ID to delete

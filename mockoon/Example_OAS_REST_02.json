@@ -1,0 +1,320 @@
+{
+  "uuid": "db0f0abe-7c82-457f-abec-c3658b4f722d",
+  "lastMigration": 24,
+  "name": "Petstore JP",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "9894c168-2910-44a0-adc0-552f65d0ef06",
+      "documentation": "Get all pets from list",
+      "method": "get",
+      "endpoint": "pets",
+      "responses": [
+        {
+          "uuid": "b93408d0-4b75-45b8-b206-b723e752a3bc",
+          "body": "[\n  [\n    {\n      \"category\": {\n        \"id\": {{faker 'datatype.number'}},\n        \"name\": \"\"\n      },\n      \"id\": \"\",\n      \"name\": {{faker 'datatype.number'}},\n      \"photoUrls\": {\n        \"url\": \"\"\n      },\n      \"tags\": {\n        \"tag\": \"\"\n      }\n    }\n  ]\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Get list of all pets",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "f16daa03-d82f-4142-91e4-a44d9e64a745",
+      "documentation": "Creating a new pet",
+      "method": "post",
+      "endpoint": "pet",
+      "responses": [
+        {
+          "uuid": "9dbc3aba-7f39-4742-bd27-d05f16073b70",
+          "body": "[\n  {\n    \"category\": {\n      \"id\": {{faker 'datatype.number'}},\n      \"name\": \"\"\n    },\n    \"id\": \"\",\n    \"name\": {{faker 'datatype.number'}},\n    \"photoUrls\": {\n      \"url\": \"\"\n    },\n    \"tags\": {\n      \"tag\": \"\"\n    }\n  }\n]",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "Successfully created a new pet",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "b437f604-34ca-4d50-bf87-027dd6ab8872",
+          "body": "",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Bad request",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "1da4d78f-50b5-4cfc-9ef4-91e850c9ba8b",
+          "body": "",
+          "latency": 0,
+          "statusCode": 405,
+          "label": "Invalid input",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "2d48fe34-3f74-4921-8fb1-2bb1af16c8ef",
+          "body": "",
+          "latency": 0,
+          "statusCode": 409,
+          "label": "Conflict",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "7b3f11d1-bb2e-4b3d-863b-fa5e867cee6c",
+      "documentation": "Update a pet's information",
+      "method": "put",
+      "endpoint": "pet/:petID",
+      "responses": [
+        {
+          "uuid": "d6e6e7ef-7aeb-4a0d-885d-fd142fcebb5e",
+          "body": "[\n  {\n    \"category\": {\n      \"id\": {{faker 'datatype.number'}},\n      \"name\": \"\"\n    },\n    \"id\": \"\",\n    \"name\": {{faker 'datatype.number'}},\n    \"photoUrls\": {\n      \"url\": \"\"\n    },\n    \"tags\": {\n      \"tag\": \"\"\n    }\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "success change information about a pet",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "f61f1a1f-5b9a-4f16-87ad-135904e9587b",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Pet not found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "88cd9d9c-d994-4072-9319-eefc1b0b2660",
+          "body": "",
+          "latency": 0,
+          "statusCode": 405,
+          "label": "Invalid input",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "746e7205-c4c8-4046-a407-ff21ef3547bc",
+      "documentation": "Delete a pet from list",
+      "method": "delete",
+      "endpoint": "pet/:petID",
+      "responses": [
+        {
+          "uuid": "020a4ab7-818e-4e21-9d0c-a1eb339ce5a9",
+          "body": "[\n  {\n    \"category\": {\n      \"id\": {{faker 'datatype.number'}},\n      \"name\": \"\"\n    },\n    \"id\": \"\",\n    \"name\": {{faker 'datatype.number'}},\n    \"photoUrls\": {\n      \"url\": \"\"\n    },\n    \"tags\": {\n      \"tag\": \"\"\n    }\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Successfully delete a pet from the list",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "0bcd20fb-d0f1-47e6-ba8b-63abf1a6d812",
+          "body": "",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "Invalid ID supplied",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "9d2b7f3e-8d5c-4054-93b0-de60f5ca32b0",
+          "body": "",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "Pet not found",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": []
+}
