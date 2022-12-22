@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<WorkshopRes xmlns="http://jpower8.com/workshop/soap"
-             xsi:schemaLocation="http://jpower8.com/workshop/soap"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+        attributeFormDefault="unqualified"
+        elementFormDefault="qualified"
+        xmlns="http://jpower8.com/workshop/soap"
+        targetNamespace="http://jpower8.com/workshop/soap"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
     <flat>
         <item>
             <name>nVidia (graphic card / nVidia) - Some description stuff</name>
@@ -47,3 +51,4 @@
         <name>židle</name>
     </filtered_by_char_extended>
 </WorkshopRes>
+        </xs:schema>

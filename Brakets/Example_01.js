@@ -95,7 +95,8 @@ var result = (ageJana ==ageDavid);
 //  greeting = "Good evening";
 //}
 //
-//
+
+
 
 
 

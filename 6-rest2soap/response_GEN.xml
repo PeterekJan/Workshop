@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PointsOfInterestsRes>
+    <requestID>1234</requestID>
+    <places>
+        <item>
+            <timestamp>str1234</timestamp>
+            <id>123</id>
+            <name>str1234</name>
+            <address>
+                <street>str1234</street>
+                <houseNo>str1234</houseNo>
+                <town>str1234</town>
+                <postal>str1234</postal>
+                <country>str1234</country>
+            </address>
+            <type>atm</type>
+            <url>str1234</url>
+            <hours>
+                <hour>
+                    <day>1</day>
+                    <from>str12</from>
+                    <to>str12</to>
+                </hour>
+            </hours>
+        </item>
+    </places>
+    <filter>
+        <type>str1234</type>
+        <pageLimit>123</pageLimit>
+        <brand>1</brand>
+        <brandName>str1234</brandName>
+    </filter>
+</PointsOfInterestsRes>

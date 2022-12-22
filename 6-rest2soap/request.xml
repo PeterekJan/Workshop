@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <headers>
+        <X-Execution-Timestamp>2017-07-21T17:32:28Z</X-Execution-Timestamp>
+        <X-Request-Id>cccfc4b7-49eb-2a9b-d625-cd1292f964d6</X-Request-Id>
+    </headers>
+    <body>
+        <RequestData>
+            <filter>
+                <type>atm</type>
+                <limit>555</limit>
+                <brand>1</brand>
+            </filter>
+        </RequestData>
+    </body>
+    <data>
+        <item>
+            <name>Office_01</name>
+            <address>
+                <street>Radlická</street>
+                <house_no>1c</house_no>
+                <town>Prague</town>
+                <postal>15000</postal>
+                <country>Czech Republic</country>
+            </address>
+        </item>
+        <item>
+            <name>Office_02</name>
+            <address>
+                <street>Vosmikovych</street>
+                <house_no>4</house_no>
+                <town>Prague</town>
+                <postal>18000</postal>
+                <country>Czech Republic</country>
+            </address>
+        </item>
+        <item>
+            <name>Office_03</name>
+            <address>
+                <street>Tähtikuja</street>
+                <house_no>1</house_no>
+                <town>Rovaniemi</town>
+                <postal>969 30</postal>
+                <country>Finland</country>
+            </address>
+        </item>
+        <item>
+            <name>Office_04</name>
+            <address>
+                <street>Olomoucká</street>
+                <house_no>88</house_no>
+                <town>Opava</town>
+                <postal>746 01</postal>
+                <country>Czech Republic</country>
+            </address>
+        </item>
+        <item>
+            <name>Office_05</name>
+            <address>
+                <street>Radlická</street>
+                <house_no>1c</house_no>
+                <town>Prague</town>
+                <postal>15000</postal>
+                <country>Czech Republic</country>
+            </address>
+        </item>
+        <item>
+            <name>Office_06</name>
+            <address>
+                <street>Kehlsteinhaus</street>
+                <house_no>1</house_no>
+                <town>Berchtesgaden</town>
+                <postal>83471</postal>
+                <country>Germany</country>
+            </address>
+        </item>
+        <item>
+            <name>Office_07</name>
+            <address>
+                <street>Malibu Point</street>
+                <house_no>10880</house_no>
+                <town>Malibu</town>
+                <postal>90265</postal>
+                <country>Los Angeles</country>
+            </address>
+        </item>
+        <item>
+            <name>Office_08</name>
+            <address>
+                <street>Alto da Boa Vista</street>
+                <house_no>1</house_no>
+                <town>Rio de Janeiro</town>
+                <postal>22725</postal>
+                <country>Brazil</country>
+            </address>
+        </item>
+        <item>
+            <name>Office_09</name>
+            <address>
+                <street>Champ de Mars</street>
+                <house_no>5Av</house_no>
+                <town>Paris</town>
+                <postal>75007</postal>
+                <country>France</country>
+            </address>
+        </item>
+        <item>
+            <name>Office_10</name>
+            <address>
+                <street>Corvin sétány</street>
+                <house_no>1</house_no>
+                <town>Budapest</town>
+                <postal>1082</postal>
+                <country>Hungary</country>
+            </address>
+        </item>
+    </data>
+</root>

@@ -1,0 +1,7 @@
+{
+  "filter": {
+    "type": "atm",
+    "limit": 555,
+    "brand": 1
+  }
+}
