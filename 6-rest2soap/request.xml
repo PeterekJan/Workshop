@@ -9,7 +9,7 @@
             <filter>
                 <type>atm</type>
                 <limit>555</limit>
-                <brand>1</brand>
+                <brand>4</brand>
             </filter>
         </RequestData>
     </body>
@@ -40,7 +40,7 @@
                 <street>Tähtikuja</street>
                 <house_no>1</house_no>
                 <town>Rovaniemi</town>
-                <postal>969 30</postal>
+                <postal>96930</postal>
                 <country>Finland</country>
             </address>
         </item>

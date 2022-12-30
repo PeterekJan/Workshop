@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PointsOfInterestsRes>
-    <requestID>1234</requestID>
+    <requestID>cccfc4b7-49eb-2a9b-d625-cd1292f964d6</requestID>
     <places>
         <item>
-            <timestamp>str1234</timestamp>
-            <id>123</id>
-            <name>str1234</name>
+            <timestamp>2017-07-21T17:32:28Z</timestamp>
+            <id>123456789</id>
+            <name>Office_01</name>
             <address>
-                <street>str1234</street>
-                <houseNo>str1234</houseNo>
-                <town>str1234</town>
-                <postal>str1234</postal>
-                <country>str1234</country>
+                <street>Radlická</street>
+                <houseNo>1c</houseNo>
+                <town>Prague</town>
+                <postal>15000</postal>
+                <country>Czech Republic</country>
             </address>
             <type>atm</type>
-            <url>str1234</url>
+            <url>string</url>
             <hours>
                 <hour>
-                    <day>1</day>
-                    <from>str12</from>
-                    <to>str12</to>
+                    <day>Pondeli</day>
+                    <from>8:00</from>
+                    <to>18:00</to>
                 </hour>
             </hours>
         </item>
     </places>
     <filter>
-        <type>str1234</type>
-        <pageLimit>123</pageLimit>
+        <type>atm</type>
+        <pageLimit>555</pageLimit>
         <brand>1</brand>
-        <brandName>str1234</brandName>
+        <brandName>string</brandName>
     </filter>
 </PointsOfInterestsRes>
