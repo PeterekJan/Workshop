@@ -3,7 +3,7 @@
     <places>
         <item>
             <timestamp>2017-07-21T17:32:28Z</timestamp>
-            <id>1</id>
+            <id>NaN</id>
             <name>Office_01</name>
             <address>
                 <street>Radlická</street>
@@ -16,15 +16,45 @@
             <url>https://www.csob.cz/pobocky/radlicka</url>
             <hours>
                 <hour>
-                    <day/>
-                    <from>aaaaa</from>
-                    <to/>
+                    <day>Po</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Út</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>St</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Čt</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Pa</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>So</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
+                </hour>
+                <hour>
+                    <day>Ne</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
                 </hour>
             </hours>
         </item>
         <item>
             <timestamp>2017-07-21T17:32:28Z</timestamp>
-            <id>2</id>
+            <id>NaN</id>
             <name>Office_02</name>
             <address>
                 <street>Vosmikovych</street>
@@ -37,15 +67,45 @@
             <url>https://www.csob.cz/pobocky/radlicka</url>
             <hours>
                 <hour>
-                    <day/>
-                    <from>aaaaa</from>
-                    <to/>
+                    <day>Po</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Út</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>St</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Čt</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Pa</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>So</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
+                </hour>
+                <hour>
+                    <day>Ne</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
                 </hour>
             </hours>
         </item>
         <item>
             <timestamp>2017-07-21T17:32:28Z</timestamp>
-            <id>3</id>
+            <id>NaN</id>
             <name>Office_03</name>
             <address>
                 <street>Tähtikuja</street>
@@ -58,15 +118,45 @@
             <url>https://www.csob.cz/pobocky/radlicka</url>
             <hours>
                 <hour>
-                    <day/>
-                    <from>aaaaa</from>
-                    <to/>
+                    <day>Po</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Út</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>St</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Čt</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Pa</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>So</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
+                </hour>
+                <hour>
+                    <day>Ne</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
                 </hour>
             </hours>
         </item>
         <item>
             <timestamp>2017-07-21T17:32:28Z</timestamp>
-            <id>4</id>
+            <id>NaN</id>
             <name>Office_04</name>
             <address>
                 <street>Olomoucká</street>
@@ -79,15 +169,45 @@
             <url>https://www.csob.cz/pobocky/radlicka</url>
             <hours>
                 <hour>
-                    <day/>
-                    <from>aaaaa</from>
-                    <to/>
+                    <day>Po</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Út</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>St</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Čt</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Pa</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>So</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
+                </hour>
+                <hour>
+                    <day>Ne</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
                 </hour>
             </hours>
         </item>
         <item>
             <timestamp>2017-07-21T17:32:28Z</timestamp>
-            <id>5</id>
+            <id>NaN</id>
             <name>Office_05</name>
             <address>
                 <street>Radlická</street>
@@ -100,15 +220,45 @@
             <url>https://www.csob.cz/pobocky/radlicka</url>
             <hours>
                 <hour>
-                    <day/>
-                    <from>aaaaa</from>
-                    <to/>
+                    <day>Po</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Út</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>St</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Čt</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Pa</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>So</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
+                </hour>
+                <hour>
+                    <day>Ne</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
                 </hour>
             </hours>
         </item>
         <item>
             <timestamp>2017-07-21T17:32:28Z</timestamp>
-            <id>6</id>
+            <id>NaN</id>
             <name>Office_06</name>
             <address>
                 <street>Kehlsteinhaus</street>
@@ -121,15 +271,45 @@
             <url>https://www.csob.cz/pobocky/radlicka</url>
             <hours>
                 <hour>
-                    <day/>
-                    <from>aaaaa</from>
-                    <to/>
+                    <day>Po</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Út</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>St</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Čt</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Pa</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>So</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
+                </hour>
+                <hour>
+                    <day>Ne</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
                 </hour>
             </hours>
         </item>
         <item>
             <timestamp>2017-07-21T17:32:28Z</timestamp>
-            <id>7</id>
+            <id>NaN</id>
             <name>Office_07</name>
             <address>
                 <street>Malibu Point</street>
@@ -142,15 +322,45 @@
             <url>https://www.csob.cz/pobocky/radlicka</url>
             <hours>
                 <hour>
-                    <day/>
-                    <from>aaaaa</from>
-                    <to/>
+                    <day>Po</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Út</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>St</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Čt</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Pa</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>So</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
+                </hour>
+                <hour>
+                    <day>Ne</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
                 </hour>
             </hours>
         </item>
         <item>
             <timestamp>2017-07-21T17:32:28Z</timestamp>
-            <id>8</id>
+            <id>NaN</id>
             <name>Office_08</name>
             <address>
                 <street>Alto da Boa Vista</street>
@@ -163,15 +373,45 @@
             <url>https://www.csob.cz/pobocky/radlicka</url>
             <hours>
                 <hour>
-                    <day/>
-                    <from>aaaaa</from>
-                    <to/>
+                    <day>Po</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Út</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>St</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Čt</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Pa</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>So</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
+                </hour>
+                <hour>
+                    <day>Ne</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
                 </hour>
             </hours>
         </item>
         <item>
             <timestamp>2017-07-21T17:32:28Z</timestamp>
-            <id>9</id>
+            <id>NaN</id>
             <name>Office_09</name>
             <address>
                 <street>Champ de Mars</street>
@@ -184,15 +424,45 @@
             <url>https://www.csob.cz/pobocky/radlicka</url>
             <hours>
                 <hour>
-                    <day/>
-                    <from>aaaaa</from>
-                    <to/>
+                    <day>Po</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Út</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>St</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Čt</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Pa</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>So</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
+                </hour>
+                <hour>
+                    <day>Ne</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
                 </hour>
             </hours>
         </item>
         <item>
             <timestamp>2017-07-21T17:32:28Z</timestamp>
-            <id>10</id>
+            <id>NaN</id>
             <name>Office_10</name>
             <address>
                 <street>Corvin sétány</street>
@@ -205,9 +475,39 @@
             <url>https://www.csob.cz/pobocky/radlicka</url>
             <hours>
                 <hour>
-                    <day/>
-                    <from>aaaaa</from>
-                    <to/>
+                    <day>Po</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Út</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>St</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Čt</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>Pa</day>
+                    <from>8:00</from>
+                    <to>16:00</to>
+                </hour>
+                <hour>
+                    <day>So</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
+                </hour>
+                <hour>
+                    <day>Ne</day>
+                    <from>CLOSED</from>
+                    <to>CLOSED</to>
                 </hour>
             </hours>
         </item>
@@ -215,7 +515,7 @@
     <filter>
         <type>atm</type>
         <pageLimit>555</pageLimit>
-        <brand>0</brand>
-        <brandName>unknown</brandName>
+        <brand>2</brand>
+        <brandName>ČSOB SK</brandName>
     </filter>
 </PointsOfInterestsRes>

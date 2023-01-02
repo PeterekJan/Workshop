@@ -26,9 +26,6 @@
             </xsl:choose>
         </xsl:variable>
 
-
-
-
         <PointsOfInterestsRes>
             <requestID><xsl:value-of select="./root/headers/X-Request-Id"/></requestID>
             <places>
@@ -50,9 +47,39 @@
                         <url>https://www.csob.cz/pobocky/radlicka</url>
                         <hours>
                             <hour>
-                                <day><xsl:value-of select="day"/></day>
-                                <from>aaaaa</from>
-                                <to></to>
+                                <day>Po</day>
+                                <from>8:00</from>
+                                <to>16:00</to>
+                            </hour>
+                            <hour>
+                                <day>Út</day>
+                                <from>8:00</from>
+                                <to>16:00</to>
+                            </hour>
+                            <hour>
+                                <day>St</day>
+                                <from>8:00</from>
+                                <to>16:00</to>
+                            </hour>
+                            <hour>
+                                <day>Čt</day>
+                                <from>8:00</from>
+                                <to>16:00</to>
+                            </hour>
+                            <hour>
+                                <day>Pa</day>
+                                <from>8:00</from>
+                                <to>16:00</to>
+                            </hour>
+                            <hour>
+                                <day>So</day>
+                                <from>CLOSED</from>
+                                <to>CLOSED</to>
+                            </hour>
+                            <hour>
+                                <day>Ne</day>
+                                <from>CLOSED</from>
+                                <to>CLOSED</to>
                             </hour>
                         </hours>
                     </item>
