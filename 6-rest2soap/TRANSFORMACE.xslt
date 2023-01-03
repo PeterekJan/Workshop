@@ -84,6 +84,8 @@
                                         <soap:from>CLOSED</soap:from>
                                         <soap:to>CLOSED</soap:to>
                                     </soap:hour>
+                                   <xsl:value-of select="format-time(current-time(),'[H01]:[m01] [z]' )"/>
+                                    <xsl:value-of select="format-date(current-date(), '[FNn], the [D1o] of [MNn], [Y01]')"/>
                                 </soap:hours>
                             </soap:item>
                         </xsl:for-each>
