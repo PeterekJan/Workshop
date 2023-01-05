@@ -42,3 +42,57 @@ function yearsUntilRetirement(year, firstName){
 yearsUntilRetirement(2000, "David")
 yearsUntilRetirement(1990, "John")
 yearsUntilRetirement(1900, "Diana")
+
+
+///////////////////////////////////////////////////
+
+function pozdrav1(){
+    console.log("Tadaa")
+}
+
+pozdrav1()
+pozdrav1()
+
+
+let pozdrav2 = function(){ //nejpouzivanejsi
+    console.log("Tadaa2")
+}
+
+pozdrav2()
+pozdrav2()
+
+//************* */
+
+let pozdrav3 = () => console.log("Tada3") //nejpouzivanejsi
+
+pozdrav3()
+pozdrav3()
+/***************************Parametr a Argument***************************************/
+
+let naDruhou = function(num){
+    console.log(num * num)
+}
+
+
+//let naDruhou = (num) => console.log(num * num)  //Jiny zapis stejne funkce
+
+naDruhou (2)
+
+
+
+
+
+///////////////////////////////////////////
+
+let pozdrav = function(name){
+    console.log("Dovi" + name);
+}
+
+pozdrav("David")
+
+
+
+
+
+
+
