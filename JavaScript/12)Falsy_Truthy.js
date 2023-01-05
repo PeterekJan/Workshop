@@ -51,3 +51,37 @@ if (salary === 0){    //tady nedovoli priradit string a number, striktni
 }
 
 
+/******************************************************************/
+//Funkce s vice parametry (soucet)
+
+var soucet = function(a, b, c){
+    return a + b + c;
+    }
+
+let value = soucet (20, 30, 5)
+    console.log(value);
+
+/////////////////////////////////////////////
+//defaultni hodnota
+
+let game = function (name = "Anonymni", score = 0){   //bez = je vychozi hodnota undefine
+    console.log(name)
+    console.log(score)
+}
+
+game("David");
+game(undefined,50);
+game();
+
+///////////////////////////////////////
+
+let game2 = function (name = "Anonymni", score = 0){   //bez = je vychozi hodnota undefine
+    return "Jmeno:" + name + ", Score:" + score
+}
+
+let value2 = game2("David", 50);
+console.log(value2)
+
+/************************************************************************/
+
+

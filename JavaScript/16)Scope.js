@@ -46,3 +46,25 @@ if(true){
 }
 
 /*************************************************************/
+
+//Globalni Scope (num1, num2, num3)
+//Lokálni Scope (a, b, c)
+//Lokalni Scope (myName)
+
+let num1 = 5;
+let num2 = 3;
+let num3 = 8;
+
+let pristup = function(a, b, c){
+    if(a === num1 && b === num2 && c === num3){
+        console.log("Entry")
+        let myName;
+    }else {
+        console.log("Spatne");
+        }
+    }
+
+
+pristup (5, 3, 8)
+
+/**************************************************/

@@ -104,3 +104,56 @@ console.log(diana);
 
 
 
+/**************************************************************/
+
+var person1 = {
+    name: "David Setek",
+    age: 34,
+    city: "Ceske budejovice"
+    
+}
+
+var person2 = {
+    name: "Harry Potter",
+    age: 12,
+    city: "London"
+    
+}
+
+var person3 = {
+    name: "Jana Tada",
+    age: 18,
+    city: "Praha"
+    
+}
+
+console.log(`Jmenuje se ${person1.name}. Je mu ${person1.age} let a pochazi z mesta ${person1.city}.`)
+console.log(`Jmenuje se ${person2.name}. Je mu ${person2.age} let a pochazi z mesta ${person1.city}.`)
+console.log(`Jmenuje se ${person3.name}. Je ji ${person3.age} let a pochazi z mesta ${person1.city}.`)
+
+/********************************************************/
+
+var firstBook = {
+    name: "Harry Potter a kamen",
+    author: "J.K.Row",
+    published: "1997"
+    
+}
+
+var secondBook = {
+    name: "Harry Potter a komnata",
+    author: "J.K.Row",
+    published: "1998"
+    
+}
+
+
+var resultBook = function(book){
+    console.log(`Kniha od ${book.author} z roku ${book.published} se jmenuje ${book.name}`)
+
+}
+
+resultBook(firstBook);
+resultBook(secondBook);
+
+/****************************************************/

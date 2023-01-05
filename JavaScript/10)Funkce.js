@@ -92,7 +92,32 @@ pozdrav("David")
 
 
 
+////////////////////////////////////////
+let naDruhou2 = function (number){
+    let result = number * number;
+    return result;
+}
 
+let value1 = naDruhou2(5);
+
+
+////////////////////////////////////////////////
+//funkce s vice parametry
+let num1 = 5;
+let num2 = 3;
+let num3 = 8;
+
+let pristup = function(a, b, c){
+    if(a === num1 && b === num2 && c === num3){
+        console.log("Entry")
+    }else {
+        console.log("Spatne");
+        }
+    }
+
+pristup (5, 3, 9)
+pristup (4, 3, 8)
+pristup (5, 3, 8)
 
 
 
