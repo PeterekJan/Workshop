@@ -157,3 +157,30 @@ resultBook(firstBook);
 resultBook(secondBook);
 
 /****************************************************/
+
+
+var firstBook = {
+    title: "Harry Potter a kamen",
+    author: "J.K.Row",
+    published: "1997"
+    
+}
+
+var secondBook = {
+    title: "Harry Potter a komnata",
+    author: "J.K.Row",
+    published: "1998"
+    
+}
+
+let bookInfo = function(book){
+    return {
+        basicInfo:`${book.title} od ${book.author}`,
+        publishing: `Kniha ${book.title} byla vydana v roce ${book.published}`
+    }
+}
+
+let result = bookInfo(firstBook)
+console.log(result)
+console.log(result.basicInfo)
+console.log(result.publishing)

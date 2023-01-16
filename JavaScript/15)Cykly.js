@@ -152,3 +152,26 @@ for(var i = 0; i < 3; i++){
     }
     console.log("Toto se neprovede pote, co se narazi na continue")
 }
+
+
+
+
+
+let vysledok = 0;
+function hodKockou(){
+    for(let i = 0; i <= 5; i++){
+        function jednotlivyHod(){
+            for(let j = 0; j<=2; j++){
+            let number = Math.ceil(Math.random() * 6);
+            return number}}
+        let result = jednotlivyHod();
+        vysledok = vysledok + result;
+}
+}
+hodKockou();
+if(vysledok >= 25){
+    console.log(`Ste vitaz, hodili ste ${vysledok}`);
+}
+else{
+    console.log(`Skuste stastie znovu, hodili ste ${vysledok}`);
+}
