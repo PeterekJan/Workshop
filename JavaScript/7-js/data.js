@@ -321,8 +321,52 @@ var object = [
 
 // console.log(arrayResults)
     
+// for(var i = 0;i < object.length; i++);
+// console.log(y)
+//for(var y = 0;y < object.length; y++){
 
 
 
+// var newObject = {"items": []};
+
+// for(var i = 0; i < object.length; i++){
+//     var item = object[i];
+//     newObject.items.push(i);
+
+//     console.log(newObject)
+
+// }
 
 
+  
+var newObject = {items: [],
+    total_count: object.length,
+    pending_count: 0,
+    available_count: 0,
+    not_available_count: 0
+};
+  
+for (i=0; i<object.length; i++) {
+
+
+    var item = object[i];
+    var newItem ={
+        id: i,
+        orig_id: item.id,
+        category_name: item.category.name,
+        images: item.photoUrls.join(", ")
+    };
+
+    newObject.items.push(newItem);
+
+    if(item.status == "pending"){
+        newObject.pending_count++;
+    }else if(item.status == "available"){
+        newObject.available_count++;
+    // }else if (item.status !== "available" && item.tags.id < 10){
+    //     newObject.not_available_count++
+    }
+  }
+
+  
+  console.log(newObject);

@@ -7,7 +7,7 @@ for(var i = 0;i < object.length; i++){
 }
 
 // 3)Vytvořte nové pole objektů, které bude obsahovat jenom objekty se sudými indexy
-var even = []
+var even = [];
 for(var i = 1; i < object.length; i += 2) {  // Sudy element
     even.push(object[i]);
 }
@@ -20,7 +20,7 @@ var filtered = object.filter(function(element, index, array) {
 
 
 //Vytvořte nové pole objektů, které bude obsahovat jenom objekty s lichými indexy
-var odd = []
+var odd = [];
 for(var i = 0; i < object.length; i += 2) {  //Lichy element
     odd.push(object[i]);
 }
@@ -41,6 +41,10 @@ var filtered = object.filter(function(element, index, array) {
 })
 
 console.log(arrayResults)
+
+//Vytvořte nový objekt, který bude mít následující strukturu
+
+
 
 
 
