@@ -175,3 +175,29 @@ if(vysledok >= 25){
 else{
     console.log(`Skuste stastie znovu, hodili ste ${vysledok}`);
 }
+
+///////////////////////////FOR EACH//////////////////////
+
+var employees = ["David", "Harry", "Hermiona", "Ron", "Draco"];
+
+employees.forEach(function(){
+    console.log("Testujeme")    //vypise tolikrat kolik je clenu, forEach je cyklus 
+})
+
+
+
+/////////////////////////////////////////////////////
+
+ employees.forEach(function(person){
+     console.log(person)
+ })
+
+///////////////////////////////////////////////
+ employees.forEach(function(person, index){
+
+    console.log(index)
+ })
+
+ ///////////////////////////////////////////////////
+
+ 

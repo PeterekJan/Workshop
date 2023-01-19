@@ -44,27 +44,3 @@ console.log(secondName.trim());
 
 /************************************************************/
 
-//math metody
-
-var number = 3.1415999999
-
-
-//zaokrouhleni na desetine mista
-console.log(number.toFixed(2));       
-
-//zakrouhleni na cele cisla
-console.log(Math.round(number));
-//zaokrouhleni dolu
-console.log(Math.floor(number));
-//zakrouhleni nahoru
-console.log(Math.ceil(number));
-
-//nahodne cele cislo
-
-console.log(Math.ceil(Math.random()* 100))
-
-//nahodne cislo z intervalu
-
-var min = 15
-var max = 20
-console.log(Math.floor(Math.random() * (max - min + 1))+ min)
