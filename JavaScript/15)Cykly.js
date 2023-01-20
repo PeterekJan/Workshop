@@ -63,6 +63,17 @@ for(var i = 5; i <= 50; i = i + 5){
 for(i = 15; i >= 0; i--){
     console.log(i)
 }
+////////////////////////////////////////////////
+var toDo = ["Sestrihat video", "uklidit pokoj", "Vyluxovat"];
+for(var i = 0; i < toDo.length; i++){
+    console.log(`${i + 1}: ${toDo[i]}`);
+}
+
+var myArray = [];
+for (var j = 0; j < 5; j++){
+    myArray.push(j)
+};
+console.log(myArray)
 
 
 /***************While cyklus**********************/
@@ -176,7 +187,7 @@ else{
     console.log(`Skuste stastie znovu, hodili ste ${vysledok}`);
 }
 
-///////////////////////////FOR EACH//////////////////////
+///////////////////////////FOR EACH - na vypis pole //////////////////////
 
 var employees = ["David", "Harry", "Hermiona", "Ron", "Draco"];
 
@@ -199,5 +210,14 @@ employees.forEach(function(){
  })
 
  ///////////////////////////////////////////////////
+ var toDo = ["vyvencit psa", "koupit kecup", "vymalovat pokoj", "udelat si svacu"];
+
+ toDo.forEach(function(activity,index){
+     var number = index + 1;
+     console.log(`${number}. ${activity}`)
+ });
+
+ /////////////////////////////////////////////////////////////////
+
 
  
