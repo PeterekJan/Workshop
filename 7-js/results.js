@@ -51,7 +51,7 @@ var newObject = {items: [],
     not_available_count: 0
 };
   
-for (i=0; i<object.length; i++) {
+for (i=0; i < object.length; i++) {
 
 
     var item = object[i];

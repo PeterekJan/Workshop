@@ -291,28 +291,45 @@ var object = [
 
 //console.log(object[4]);
 
-// console.log(object[1].category)
+// for(var i = 0;i < object.length; i++){
+//     console.log(object[i].category);
+// }
+
+
+// var even = [];
+// for(var i = 1; i < object.length; i += 2) {  // Sudy element
+//     even.push(object[i]);
+// }
+// console.log(even)
+
+// var filteredEven = object.filter(function(element, index, array) {
+//     return (index % 2 === 1);
+//   });
+//   console.log(filteredEven)
+
 
 
 // var odd = []
-// for(var i = 1; i < object.length; i += 2) {  //Lichy element
+// for(var i = 0; i < object.length; i += 2) {  //Lichy element
 //     odd.push(object[i]);
 // }
 // console.log(odd)
 
 
-// var filtered = object.filter(function(element, index, array) {
-//   return (index % 2 === 1);
+// var filteredOdd = object.filter(function(element, index, array) {
+//   return (index % 2 === 0);
 // });
-// console.log(filtered)
+// console.log(filteredOdd)
 
 
-// var arrayResults = object.filter(funstion(oneName){
+
+
+// var arrayResults = object.filter(function(oneName){
 //     var stat = oneName.status.toLowerCase().includes("available")
 //     return weTryFind
 // })
 
-//var names = ["janna","pepa", "ola"];
+
 
 // var arrayResults = object.filter(function(oneObject){
 //     var weTryFind = oneObject.status.toLowerCase().includes("available")
@@ -320,23 +337,6 @@ var object = [
 // })
 
 // console.log(arrayResults)
-    
-// for(var i = 0;i < object.length; i++);
-// console.log(y)
-//for(var y = 0;y < object.length; y++){
-
-
-
-// var newObject = {"items": []};
-
-// for(var i = 0; i < object.length; i++){
-//     var item = object[i];
-//     newObject.items.push(i);
-
-//     console.log(newObject)
-
-// }
-
 
   
 var newObject = {
@@ -347,7 +347,7 @@ var newObject = {
     not_available_count: 0
 };
   
-for (i=0; i<object.length; i++) {
+for (i=0; i < object.length; i++) {
 
 
     var item = object[i];

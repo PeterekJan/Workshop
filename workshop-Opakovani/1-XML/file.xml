@@ -1,0 +1,17 @@
+<Pets>
+    <Pet>
+        <category>
+            <id>00001</id>
+            <name>Gargoyl</name>
+        </category>
+        <id>00800</id>
+        <name>Amalka</name>
+        <photoUrls>
+            <url>www.ereboros.com</url>
+        </photoUrls>
+        <status>alive</status>
+        <tags>
+            <tag>string</tag>
+        </tags>
+    </Pet>
+</Pets>
