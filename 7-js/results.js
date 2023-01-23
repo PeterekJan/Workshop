@@ -101,6 +101,8 @@ for (i=0; i<object.length; i++) {
   //console.log(tag_names)
 
   var dynamic = {};
+
+  //Nejdrive definovat promennou a az pak ji plnit!
     
     var itemCategoryName = item.category.name;
     dynamic[itemCategoryName] = item.category.id;

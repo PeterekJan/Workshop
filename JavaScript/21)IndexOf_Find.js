@@ -47,4 +47,42 @@ var books = [
 
     ///////////////////////////////////////////////////////////////
 
+    var books = [
+        {
+            title: "Henry 01",
+            author: "JKR",
+            published: 1997
+        },
+        {
+            title: "Henry 02",
+            author: "JKR",
+            published: 1998
+        },
+        {
+            title: "Henry 03",
+            author: "JKR",
+            published: 1999
+        }];
+    
+        //find a bezne pole
+    
+        var myArray = [1, 3, 20, 2, 8]
+    
+        var result = myArray.find(function(oneNumber){
+            return oneNumber > 4
+        })
+    
+        console.log(result);
+    
+        //find a pole objektu ... vybere pouze prvni shodny prvek
+    
+        var result2 = books.find(function(oneBook){
+            if (oneBook.published === 1999){
+                return oneBook
+            }
+        })
+        console.log(result2.title) //chceme vytahnout jen title
+
+        /////////////////////////////////////////////////////////////
+
     
