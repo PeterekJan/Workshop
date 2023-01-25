@@ -2,8 +2,6 @@
 <xs:schema
         attributeFormDefault="unqualified"
         elementFormDefault="qualified"
-        xmlns="http://jpower8.com/workshop/soap"
-        targetNamespace="http://jpower8.com/workshop/soap"
         xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
     <xs:element name="zoo">
@@ -22,17 +20,17 @@
                             <xs:element name="animal" minOccurs="1" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="idName" minOccurs="1" maxOccurs="6"/>
+                                        <xs:element name="idName" minOccurs="1" maxOccurs="unbounded"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="notAvailable" minOccurs="1" maxOccurs="1">
+                <xs:element name="notAvailable" minOccurs="1" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="animal" minOccurs="1" maxOccurs="1">
+                            <xs:element name="animal" minOccurs="1" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="id" minOccurs="1" maxOccurs="unbounded"/>
@@ -56,35 +54,35 @@
                             <xs:element name="animal" minOccurs="1" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="Pet" minOccurs="1" maxOccurs="1">
+                                        <xs:element name="Pet" minOccurs="1" maxOccurs="unbounded">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element name="category" minOccurs="1" maxOccurs="1">
+                                                    <xs:element name="category" minOccurs="1" maxOccurs="unbounded">
                                                         <xs:complexType>
                                                             <xs:sequence>
-                                                                <xs:element name="id" minOccurs="1" maxOccurs="1"/>
-                                                                <xs:element name="name" minOccurs="1" maxOccurs="1"/>
+                                                                <xs:element name="id" minOccurs="1" maxOccurs="unbounded"/>
+                                                                <xs:element name="name" minOccurs="1" maxOccurs="unbounded"/>
                                                             </xs:sequence>
                                                         </xs:complexType>
                                                     </xs:element>
-                                                    <xs:element name="id" minOccurs="1" maxOccurs="1"/>
-                                                    <xs:element name="name" minOccurs="1" maxOccurs="1"/>
-                                                    <xs:element name="photoUrls" minOccurs="1" maxOccurs="1">
+                                                    <xs:element name="id" minOccurs="1" maxOccurs="unbounded"/>
+                                                    <xs:element name="name" minOccurs="1" maxOccurs="unbounded"/>
+                                                    <xs:element name="photoUrls" minOccurs="1" maxOccurs="unbounded">
                                                         <xs:complexType>
                                                             <xs:sequence>
-                                                                <xs:element name="photoUrl" minOccurs="1" maxOccurs="1"/>
+                                                                <xs:element name="photoUrl" minOccurs="1" maxOccurs="unbounded"/>
                                                             </xs:sequence>
                                                         </xs:complexType>
                                                     </xs:element>
-                                                    <xs:element name="status" minOccurs="1" maxOccurs="1"/>
-                                                    <xs:element name="tags" minOccurs="1" maxOccurs="1">
+                                                    <xs:element name="status" minOccurs="1" maxOccurs="unbounded"/>
+                                                    <xs:element name="tags" minOccurs="0" maxOccurs="unbounded">
                                                         <xs:complexType>
                                                             <xs:sequence>
-                                                                <xs:element name="tag" minOccurs="1" maxOccurs="1">
+                                                                <xs:element name="tag" minOccurs="1" maxOccurs="unbounded">
                                                                     <xs:complexType>
                                                                         <xs:sequence>
-                                                                            <xs:element name="id" minOccurs="1" maxOccurs="1"/>
-                                                                            <xs:element name="name" minOccurs="1" maxOccurs="1"/>
+                                                                            <xs:element name="id" minOccurs="1" maxOccurs="unbounded"/>
+                                                                            <xs:element name="name" minOccurs="1" maxOccurs="unbounded"/>
                                                                         </xs:sequence>
                                                                     </xs:complexType>
                                                                 </xs:element>
