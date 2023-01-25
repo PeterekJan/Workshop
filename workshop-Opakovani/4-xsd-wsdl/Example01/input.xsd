@@ -11,7 +11,7 @@
                 <xs:element name="Pet" minOccurs="1" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="Category" minOccurs="0" maxOccurs="unbounded">
+                            <xs:element name="category" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="id" minOccurs="0" maxOccurs="unbounded"/>
@@ -29,10 +29,10 @@
                                 </xs:complexType>
                             </xs:element>
                             <xs:element name="status" minOccurs="1" maxOccurs="unbounded"/>
-                            <xs:element name="tags" minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="tags" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="tag" minOccurs="1" maxOccurs="unbounded">
+                                        <xs:element name="tag" minOccurs="0" maxOccurs="unbounded">
                                             <xs:complexType>
                                                 <xs:sequence>
                                                     <xs:element name="id" maxOccurs="1" minOccurs="1"/>
