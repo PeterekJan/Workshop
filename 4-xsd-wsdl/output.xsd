@@ -2,8 +2,6 @@
 <xs:schema
         attributeFormDefault="unqualified"
         elementFormDefault="qualified"
-        xmlns="http://jpower8.com/workshop/soap"
-        targetNamespace="http://jpower8.com/workshop/soap"
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
   <xs:element name="WorkshopRes" type="dataType"/>
