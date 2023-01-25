@@ -2,8 +2,6 @@
 <xs:schema
         attributeFormDefault="unqualified"
         elementFormDefault="qualified"
-        xmlns="http://jpower8.com/workshop/soap"
-        targetNamespace="http://jpower8.com/workshop/soap"
         xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 
@@ -13,11 +11,11 @@
                 <xs:element name="Pet" minOccurs="1" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="Category">
+                            <xs:element name="Category" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="id"/>
-                                        <xs:element name="name"/>
+                                        <xs:element name="id" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:element name="name" minOccurs="0" maxOccurs="unbounded"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
@@ -51,5 +49,4 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
 </xs:schema>
