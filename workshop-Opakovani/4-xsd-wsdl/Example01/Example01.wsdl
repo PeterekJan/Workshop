@@ -1,0 +1,13 @@
+<definitions
+        targetNamespace="http://jpower8.com/workshop"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:jp8="http://jpower8.com/workshop/soap"
+        xmlns:tns="http://jpower8.com/workshop"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns="http://schemas.xmlsoap.org/wsdl/"
+        name="Workshop">
+
+
+
+
+</definitions>

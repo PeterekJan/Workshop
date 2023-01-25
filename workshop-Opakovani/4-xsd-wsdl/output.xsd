@@ -48,12 +48,12 @@
   </xs:complexType>
   <xs:complexType name="flatType">
     <xs:sequence>
-      <xs:element type="itemType" name="item" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="itemType" name="item" maxOccurs="unbounded" minOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="sortedType">
     <xs:sequence>
-      <xs:element name="name" maxOccurs="unbounded" minOccurs="0">
+      <xs:element name="name" maxOccurs="unbounded" minOccurs="1">
         <xs:simpleType>
           <xs:restriction base="xs:string">
             <xs:enumeration value="Corsair memory"/>
