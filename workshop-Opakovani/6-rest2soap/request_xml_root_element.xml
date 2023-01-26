@@ -1,0 +1,7 @@
+<PointsOfInterestsReq>
+    <filter>
+        <type></type>
+        <pageLimit></pageLimit>
+        <brand></brand>
+    </filter>
+</PointsOfInterestsReq>

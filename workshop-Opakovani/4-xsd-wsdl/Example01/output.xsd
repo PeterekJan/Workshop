@@ -2,9 +2,10 @@
 <xs:schema
         attributeFormDefault="unqualified"
         elementFormDefault="qualified"
+        targetNamespace="http://jpower8.com/workshop"
         xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:element name="zoo">
+    <xs:element name="zoo" type="xs:date">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="animals" minOccurs="1" maxOccurs="unbounded">

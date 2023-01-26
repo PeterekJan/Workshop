@@ -2,13 +2,15 @@
 <xs:schema
         attributeFormDefault="unqualified"
         elementFormDefault="qualified"
-        xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://jpower8.com/workshop"
+>
 
 
-    <xs:element name="pets">
+    <xs:element name="pets" type="xs:date">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Pet" minOccurs="1" maxOccurs="unbounded">
+                <xs:element name="Pet" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="category" minOccurs="0" maxOccurs="unbounded">
