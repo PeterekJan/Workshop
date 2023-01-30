@@ -89,6 +89,8 @@ var arrayResults = criminals.filter(function(oneSuspect){
     return tryToFind
 });
 
+
+
 arrayResults.forEach(function(oneSuspect){
     
     console.log(`Jmeno:${oneSuspect.firstName}`)
@@ -102,6 +104,14 @@ arrayResults.forEach(function(oneSuspect){
 
 /////////////////////////////////////////////////////////////
 
+
+/////////////////////////////////////////////////
+var result = object.filter(function(availableStatus){
+    var tryToFind = availableStatus.status.toLowerCase().includes("available")   //hledej vsechny objekty ktere obsahuji status = available
+    return tryToFind
+});
+
+console.log(result)
 
 
 
