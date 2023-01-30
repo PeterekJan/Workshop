@@ -5,21 +5,26 @@
         <X-Request-Id>f779ea2c-bb96-4873-aca8-7a4b5eb2e3da</X-Request-Id>
     </headers>
     <body>
-        <filter>
-            <type>atm</type>
-            <limit>0</limit>
-            <brand>1</brand>
-        </filter>
+        <RequestData>
+            <filter>
+                <type>atm</type>
+                <limit>0</limit>
+                <brand>1</brand>
+            </filter>
+        </RequestData>
     </body>
     <data>
-        <name>aaaaa</name>
-        <address>
-            <street>asdae</street>
-            <house_no>228</house_no>
-            <town>vrcaxwe</town>
-            <postal>775756</postal>
-            <country>cfrcw</country>
-        </address>
+        <item>
+            <name>aaaaa</name>
+            <address>
+                <street>asdae</street>
+                <house_no>228</house_no>
+                <town>vrcaxwe</town>
+                <postal>775756</postal>
+                <country>cfrcw</country>
+            </address>
+        </item>
+        <item>
         <name>bbbbb</name>
         <address>
             <street>crwxcsd</street>
@@ -28,6 +33,8 @@
             <postal>282596</postal>
             <country>sdcsfd</country>
         </address>
+        </item>
+        <item>
         <name>ccccc</name>
         <address>
             <street>sdcsf</street>
@@ -36,6 +43,8 @@
             <postal>85812</postal>
             <country>csdcsd</country>
         </address>
+        </item>
+        <item>
         <name>ddddd</name>
         <address>
             <street>cssdsc</street>
@@ -44,6 +53,8 @@
             <postal>825</postal>
             <country>sdcfrvre</country>
         </address>
+        </item>
+        <item>
         <name>eeeee</name>
         <address>
             <street>crerwcwe</street>
@@ -52,6 +63,8 @@
             <postal>585</postal>
             <country>vcreve</country>
         </address>
+        </item>
+        <item>
         <name>fffff</name>
         <address>
             <street>crewxwe</street>
@@ -60,6 +73,8 @@
             <postal>5884</postal>
             <country>crewas</country>
         </address>
+        </item>
+        <item>
         <name>ggggg</name>
         <address>
             <street>crsdd</street>
@@ -68,6 +83,8 @@
             <postal>777</postal>
             <country>xweewdc</country>
         </address>
+        </item>
+        <item>
         <name>hhhhh</name>
         <address>
             <street>cxwcr</street>
@@ -76,6 +93,8 @@
             <postal>999</postal>
             <country>vcerasdc</country>
         </address>
+        </item>
+        <item>
         <name>iiiii</name>
         <address>
             <street>cerf</street>
@@ -84,6 +103,8 @@
             <postal>77787</postal>
             <country>xewxcew</country>
         </address>
+        </item>
+        <item>
         <name>jjjjj</name>
         <address>
             <street>cercer</street>
@@ -92,5 +113,6 @@
             <postal>5213</postal>
             <country>cefrcw</country>
         </address>
+        </item>
     </data>
 </root>

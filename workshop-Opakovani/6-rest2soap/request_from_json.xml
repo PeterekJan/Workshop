@@ -1,5 +1,7 @@
+<RequestData>
     <filter>
         <type>atm</type>
         <limit>0</limit>
         <brand>1</brand>
     </filter>
+</RequestData>
