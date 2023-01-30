@@ -3,6 +3,24 @@
 
 
     <xsl:template match="/">
+
+        <xsl:variable name="brand_temp">
+            <xsl:value-of select="/root/body/RequestData/filter/brand"/>
+        </xsl:variable>
+
+        <xsl:variable name="brand">
+            <xsl:choose>
+                <xsl:when test="$brand_temp = 1 or $brand_temp = 2 or $brand_temp = 3">
+                    <xsl:value-of select="$brand_temp"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>0</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+
+
+
         <soapenv:Envelope
                 xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
                 xmlns:soap="http://www.jpower8.com/newDeveloper/soap">
@@ -76,13 +94,22 @@
                 </soap:item>
                 </xsl:for-each>
             </soap:places>
-
-
+            <soap:filter>
+                <soap:type><xsl:value-of select="/root/body/RequestData/filter/type"/></soap:type>
+                <soap:pageLimit><xsl:value-of select="/root/body/RequestData/filter/limit"/></soap:pageLimit>
+                <soap:brand><xsl:value-of select="$brand"/></soap:brand>
+                <soap:brandName>
+                    <xsl:choose>
+                        <xsl:when test="$brand = 1">ČSOB</xsl:when>
+                        <xsl:when test="$brand = 2">ČSOB SK</xsl:when>
+                        <xsl:when test="$brand = 3">Česká pošta</xsl:when>
+                        <xsl:otherwise>unknow</xsl:otherwise>
+                    </xsl:choose>
+                </soap:brandName>
+            </soap:filter>
         </soap:PointsOfInterestsRes>
-
-
         </soapenv:Body>
-    </soapenv:Envelope>
-    </xsl:template>
+        </soapenv:Envelope>
 
+    </xsl:template>
 </xsl:stylesheet>

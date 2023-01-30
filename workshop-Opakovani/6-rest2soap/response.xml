@@ -516,6 +516,12 @@
                </soap:hours>
             </soap:item>
          </soap:places>
+         <soap:filter>
+            <soap:type>atm</soap:type>
+            <soap:pageLimit>0</soap:pageLimit>
+            <soap:brand>2</soap:brand>
+            <soap:brandName>ČSOB SK</soap:brandName>
+         </soap:filter>
       </soap:PointsOfInterestsRes>
    </soapenv:Body>
 </soapenv:Envelope>
