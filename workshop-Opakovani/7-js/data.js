@@ -349,6 +349,30 @@ for (i = 0; i < object.length; i++){
         images: item.photoUrls.join(", ")
 
 }
+tag_names = [];
+
+for (k = 0; k < item.tags.length; k++){
+    var tagNames = item.tags[k].name;
+    
+    //console.log(tagNames)
+}
+
+tag_names.push(tagNames);
+
+newItem.tag_names = tag_names.join(", ");
+
+var dynamic = {};
+
+var itemCategoryName = item.category.name;
+var itemCategoryId = item.category.id;
+
+
+dynamic[itemCategoryName] = item.category.id;
+dynamic[itemCategoryId] = item.category
+
+//console.log(dynamic)
+newItem.dynamic = dynamic
+
 
 newObject.items.push(newItem)
 
@@ -358,12 +382,17 @@ if (item.status == "pending"){
     newObject.available_count++;
 }
 
-for (j = 0, j < 15, j++){
-if(item.status !== "available" && item.tags.id < 10){
-    newObject.not_available_count++;
-}
+for (j = 0; j < item.tags.length; j++){
+    var itemTagsId = item.tags[j].id
 
+if (item.status !== "available" && itemTagsId < 10){
+    newObject.not_available_count++;
+    break;
+    }
+
+}
 console.log(newObject)
+
 
 
 }
