@@ -152,11 +152,7 @@ var sortsArray2 = function(myNumbers){   ///univerzalni razeni cisel
         }
         
     })
-    // for(var i = 0; i <numbers.length; i++){
-    //     console.log(numbers)
     }
-
-
 
 sortsArray2(numbers)
 console.log(numbers[numbers.length-1])

@@ -28,3 +28,22 @@ if(password.includes("1234")){
 }else{
     console.log("Heslo je v pořádku")
 }
+
+
+//////////////////////////////////////////////////////////////
+// Vytvořte fci ``calculateGeometry``, která bude mít na vstupu dva parametry ``a`` a ``b``,
+// přičemž ``b`` může zůstat prázdné. Tato fce vypočte obsah čtverce nebo obdélníku na základě toho,
+// jaká data přijdou z parametrů. Tj, pokud nebude ``b`` vyplněno, jedná se pravděpodobně o čtverec.
+
+function calculateGeometry(a,b){
+    if (a == 0 || b == 0){
+        console.log("Incorrect page size");
+    }else if(a > 0 && b > 0){
+        console.log(`Content rectangle is${" " + a * b + "[x^2]"}`);
+    }else if(a > 0 || b == null){
+        console.log(`Content square is${" " + a * a + "[x^2]"}`);
+    }
+    
+}
+
+calculateGeometry(5,2)

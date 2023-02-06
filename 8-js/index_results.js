@@ -3,14 +3,11 @@
 // Vytvořte fci ```square```, která bude mít na vstupu parametr ```a``` (číslo musí být větší než 0),
 // vypočítá obsah čtverce a toto číslo vypište pomocí ```console.log()```
 
-/////////////////Spravny vysledek ///////////////////////////
-let square = function(a){
+var square = function(a){
     console.log(`Content square is${" " + a * a + "[x^2]"}`);
 }
 
 square(5)
-
-
 
 /////////////////////////////////////////////////////////
 
