@@ -4,10 +4,14 @@
 // vypočítá obsah čtverce a toto číslo vypište pomocí ```console.log()```
 
 var square = function(a){
-    console.log(`Content square is${" " + a * a + "[x^2]"}`);
-}
-
-square(5)
+    if (typeof a === 'number' )
+        console.log(`Content square is${" " + (a * a).toFixed(2) + "[x^2]"}`);
+    else {
+        console.log(`Inccorect value`)
+    }
+    }
+    
+    square(0.1)
 
 /////////////////////////////////////////////////////////
 
@@ -15,14 +19,18 @@ square(5)
 // (čísla musí být větší než 0), a která vypíše obsah obdélníku stejn ějako v předchozím bodě
 
 function rectangle(a,b){
-    if (a == 0 || b == 0){
+    if(isNaN(a)){
+        console.log("Incorrect value");
+    }else if(isNaN(b)){
+            console.log("Incorrect value");
+    }else if (a == 0 || b == 0){
         console.log("Incorrect page size");
     }else if(a > 0 || b > 0){
-        console.log(`Content rectangle is${" " + a * b + "[x^2]"}`);
+        console.log(`Content rectangle is${" " + ((a * b).toFixed(2)) + "[x^2]"}`);
     }
 }
 
-rectangle(1,5)
+rectangle(0.1,0.1)
 
 ///////////////////////////////////////////////////////////////////
 
@@ -76,11 +84,7 @@ var sortsArray2 = function(myNumbers){   ///univerzalni razeni cisel
         }
         
     })
-    // for(var i = 0; i <numbers.length; i++){
-    //     console.log(numbers)
     }
-
-
 
 sortsArray2(numbers)
 console.log(numbers[numbers.length-1])
@@ -94,12 +98,17 @@ console.log(numbers[numbers.length-1])
 function calculateGeometry(a,b){
     if (a == 0 || b == 0){
         console.log("Incorrect page size");
+    }else if (typeof a === 'string' ){
+        console.log(`Incorrect value. Value "a" can't be string`);
+    }else if (typeof b === 'string' ){
+        console.log(`Incorrect value. Value "b" can't be string`);
     }else if(a > 0 && b > 0){
-        console.log(`Content rectangle is${" " + a * b + "[x^2]"}`);
-    }else if(a > 0 || b == null){
-        console.log(`Content square is${" " + a * a + "[x^2]"}`);
+        console.log(`Content rectangle is${" " + (a * b).toFixed(2) + "[x^2]"}`);
+    }else if(a > 0 || b == undefined){
+        console.log(`Content square is${" " + (a * a).toFixed(2) + "[x^2]"}`);
+        
     }
     
 }
 
-calculateGeometry(5,2)
+calculateGeometry("aaa")

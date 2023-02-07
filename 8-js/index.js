@@ -26,16 +26,17 @@
 // content( `${" " + square + "[x^2]"}`)
 
 
-/////////////////Spravny vysledek ///////////////////////////
-// let square = function(a){
-//     console.log(`Content square is${" " + a * a + "[x^2]"}`);
+/////////////////Spravny vysledek /////////////////////////////////////////////////
+// var square = function(a){
+// if (typeof a === 'number' )
+//     console.log(`Content square is${" " + (a * a).toFixed(2) + "[x^2]"}`);
+// else {
+//     console.log(`Inccorect value`)
+// }
 // }
 
-// square(5)
-
-
-
-/////////////////////////////////////////////////////////
+// square(0.1)
+//////////////////////////////////////////////////////////////////////////////////////
 
 // Vytvořte fci ```rectangle```, která bude mít dva vstupní parametry ```a``` a ```b``` 
 // (čísla musí být větší než 0), a která vypíše obsah obdélníku stejn ějako v předchozím bodě
@@ -52,19 +53,23 @@
 // }
 // content2();
 
-////////////////////////////////////
+/////////////////Spravy vysledek //////////////////////////////////////////////////////
 
 // function rectangle(a,b){
-//     if (a == 0 || b == 0){
+//     if(isNaN(a)){
+//         console.log("Incorrect value");
+//     }else if(isNaN(b)){
+//             console.log("Incorrect value");
+//     }else if (a == 0 || b == 0){
 //         console.log("Incorrect page size");
 //     }else if(a > 0 || b > 0){
-//         console.log(`Content rectangle is${" " + a * b + "[x^2]"}`);
+//         console.log(`Content rectangle is${" " + ((a * b).toFixed(2)) + "[x^2]"}`);
 //     }
 // }
 
-// rectangle(1,5)
+// rectangle(0.1,0.1)
 
-///////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 
 // Vytvořte fci ``highest``, která bude mít na vstupu pole čísel.
 // Úkolem fce bude v tomto poli najít nejvyšší číslo a to vrátit / vypsat do konzole.
@@ -139,23 +144,23 @@
 
 
 //////////////////////////////////////////////////
-var numbers = [5,15,22,-8,25,358,48,55,98,78,]
+// var numbers = [5,15,22,-8,25,358,48,55,98,78,]
 
-var sortsArray2 = function(myNumbers){   ///univerzalni razeni cisel
-    myNumbers.sort(function(a, b){
-        if(a < b){
-            return -1
-        } else if (b < a){
-            return 1
-        } else {
-            return 0
-        }
+// var sortsArray2 = function(myNumbers){   ///univerzalni razeni cisel
+//     myNumbers.sort(function(a, b){
+//         if(a < b){
+//             return -1
+//         } else if (b < a){
+//             return 1
+//         } else {
+//             return 0
+//         }
         
-    })
-    }
+//     })
+//     }
 
-sortsArray2(numbers)
-console.log(numbers[numbers.length-1])
+// sortsArray2(numbers)
+// console.log(numbers[numbers.length-1])
 
 
 
@@ -181,16 +186,23 @@ console.log(numbers[numbers.length-1])
 //     }
 // }
 // calculateGeometry();
-
-// function calculateGeometry(a,b){
-//     if (a == 0 || b == 0){
-//         console.log("Incorrect page size");
-//     }else if(a > 0 && b > 0){
-//         console.log(`Content rectangle is${" " + a * b + "[x^2]"}`);
-//     }else if(a > 0 || b == null){
-//         console.log(`Content square is${" " + a * a + "[x^2]"}`);
-//     }
+/////////////////////////////////////////////////////////////////////////////////////////////
+function calculateGeometry(a,b){
+    if (a == 0 || b == 0){
+        console.log("Incorrect page size");
+    }else if (typeof a === 'string' ){
+        console.log(`Incorrect value. Value "a" can't be string`);
+    }else if (typeof b === 'string' ){
+        console.log(`Incorrect value. Value "b" can't be string`);
+    }else if(a > 0 && b > 0){
+        console.log(`Content rectangle is${" " + (a * b).toFixed(2) + "[x^2]"}`);
+    }else if(a > 0 || b == undefined){
+        console.log(`Content square is${" " + (a * a).toFixed(2) + "[x^2]"}`);
+        
+    }
     
-// }
+}
 
-// calculateGeometry(5,2)
+calculateGeometry("aaa")
+
+

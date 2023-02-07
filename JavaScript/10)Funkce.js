@@ -175,7 +175,36 @@ let square = function(a){
 square(5)
 ///////////////////////////////////////////////////////////////////////////////
 
+///////////////////odecteni jednotlivych elementu od prvniho ///////////////////////
+var numbers = [175, 50, 25];
+
+var result = numbers.reduce(myFunc);
+
+function myFunc(total, num) {
+  return total - num;
+}
+console.log(result)
+
+/////////////////////////Zaokrouhli a sečte////////////////////////////
+
+var numbers = [15.5, 2.3, 1.1, 4.7];
+result2 = numbers.reduce(getSum, 0);
+
+function getSum(total, num) {
+  return total + Math.round(num);
+}
+
+console.log(result2)
 
 
+/////////////////////////////////////////////////////////////////////////
 
+function rectangle(a,b){
+    if (a == 0 || b == 0){
+        console.log("Incorrect page size");
+    }else if(a > 0 || b > 0){
+        console.log(`Content rectangle is${" " + ((a * b).toFixed(2)) + "[x^2]"}`); //zaokrouhleni na 2 desetina
+    }
+}
 
+rectangle(0.1,0.1)
