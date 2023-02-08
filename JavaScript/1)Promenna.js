@@ -1,3 +1,6 @@
+//Proměnné vytvořené bez klíčového slova deklarace 
+//( var, let, nebo const) jsou vždy globální, i když jsou vytvořeny uvnitř funkce.
+
 //promenné
 var firstName = 'Petr';
 console.log(firstName);

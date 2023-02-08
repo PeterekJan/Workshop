@@ -30,5 +30,12 @@ if(Number.isFinite(numberOfpushUpsToday) ){
 }
 else {
     console.log('It is not a number')
+
 }
+
+// Globální funkce isFinite()testuje, zda je předaná hodnota konečné číslo.
+// Argumenty se v případě potřeby nejprve převedou na čísla.
+
+
+///////////////////////////////////////////////////////////////////////////////////
     

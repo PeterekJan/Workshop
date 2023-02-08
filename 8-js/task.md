@@ -14,3 +14,12 @@
 8. Vytvořte fci ``calculateGeometry``, která bude mít na vstupu dva parametry ``a`` a ``b``, přičemž ``b`` může zůstat prázdné. Tato fce vypočte obsah čtverce nebo obdélníku na základě toho, jaká data přijdou z parametrů. Tj, pokud nebude ``b`` vyplněno, jedná se pravděpodobně o čtverec
 9. Zajistěte, aby všechny geometrické fce bylo možno volat i s hodnotou 0.1 a zároveň aby jako argument akceptovaly pouze číselné typy. Tzn aby nebylo možné zadat "xxx" jako hodnotu
 10. Nastudujte si, co jsou to anonymní funkce a jak je možné je zavolat automaticky bez jejich zavolání
+11. Nastudujte si, co je to ternární operátor a jak se používá
+12. Napište fci, která bude mít jako vstupní hodnotu pole čísel (reálná čísla). Tato fce vrátí objekt s parametry:
+    - ``count`` - počet prvků
+    - ``min`` - minimální hodnota
+    - ``max`` - maximální hodnota
+    - ``total`` - součet hodnot
+    - ``avg`` - aritmetický průměr
+    - ``modus`` - modus
+    - ``median`` - medián
