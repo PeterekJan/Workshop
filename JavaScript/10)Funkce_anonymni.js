@@ -62,3 +62,53 @@ setTimeout(function(){
 
 ////////////////////////////////////////////////////////////////////////
 
+let area = function(length, breadth){
+    return length * breadth 
+}
+let x = area(10,5) 
+console.log("Area of the rectangle is = ", x);
+
+
+//////////////////////////////////////////////////////////////////
+//Použití anonymních funkcí jako argumentů jiných funkcí
+
+function greet(wish){
+    console.log(wish() ,"everyone!");
+  }
+  
+  greet(function(){
+      return "Good Morning";
+  })
+
+  ////////////////////////////////////////////////////////////
+  //IIFE (Immediately Invoked Function Expression
+  (function () {
+    statements
+  })();
+//////////////////////////počítaní počtu opakovaní//////////////////////////////////////////
+
+for (var i = 1; i <= 5; i++) {
+    (function (count) {
+        setTimeout(function() {
+            console.log(`Counted till ${count} after ${count} seconds`);
+        }, 1000 * i);
+    })(i);
+}
+
+////////////////////////////////////////////////////////////
+
+setTimeout(function() {
+    console.log(`Counted till ${count} after ${count} seconds`);
+}, 1000 * i);
+
+/////rozdil bez funkce
+for (var i = 1; i <= 5; i++) {
+    setTimeout(function () {
+        console.log(`Counted till ${i} after ${i} seconds`);
+    }, 1000 * i);
+}
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+

@@ -187,22 +187,57 @@
 // }
 // calculateGeometry();
 /////////////////////////////////////////////////////////////////////////////////////////////
-function calculateGeometry(a,b){
-    if (a == 0 || b == 0){
-        console.log("Incorrect page size");
-    }else if (typeof a === 'string' ){
-        console.log(`Incorrect value. Value "a" can't be string`);
-    }else if (typeof b === 'string' ){
-        console.log(`Incorrect value. Value "b" can't be string`);
-    }else if(a > 0 && b > 0){
-        console.log(`Content rectangle is${" " + (a * b).toFixed(2) + "[x^2]"}`);
-    }else if(a > 0 || b == undefined){
-        console.log(`Content square is${" " + (a * a).toFixed(2) + "[x^2]"}`);
+
+
+// function calculateGeometry(a,b){
+//     if (a == 0 || b == 0){
+//         console.log("Incorrect page size");
+//     }else if (typeof a === 'string' ){
+//         console.log(`Incorrect value. Value "a" can't be string`);
+//     }else if (typeof b === 'string' ){
+//         console.log(`Incorrect value. Value "b" can't be string`);
+//     }else if(a > 0 && b > 0){
+//         console.log(`Content rectangle is${" " + (a * b).toFixed(2) + "[x^2]"}`);
+//     }else if(a > 0 || b == undefined){
+//         console.log(`Content square is${" " + (a * a).toFixed(2) + "[x^2]"}`);
         
-    }
+//     }
     
+// }
+
+// calculateGeometry("aaa")
+
+// 12. Napište fci, která bude mít jako vstupní hodnotu pole čísel (reálná čísla).
+// Tato fce vrátí objekt s parametry:
+//     - ``count`` - počet prvků
+//     - ``min`` - minimální hodnota
+//     - ``max`` - maximální hodnota
+//     - ``total`` - součet hodnot
+//     - ``avg`` - aritmetický průměr
+//     - ``modus`` - modus
+//     - ``median`` - medián
+
+
+realNumbers([8,15,8,25,85,-0.1,0.1,-65,325]);
+
+var newObject = {
+    count: 0,
+    min:0,
+    max:0,
+    total:0,
+    avg:0,
+    modeus:0,
+    median:0
+};
+
+
+function realNumbers(i){
+  }  for(i = 0; i<30; i++){
+        if(a = !NaN ){
+            newObject.count++;
+    }
 }
 
-calculateGeometry("aaa")
 
 
+console.log(newObject)
