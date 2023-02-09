@@ -217,27 +217,76 @@
 //     - ``modus`` - modus
 //     - ``median`` - medián
 
+// var object = {
+//     count: realNumbers.length,
+//     min:null,
+//     max:null,
+//     total:0,
+//     avg:0,
+//     modus:0,
+//     median:0
 
-realNumbers([8,15,8,25,85,-0.1,0.1,-65,325]);
 
-var newObject = {
-    count: 0,
-    min:0,
-    max:0,
-    total:0,
-    avg:0,
-    modeus:0,
-    median:0
+var array = realNumbers ([8,15,8,25,85,-0.1,0.1,-65,325]);
+
+
+function realNumbers(array){
+var object = {
+     count: array.length,
+     min:null,
+     max: null,
+     total:0,
+     avg:0   
 };
 
+var min = 0;
+    for(var i = 0; i <array.length; i++){
+        if(array[i] < min);
+           {min = array[i]}
+        };
+        object.min = min
+        //console.log(min)       
 
-function realNumbers(i){
-  }  for(i = 0; i<30; i++){
-        if(a = !NaN ){
-            newObject.count++;
-    }
+object.max = Math.max.apply(null,array)
+
+var total = 0;       
+    for(var j = 0; j <array.length; j++){
+        total += array[j];
+ }
+//console.log(total)
+object.total = total
+
+var avg = 0;
+ for(var k = 0; k <array.length; k++){
+    avg += ((array[k])/array.length);
 }
+//console.log(avg)
+
+object.avg = avg.toFixed(2);
 
 
 
-console.log(newObject)
+
+
+console.log(object)
+};
+
+// let max = arr[0]; 
+
+// for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] > max) 
+//         max = arr[i]; 
+// } 
+// return max; 
+// } 
+
+// let arr = [1, 5, 4, 9, 8];
+
+// var array = [1 , 2 , 3 , 6 , 12 , 13 , 17 , 3];
+// var largest = 0;
+
+// for( var i = 0; i < array.length; i++){
+//     if(largest < array[i])
+//     { largest = array[i]; }
+// } 
+// console.log(largest);
