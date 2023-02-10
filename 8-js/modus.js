@@ -1,0 +1,123 @@
+// /**
+//  * The "mode" is the number that is repeated most often.
+//  *
+//  * For example, the "mode" of [3, 5, 4, 4, 1, 1, 2, 3] is [1, 3, 4].
+//  *
+//  * @param {Array} numbers An array of numbers.
+//  * @return {Array} The mode of the specified numbers.
+//  */
+// function mode(numbers) {
+//     // as result can be bimodal or multi-modal,
+//     // the returned result is provided as an array
+//     var numbers = [3, 5, 4, 4, 1, 1, 2, 3] //= [1, 3, 4]
+//     var modes = [], count = [], i, number, maxIndex = 0;
+ 
+//     for (i = 0; i < numbers.length; i += 1) {
+//         number = numbers[i];
+//         count[number] = (count[number] || 0) + 1;
+//         if (count[number] > maxIndex) {
+//             maxIndex = count[number];
+//         }
+//     }
+ 
+//     for (i in count)
+//         if (count.hasOwnProperty(i)) {
+//             if (count[i] === maxIndex) {
+//                 modes.push(Number(i));
+//             }
+//         }
+ 
+//     return modes;
+//     var modul = modes;
+// }
+// console.log(number)
+// list = [1,2,3,4,5,6,7,7]
+// counts = {}
+// list.forEach(function(e) {
+//   if(counts[e] === undefined) {
+//     counts[e] = 0
+//   }
+//   counts[e] += 1
+// })
+
+// console.log(counts)
+
+
+/////////////////////////////////////////////////////
+// var array = ([2,2,5,1.2,10]);
+
+// const mode = array => {
+//     const mode = {};
+//     let max = 0, count = 0;
+  
+//     for(let i = 0; i < array.length; i++) {
+//       const item = array[i];
+      
+//       if(mode[item]) {
+//         mode[item]++;
+//       } else {
+//         mode[item] = 1;
+//       }
+      
+//       if(count < mode[item]) {
+//         max = item;
+//         count = mode[item];
+//       }
+//     }
+     
+//     return max;
+//   };
+
+// console.log(modus)
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+var nums = [1,2,2,3,3,4,6];
+
+function getMode(array){
+    var obj = {};
+    array.forEach(number => {
+        if (!obj[number]){
+            obj[number] = 1;
+        }else{
+            obj [number] += 1;
+        }
+    });
+console.log(obj);
+
+    var highestValue = 0;
+    var highestValueKey = -Infinity;
+
+    for(var key in obj){
+        var value = obj[key];
+        if (value >= highestValue && Number(key) > highestValueKey){
+            highestValue = value;
+            highestValueKey = Number(key);
+        }
+    }
+
+    return highestValueKey;
+
+};
+
+
+
+
+// list = [1,2,3,4,5,6,7,7]
+// counts = {}
+// list.forEach(function(e) {
+//   if(counts[e] === undefined) {
+//     counts[e] = 0
+//   }
+//   counts[e] += 1
+
+
+  
+// })
+
+// console.log(counts)

@@ -208,3 +208,21 @@ function rectangle(a,b){
 }
 
 rectangle(0.1,0.1)
+
+
+//////////////////////aritmeticky prumer////////////////////////
+
+const numbers = [1,2,4,6,9];
+
+const getAvg = (array) => {
+    let sum = 0;
+    for (let number of array) {
+        sum += number;
+    }
+
+
+
+    return Math.floor(sum/array.length);
+}
+
+console.log(getAvg(numbers));

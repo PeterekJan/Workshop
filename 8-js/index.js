@@ -227,7 +227,7 @@
 //     median:0
 
 
-var array = realNumbers ([8,15,8,25,85,-0.1,0.1,-65,325]);
+var array = realNumbers ([2,2,5,1.2,10]);
 
 
 function realNumbers(array){
@@ -236,16 +236,25 @@ var object = {
      min:null,
      max: null,
      total:0,
-     avg:0   
+     avg:0,
+     modus:[],
+     median:0   
 };
 
-var min = 0;
-    for(var i = 0; i <array.length; i++){
-        if(array[i] < min);
-           {min = array[i]}
-        };
-        object.min = min
-        //console.log(min)       
+function minimal(number){
+    var min = number[0];
+    for(var i = 0; i < number.length;i++){
+        var element = number[i];
+        if(element < min){
+            min = element;
+        }
+    }
+    return min;
+}
+    //console.log(min);
+    var result = minimal(array);
+    //console.log(result);
+    object.min = result;
 
 object.max = Math.max.apply(null,array)
 
@@ -256,37 +265,37 @@ var total = 0;
 //console.log(total)
 object.total = total
 
-var avg = 0;
+var number2 = 0;
  for(var k = 0; k <array.length; k++){
-    avg += ((array[k])/array.length);
+    number2 += array[k];
+    avg = (number2/array.length)
 }
 //console.log(avg)
 
-object.avg = avg.toFixed(2);
+ object.avg = avg
 
 
-
-
-
-console.log(object)
 };
 
-// let max = arr[0]; 
-
-// for (let i = 1; i < arr.length; i++) {
-//     if (arr[i] > max) 
-//         max = arr[i]; 
-// } 
-// return max; 
-// } 
-
-// let arr = [1, 5, 4, 9, 8];
-
-// var array = [1 , 2 , 3 , 6 , 12 , 13 , 17 , 3];
-// var largest = 0;
-
-// for( var i = 0; i < array.length; i++){
-//     if(largest < array[i])
-//     { largest = array[i]; }
-// } 
-// console.log(largest);
+const mode = (array) => {
+    const map = new Map();
+    let maxFreq = 0;
+    let mode;
+  
+    for(const item of array) {
+      let freq = map.has(item) ? map.get(item) : 0;
+      freq++;
+  
+      if(freq > maxFreq) {
+        maxFreq = freq;
+        mode = item;
+      }
+      
+      map.set(item, freq);
+    }
+  
+    return mode;
+  };
+  
+  const testArray = [1, 1, 2, 3, 5, 8, 13];
+  console.log(`Mode of [${testArray}] is ${mode(testArray)}.`);
