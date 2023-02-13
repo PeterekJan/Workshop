@@ -217,17 +217,10 @@
 //     - ``modus`` - modus
 //     - ``median`` - medián
 
-// var object = {
-//     count: realNumbers.length,
-//     min:null,
-//     max:null,
-//     total:0,
-//     avg:0,
-//     modus:0,
-//     median:0
 
 
-var array = realNumbers ([2,2,5,1.2,10]);
+
+var array = realNumbers ([5,2,5,1.2,10,2,101,8,6,15,3,6,1,1,500,1.2]);
 
 
 function realNumbers(array){
@@ -263,7 +256,7 @@ var total = 0;
         total += array[j];
  }
 //console.log(total)
-object.total = total
+object.total = Number(total.toFixed(2))
 
 var number2 = 0;
  for(var k = 0; k <array.length; k++){
@@ -272,30 +265,92 @@ var number2 = 0;
 }
 //console.log(avg)
 
- object.avg = avg
+ object.avg = Number(avg.toFixed(2))
 
 
+// var mode = function(arr) {  //jen pro jedno cislo !
+//     var mode = {};
+//     var max = 0;
+//     var count = 0;
+  
+//     for(var i = 0; i < arr.length; i++) {
+//         var item = arr[i];
+      
+//       if(mode[item]) {
+//         mode[item]++;
+//       } else {
+//         mode[item] = 1;
+//       }
+      
+//       if(count < mode[item]) {
+//         max = item;
+//         count = mode[item];
+//       }
+//     }
+     
+//     return max;
+//   };
+
+//   var newArray = [];
+//     newArray = mode(array)
+
+//     object.modus = newArray
+
+
+
+function getMode(array) {
+    var frequency = []; // array of frequency.
+    var maxFreq = 0; // holds the max frequency.
+    var modes = [];
+    for (var i in array) {
+      frequency[array[i]] = (frequency[array[i]] || 0) + 1; // increment frequency.
+      if (frequency[array[i]] > maxFreq) { // is this frequency > max so far ?
+        maxFreq = frequency[array[i]]; // update max.
+      };
+    };
+    for (var k in frequency) {
+      if (frequency[k] == maxFreq) {
+        modes.push(k);
+      };
+    };
+    return modes;
+  };
+
+    var newArray = [];
+    newArray = getMode(array).sort()
+    object.modus = newArray
+
+
+
+
+var sortedArray = array.sort(function(a,b){
+    return a - b;
+});
+
+//console.log(sortedArray)
+//console.log(sortedArray.length)
+
+
+if(sortedArray.length % 2 != 0){
+        var odd = Math.floor(sortedArray.length / 2)
+        object.median = (`${sortedArray[odd]}, Count of elements in array is odd`);
+}else if(sortedArray.length % 2 == 0){
+        var even = (sortedArray.length/2);
+        var middle = sortedArray[even-1];  // 0 index
+        var middle2 = sortedArray[even];    
+        object.median = (`${(middle + middle2)/2}, Count of elements in array is even`);
+}
+
+
+//console.log(sortedArray)
+//console.log(object.median)
+
+
+
+
+
+console.log(object)
 };
 
-const mode = (array) => {
-    const map = new Map();
-    let maxFreq = 0;
-    let mode;
-  
-    for(const item of array) {
-      let freq = map.has(item) ? map.get(item) : 0;
-      freq++;
-  
-      if(freq > maxFreq) {
-        maxFreq = freq;
-        mode = item;
-      }
-      
-      map.set(item, freq);
-    }
-  
-    return mode;
-  };
-  
-  const testArray = [1, 1, 2, 3, 5, 8, 13];
-  console.log(`Mode of [${testArray}] is ${mode(testArray)}.`);
+
+

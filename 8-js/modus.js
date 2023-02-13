@@ -75,8 +75,6 @@
 /////////////////////////////////////////////////////////////////
 
 
-
-
 var nums = [1,2,2,3,3,4,6];
 
 function getMode(array){
@@ -121,3 +119,118 @@ console.log(obj);
 // })
 
 // console.log(counts)
+
+///////////////////////////////////////////////////////
+
+// const mode = (array) => {
+//     const map = new Map();
+//     let maxFreq = 0;
+//     let mode;
+  
+//     for(const item of array) {
+//       let freq = map.has(item) ? map.get(item) : 0;
+//       freq++;
+  
+//       if(freq > maxFreq) {
+//         maxFreq = freq;
+//         mode = item;
+//       }
+      
+//       map.set(item, freq);
+//     }
+  
+//     return mode;
+//   };
+  
+//   const testArray = [1, 1, 2, 3, 5, 8, 13];
+//   console.log(`Mode of [${testArray}] is ${mode(testArray)}.`);
+
+
+  ///////////////////////////////////////////////////////////////////
+//   var array = [2,5,8,12,15,15,3]
+//   const modus = arr => {
+//     const mode = {};
+//     let max = 0, count = 0;
+  
+//     for(let i = 0; i < arr.length; i++) {
+//       const item = arr[i];
+      
+//       if(mode[item]) {
+//         mode[item]++;
+//       } else {
+//         mode[item] = 1;
+//       }
+      
+//       if(count < mode[item]) {
+//         max = item;
+//         count = mode[item];
+//       }
+//     }
+     
+//     return max;
+//   };
+
+//   console.log(modus(array))
+
+
+  ////////////////////////////////////////////////////////////////////
+ 
+ 
+//   var array = [2,5,8,12,15,15,3,2,2,5,5]
+
+  
+//   function findMode(array) {
+//     // This function starts by creating an object where the keys are each unique number of the array and the values are the amount of times that number appears in the array.
+  
+//     let object = {}
+  
+//     for (let i = 0; i < array.length; i++) {
+//       if (object[array[i]]) {
+//         // increment existing key's value
+//         object[array[i]] += 1
+//       } else {
+//         // make a new key and set its value to 1
+//         object[array[i]] = 1
+//       }
+//     }
+  
+//     // assign a value guaranteed to be smaller than any number in the array
+//     let biggestValue = -1
+//     let biggestValuesKey = -1
+  
+//     // finding the biggest value and its corresponding key
+//     Object.keys(object).forEach(key => {
+//       let value = object[key]
+//       if (value > biggestValue) {
+//         biggestValue = value
+//         biggestValuesKey = key
+//       }
+//     })
+  
+//     return biggestValuesKey
+  
+//   }
+
+//   console.log(findMode(array))
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+function getModes(array) {
+    var frequency = []; // array of frequency.
+    var maxFreq = 0; // holds the max frequency.
+    var modes = [];
+    for (var i in array) {
+      frequency[array[i]] = (frequency[array[i]] || 0) + 1; // increment frequency.
+      if (frequency[array[i]] > maxFreq) { // is this frequency > max so far ?
+        maxFreq = frequency[array[i]]; // update max.
+      }
+    }
+    for (var k in frequency) {
+      if (frequency[k] == maxFreq) {
+        modes.push(k);
+      }
+    }
+    return modes;
+  }
+  console.log(getModes([3, 6, 1, 9, 2, 3, 6, 6, 3, 1, -8, 7]));
