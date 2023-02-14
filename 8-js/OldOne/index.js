@@ -220,7 +220,7 @@
 
 
 
-var array = realNumbers ([5,2,5,1.2,10,2,101,8,6,15,3,6,1,1,500,1.2]);
+var array = realNumbers ([6,2,1.2,10,2,101,8,6,15,3,6,1,1,500,1.2])
 
 
 function realNumbers(array){
@@ -235,59 +235,59 @@ var object = {
 };
 
 function minimal(number){
-    var min = number[0];
-    for(var i = 0; i < number.length;i++){
-        var element = number[i];
-        if(element < min){
-            min = element;
-        }
-    }
-    return min;
+  var min = number[0];
+  for(var i = 0; i < number.length;i++){
+      var element = number[i];
+      if(element < min){
+          min = element;
+      }
+  }
+  return min;
 }
-    //console.log(min);
-    var result = minimal(array);
-    //console.log(result);
-    object.min = result;
+  //console.log(min);
+  var result = minimal(array);
+  //console.log(result);
+  object.min = result;
 
 object.max = Math.max.apply(null,array)
 
 var total = 0;       
-    for(var j = 0; j <array.length; j++){
-        total += array[j];
- }
+  for(var j = 0; j <array.length; j++){
+      total += array[j];
+}
 //console.log(total)
 object.total = Number(total.toFixed(2))
 
 var number2 = 0;
- for(var k = 0; k <array.length; k++){
-    number2 += array[k];
-    avg = (number2/array.length)
+for(var k = 0; k <array.length; k++){
+  number2 += array[k];
+  avg = (number2/array.length)
 }
 //console.log(avg)
 
- object.avg = Number(avg.toFixed(2))
+object.avg = Number(avg.toFixed(2))
 
 
 // var mode = function(arr) {  //jen pro jedno cislo !
 //     var mode = {};
 //     var max = 0;
 //     var count = 0;
-  
+
 //     for(var i = 0; i < arr.length; i++) {
 //         var item = arr[i];
-      
+    
 //       if(mode[item]) {
 //         mode[item]++;
 //       } else {
 //         mode[item] = 1;
 //       }
-      
+    
 //       if(count < mode[item]) {
 //         max = item;
 //         count = mode[item];
 //       }
 //     }
-     
+   
 //     return max;
 //   };
 
@@ -299,32 +299,32 @@ var number2 = 0;
 
 
 function getMode(array) {
-    var frequency = []; // array of frequency.
-    var maxFreq = 0; // holds the max frequency.
-    var modes = [];
-    for (var i in array) {
-      frequency[array[i]] = (frequency[array[i]] || 0) + 1; // increment frequency.
-      if (frequency[array[i]] > maxFreq) { // is this frequency > max so far ?
-        maxFreq = frequency[array[i]]; // update max.
-      };
+  var frequency = []; // array of frequency.
+  var maxFreq = 0; // holds the max frequency.
+  var modes = [];
+  for (var i in array) {
+    frequency[array[i]] = (frequency[array[i]] || 0) + 1; // increment frequency.
+    if (frequency[array[i]] > maxFreq) { // is this frequency > max so far ?
+      maxFreq = frequency[array[i]]; // update max.
     };
-    for (var k in frequency) {
-      if (frequency[k] == maxFreq) {
-        modes.push(k);
-      };
-    };
-    return modes;
   };
+  for (var k in frequency) {
+    if (frequency[k] == maxFreq) {
+      modes.push(k);
+    };
+  };
+  return modes;
+};
 
-    var newArray = [];
-    newArray = getMode(array).sort()
-    object.modus = newArray
+  var newArray = [];
+  newArray = getMode(array).sort()
+  object.modus = newArray
 
 
 
 
 var sortedArray = array.sort(function(a,b){
-    return a - b;
+  return a - b;
 });
 
 //console.log(sortedArray)
@@ -332,18 +332,20 @@ var sortedArray = array.sort(function(a,b){
 
 
 if(sortedArray.length % 2 != 0){
-        var odd = Math.floor(sortedArray.length / 2)
-        object.median = (`${sortedArray[odd]}, Count of elements in array is odd`);
+      var odd = Math.floor(sortedArray.length / 2)
+      object.median = (`${sortedArray[odd]}, Count of elements in array is odd`);
 }else if(sortedArray.length % 2 == 0){
-        var even = (sortedArray.length/2);
-        var middle = sortedArray[even-1];  // 0 index
-        var middle2 = sortedArray[even];    
-        object.median = (`${(middle + middle2)/2}, Count of elements in array is even`);
+      var even = (sortedArray.length/2);
+      var middle = sortedArray[even-1];  // 0 index
+      var middle2 = sortedArray[even];    
+      object.median = (`${(middle + middle2)/2}, Count of elements in array is even`);
 }
 
 
 //console.log(sortedArray)
 //console.log(object.median)
+
+
 
 
 
