@@ -14,3 +14,5 @@ function realNumbers(array){
     
 }
 realNumbers("a",2,5,25,78)
+
+
