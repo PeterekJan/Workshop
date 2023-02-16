@@ -203,3 +203,82 @@ console.log("---------------cykly-----------------")
 //    - ``foreach``
 //    - ``while``
 
+let students = ['John', 'Sara', 'Jack'];
+
+// using forEach
+students.forEach(myFunction);
+
+function myFunction(item) {
+
+    console.log(item);
+}
+
+console.log(students)
+
+/////////for//////////
+var names = ["aaa","bb", "cc" ];
+for(name2 of names){
+  console.log(name2)
+}
+
+/////////for//////////
+const arrayItems = ['item1', 'item2', 'item3'];
+const copyItems = [];
+
+// using for loop
+for (let i = 0; i < arrayItems.length; i++) {
+  copyItems.push(arrayItems[i]);
+}
+
+console.log(copyItems);
+
+////////////////////forEach///////////////////////////
+var total = 0;
+var cart = [5,6,7,8,9];
+
+function checkOut(element, index, array){ //index vypise cislo indexu
+
+    total += element;
+
+}
+
+cart.forEach(checkOut);
+
+console.log("Your total is $" +total)
+
+/////////////////////////////////////////////
+
+var letters = ["a", "b", "b", "d", "x", "b"]
+var count = {}; //vypise do objektu nebo do [];
+letters.forEach(consoleItem);
+
+function consoleItem(item, index, arr){
+    if(count[item]){
+        count[item]++;
+    }else{
+        count[item] = 1;
+    };
+};
+console.log(count)
+
+/////////////////////////////////////////////
+
+var count = 0;
+console.log("Starting Loop ");
+         
+while (count < 5) {
+console.log("Current Count : " + count );
+count++;
+console.log("provedeni cyklu")
+}
+
+console.log("Loop stopped!");
+
+/////////////////Do while/////////////////
+
+var i = 0;            //provede se 2x
+do {
+  console.log(`The number is ${i}`)
+  i++
+} while (i <= 1);
+////////////////////////////////////////
