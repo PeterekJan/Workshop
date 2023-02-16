@@ -1,4 +1,4 @@
-//Funkce nemusí být vždy tak formálně napsána jako jsme si kukazovali výše v příkladech.
+//Funkce nemusí být vždy tak formálně napsána jako jsme si ukazovali výše v příkladech.
 //Anonymní funkce není označována žádným vlastním názvem a zpravidla se k ní přistupuje prostřednictvím proměnné,
 // takto:
 
