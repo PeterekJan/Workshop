@@ -69,13 +69,7 @@ function example() {
   const score = 45
 
   const scoreRating =
-    score > 70
-      ? "Excellent"
-      : score > 50
-      ? "Average"
-      : score > 40
-      ? "Fair"
-      : "Do better"
+    score > 70 ? "Excellent": score > 50 ? "Average" : score > 40 ? "Fair" : "Do better"
   
   console.log(scoreRating)
 
