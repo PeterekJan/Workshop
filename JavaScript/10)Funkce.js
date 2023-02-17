@@ -99,6 +99,14 @@ let naDruhou2 = function (number){
 }
 
 let value1 = naDruhou2(5);
+////////////////////////////////
+//stejny vysledek
+function naDruhou(number){
+    //var result = number * number;
+    return result = number * number;
+};
+
+console.log(`čislo naDruhou je: ${naDruhou(2)}`);
 
 
 ////////////////////////////////////////////////

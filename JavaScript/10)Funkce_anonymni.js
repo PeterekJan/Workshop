@@ -81,10 +81,19 @@ function greet(wish){
   })
 
   ////////////////////////////////////////////////////////////
-  //IIFE (Immediately Invoked Function Expression
+  //IIFE (Immediately Invoked Function Expression)
   (function () {
     statements
   })();
+
+
+  //////////////////
+  (function myFunc() { // Beginning of function
+    console.log(greeting)
+    }) // End of function
+    () //calls the function execution e.g. myFunc()
+
+    
 //////////////////////////počítaní počtu opakovaní//////////////////////////////////////////
 
 for (var i = 1; i <= 5; i++) {
