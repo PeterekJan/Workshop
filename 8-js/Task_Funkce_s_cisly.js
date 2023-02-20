@@ -66,20 +66,33 @@ var arr = [7,88,25,15,5,72,1.6,1,2,8]
 
 console.log(`The highest elemenet is: ${highest(arr)}`)
 
+console.log("------------------highest----------------")
 
-
-
-
-
-////////////////////////////////
-
-
-
-
+///////////////////////////////////////////////////////////////////////
 
 //    4. Vytvořte fci ``calculateGeometry``, která bude mít na vstupu dva parametry ``a`` a ``b``,
 //       přičemž ``b`` může zůstat prázdné. Tato fce vypočte obsah čtverce nebo obdélníku na základě toho, jaká data přijdou z parametrů.
 //       Tj, pokud nebude ``b`` vyplněno, jedná se pravděpodobně o čtverec
+
+
+function calculateGeometry(a,b){
+    a= Number(a)
+    b= Number(b)
+    
+    if(typeof a == 'number' && typeof b == 'number'){
+        console.log(`Content of rectagle is: ${(a * b).toFixed(2)}`)
+    }else if(typeof a === 'number' && typeof b === 'undefined'){
+        console.log(`Content of square is: ${(a * a).toFixed(2)}`);
+    }else if(isNaN(a) || isNaN(b)){
+            console.log(`Value can't be NaN`);
+    };
+    
+};
+calculateGeometry("a","15")
+
+
+
+
 
 //    5. Zajistěte, aby všechny geometrické fce bylo možno volat i s hodnotou 0.1 a zároveň aby jako argument akceptovaly pouze číselné typy.
 //       Tzn aby nebylo možné zadat "xxx" jako hodnotu
