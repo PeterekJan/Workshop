@@ -53,12 +53,12 @@ console.log("--------rectagle------------")
 
 function highest(number){
    var max = number[0];
-   for(var i = 0; i < number.lenght; i++){
-    var element = number[i]
-    if(element > max){
-        max = element;
+   for(var i = 0; i < number.length; i++){
+        var element = number[i]
+        if(element > max){
+            max = element;
+        }
     }
-   }
     return max;
 }
 var arr = [7,88,25,15,5,72,1.6,1,2,8]
