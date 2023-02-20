@@ -1,3 +1,6 @@
+//PODMINKA ? (VYRAZ = TRUE) : (VYRAZ = FALSE)
+
+
 //var ageDavid = 10;
 // if (ageDavid >= 18){
 //     console.log("David je plnolety");
@@ -127,4 +130,6 @@ var result;
 console.log(result)
 
 ///////////////////////////////////////////////////////////////////////////////////
+
+//PODMINKA ? (VYRAZ = TRUE) : (VYRAZ = FALSE)
 

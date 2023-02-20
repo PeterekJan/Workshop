@@ -12,7 +12,9 @@ function square(a){
     }
    
 }
-square("10")
+square(2)
+
+console.log("------------square -----------")
 
 /////////////2.Metoda//////////////
 // function square(a){
@@ -29,9 +31,9 @@ square("10")
 
 
 function rectagle(i,j){
-    if(typeof i === 'string'|| typeof j === 'string' ){
+    if(typeof i === 'string' || typeof j === 'string' ){
         console.log("Value can't be string")
-    }else if(typeof j === undefined){
+    }else if(typeof j === 'undefined'){
         console.log("Value j can't be undefined")
     }else {
         console.log(`Value of rectagle's content is: ${i * j}`)
@@ -39,10 +41,41 @@ function rectagle(i,j){
 
 }
 
-rectagle(2)
+rectagle(2,3)
+
+console.log("--------rectagle------------")
 
 //    3. Vytvořte fci ``highest``, která bude mít na vstupu pole čísel.
 //       Úkolem fce bude v tomto poli najít nejvyšší číslo a to vrátit / vypsat do konzole.
+
+
+
+
+function highest(number){
+   var max = number[0];
+   for(var i = 0; i < number.lenght; i++){
+    var element = number[i]
+    if(element > max){
+        max = element;
+    }
+   }
+    return max;
+}
+var arr = [7,88,25,15,5,72,1.6,1,2,8]
+
+
+console.log(`The highest elemenet is: ${highest(arr)}`)
+
+
+
+
+
+
+////////////////////////////////
+
+
+
+
 
 //    4. Vytvořte fci ``calculateGeometry``, která bude mít na vstupu dva parametry ``a`` a ``b``,
 //       přičemž ``b`` může zůstat prázdné. Tato fce vypočte obsah čtverce nebo obdélníku na základě toho, jaká data přijdou z parametrů.

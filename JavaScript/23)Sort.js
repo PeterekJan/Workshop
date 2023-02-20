@@ -77,6 +77,18 @@ var sortsArray3 = function(myNumbers){   ///univerzalni razeni cisel
 sortsArray3(numbers)
 console.log(numbers[numbers.length-1])
 
+
+////////////////////////////srovnani cisel do rady///////////////////////////////////
+
+var arr = [3,5,8,15,1,1.6]
+
+    
+arr.sort(function (a,b){
+        return a - b
+    });
+
+console.log(arr)
+
     
     
     

@@ -67,7 +67,7 @@ function highest2(number){
 }
 var newArray= [22,25,40,60,80,100];
 var result = highest2(newArray);
-console.log(`The Highest Number is: ${result}`);
+console.log(`The highest number is: ${result}`);
 
 /////////////////////Sort of metod////////////////////////
 
@@ -89,7 +89,66 @@ var sortsArray2 = function(myNumbers){   ///univerzalni razeni cisel
 sortsArray2(numbers)
 console.log(numbers[numbers.length-1])
 
-//////////////////////////////////////////////////////////////
+
+//////////////////////highest s validaci/////////////////
+
+function highest(arr) {
+    // Filter array, if NaN found, return error
+    if(arr.filter(function(item) { return isNaN(item) }).length > 0) {
+      console.log("Error, string found");
+      return null;
+    } 
+    
+    // Sort descendent
+    arr.sort(function(a, b){return b - a})
+    console.log((arr))
+    
+    // Return first index of array
+    return arr[0];
+    
+  }
+  
+  var arr = [5,9.5,15,-6,1];
+  
+  // take first number from array as highest
+  
+  console.log("Highest: " + highest(arr));
+
+///////////////////////////Srozumitelnejsi reseni///////////////////////////////////
+
+function highestSimple(arr) {
+  
+    // 1. check if all are numbers (optional)
+    for(i=0;i<arr.length;i++) {
+      if(isNaN(arr[i])) {
+        console.log("Error `" + arr[i] + "` is NaN");
+        return null;
+      }
+      
+      // (optional) set all to numbers
+      arr[i] = Number(arr[i]);
+    }
+    
+    // look for highest number
+    var highest = null;
+    
+    for(i=0;i<arr.length;i++) {
+      
+      // if current number is higher that temp highest, replace value
+      if(highest == null || highest < arr[i]) {
+        highest = arr[i];
+      }
+    }
+    
+    // return highest
+    return highest;
+  }
+  
+  
+  var arr = [5,9.5,15,-6, "150"];
+  
+  // take first number from array as highest
+  console.log("Highest simple: " + highestSimple(arr));
 
 // Vytvořte fci ``calculateGeometry``, která bude mít na vstupu dva parametry ``a`` a ``b``,
 // přičemž ``b`` může zůstat prázdné. Tato fce vypočte obsah čtverce nebo obdélníku na základě toho,
