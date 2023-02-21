@@ -107,7 +107,7 @@ calculateGeometry(20,1)
 
 console.log("-------------RealNumbers-------------------")
 
-var newArray = [3,10,0.1,0.1,15,88,101,88,72,88,-5,];
+var newArray = [-2,-3,-5,-6];
 
 newObject = {
     count: newArray.length,
@@ -121,14 +121,14 @@ newObject = {
 };
 
 function minNum(number){
-    var min = 0;
-    for(var i = 0;i < number.length; i++){
+    var min = number[0];
+    for(var i = 0; i < number.length; i++){
         var element = number[i];
         if(element < min){
-            min = number[i]
+            min = element
         };
     };
-        //console.log(number[1])
+        console.log(number[0])
         //console.log(element)
     return min;
         
@@ -139,7 +139,7 @@ var result = minNum(newArray)
 newObject.min = result
 
 function maxNum(number){
-    var max = 0;
+    var max = number[0];
     for(var i = 0;i < number.length; i++){
         var element = number[i];
         if(element > max){
@@ -174,22 +174,24 @@ function sum(number){
 var result4 = sum(newArray);
 newObject.total = result4
 //console.log(sum(newArray))
+
+function total(number){
+    var total = 0;
+    for(var i = 0;i < number.length; i++ ){
+        total += number[i]
+    };
+    return total;
+};
     
 function avg(number){
-    function total(number){
-        var total = 0;
-        for(var i = 0;i < number.length; i++ ){
-            total += number[i]
-        };
-        return total;
-    };
     var avg = 0;
-    avg = total(newArray)/number.length
+    avg = (total(number)/number.length).toFixed(2)
+    avg = Number(avg)
 
 return avg; 
 };
 
 var result5 = avg(newArray)
-console.log(result5)
+newObject.avg = result5
 
-
+console.log(newObject)
