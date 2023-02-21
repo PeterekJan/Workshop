@@ -1,7 +1,7 @@
 // f) Funkce s čísly
 //    1. Vytvořte fci ```square```, která bude mít na vstupu parametr ```a``` 
 //      (číslo musí být větší než 0), vypočítá obsah čtverce a toto číslo vypište pomocí ```console.log()```
-
+console.log("------------square -----------")
 function square(a){
     if(a <= 0){
         console.log("Invalid value");
@@ -14,7 +14,7 @@ function square(a){
 }
 square(2)
 
-console.log("------------square -----------")
+
 
 /////////////2.Metoda//////////////
 // function square(a){
@@ -29,7 +29,7 @@ console.log("------------square -----------")
 //    2. Vytvořte fci ```rectangle```, která bude mít dva vstupní parametry ```a``` a ```b``` 
 //       (čísla musí být větší než 0), a která vypíše obsah obdélníku stejn ějako v předchozím bodě
 
-
+console.log("--------rectagle------------")
 function rectagle(i,j){
     if(typeof i === 'string' || typeof j === 'string' ){
         console.log("Value can't be string")
@@ -43,13 +43,13 @@ function rectagle(i,j){
 
 rectagle(2,3)
 
-console.log("--------rectagle------------")
+
 
 //    3. Vytvořte fci ``highest``, která bude mít na vstupu pole čísel.
 //       Úkolem fce bude v tomto poli najít nejvyšší číslo a to vrátit / vypsat do konzole.
 
 
-
+console.log("------------------highest----------------")
 
 function highest(number){
    var max = number[0];
@@ -66,7 +66,7 @@ var arr = [7,88,25,15,5,72,1.6,1,2,8]
 
 console.log(`The highest elemenet is: ${highest(arr)}`)
 
-console.log("------------------highest----------------")
+
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -74,6 +74,7 @@ console.log("------------------highest----------------")
 //       přičemž ``b`` může zůstat prázdné. Tato fce vypočte obsah čtverce nebo obdélníku na základě toho, jaká data přijdou z parametrů.
 //       Tj, pokud nebude ``b`` vyplněno, jedná se pravděpodobně o čtverec
 
+console.log("-------------CalculateGeometry-------------------")
 
 function calculateGeometry(a,b){
     //a= Number(a)
@@ -103,7 +104,8 @@ calculateGeometry(20,1)
 //        - ``avg`` - aritmetický průměr
 //        - ``modus`` - modus - nejčastejší vyskyt
 //        - ``median`` - medián - střední hodnota seřazené posloupnosti
-console.log("-------------CalculateGeometry-------------------")
+
+console.log("-------------RealNumbers-------------------")
 
 var newArray = [3,10,0.1,0.1,15,88,101,88,72,88,-5,];
 
@@ -174,14 +176,20 @@ newObject.total = result4
 //console.log(sum(newArray))
     
 function avg(number){
-    var total2 = 0;
-    for(var i = 0;i < number.length; i++ ){
-        total2 += number[i]
+    function total(number){
+        var total = 0;
+        for(var i = 0;i < number.length; i++ ){
+            total += number[i]
+        };
+        return total;
     };
+    var avg = 0;
+    avg = total(newArray)/number.length
 
-    return total2
+return avg; 
+};
 
-    
-}  
+var result5 = avg(newArray)
+console.log(result5)
 
 
