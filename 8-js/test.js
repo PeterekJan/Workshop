@@ -28,12 +28,41 @@ var result = minNum(newArray)
 //console.log(result)
 newObject.min = result
 
+function maxNum(number){
+    var max = 0;
+    for(var i = 0;i < newArray.length; i++){
+        var element = number[i];
+        if(element > max){
+            max = number[i];
+        };
+    };
+    //console.log(number[5]);
+    //console.log(element);
+    return max;
+    
+};
+
+var result2 = maxNum(newArray);
+//console.log(result2);
+newObject.max = result2;
+
+
+//var result3 = Math.max.apply(null,newArray);
+//console.log(result3);
+
+function summary(newArray){
+    var total = 0;
+    for(var i = 0;i < newArray.length; i++){
+        
+    }
+}
+
     
    
 
 
 
-//console.log(newObject)
+console.log(newObject)
 
 
 
