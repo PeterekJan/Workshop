@@ -76,26 +76,24 @@ console.log("------------------highest----------------")
 
 
 function calculateGeometry(a,b){
-    a= Number(a)
-    b= Number(b)
+    //a= Number(a)
+    //b= Number(b)
     
-    if(typeof a == 'number' && typeof b == 'number'){
+    if(!isNaN(a) && !isNaN(b)){
         console.log(`Content of rectagle is: ${(a * b).toFixed(2)}`)
-    }else if(typeof a === 'number' && typeof b === 'undefined'){
-        console.log(`Content of square is: ${(a * a).toFixed(2)}`);
+    }else if(!isNaN(a) && typeof b === 'undefined'){
+        console.log(`Content of square is: ${(a * a).toFixed(2)}`); //odfiltrovani vsech stringu => typeof a,b === 'string'
     }else if(isNaN(a) || isNaN(b)){
-            console.log(`Value can't be NaN`);
+            console.log(`Value can't be string`);
     };
     
 };
-calculateGeometry("a","15")
-
-
-
+calculateGeometry(20,1)
 
 
 //    5. Zajistěte, aby všechny geometrické fce bylo možno volat i s hodnotou 0.1 a zároveň aby jako argument akceptovaly pouze číselné typy.
 //       Tzn aby nebylo možné zadat "xxx" jako hodnotu
+
 
 //    6. Napište fci, která bude mít jako vstupní hodnotu pole čísel (reálná čísla). Tato fce vrátí objekt s parametry:
 //        - ``count`` - počet prvků
@@ -103,5 +101,43 @@ calculateGeometry("a","15")
 //        - ``max`` - maximální hodnota
 //        - ``total`` - součet hodnot
 //        - ``avg`` - aritmetický průměr
-//        - ``modus`` - modus
-//        - ``median`` - medián
+//        - ``modus`` - modus - nejčastejší vyskyt
+//        - ``median`` - medián - střední hodnota seřazené posloupnosti
+console.log("-------------CalculateGeometry-------------------")
+
+var newArray = realNum([3,10,0.1,0.1,15,88,101,88,72,88,-5]);
+
+function realNum(newArray){
+
+    newObject = {
+        count: newArray.length,
+        min: 0,
+        max: 0,
+        total:0,
+        avg: 0,
+        modus:[],
+        median:0
+       
+    };
+    function minNum(number){
+        var min = 0;
+        for(var i = 0;i < newArray.length; i++){
+            var element = number[i];
+            if(element < min){
+                min = number[i]
+            }
+        }
+        return min;
+      
+};
+
+var result = minNum(newArray)
+newObject.min = result
+    //console.log(result)
+    console.log(element)
+
+
+};
+//console.log(newObject)
+
+

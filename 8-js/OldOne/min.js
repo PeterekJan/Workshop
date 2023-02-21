@@ -6,4 +6,4 @@ var min = 0;
         object.min = min
         //console.log(min)     
 
-        //nerlisuje mezi 10 a 1 . urcit vysledek ze je cislo !
+        //nerlisuje mezi 10 a 1 .
