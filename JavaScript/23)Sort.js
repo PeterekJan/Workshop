@@ -72,7 +72,7 @@ var sortsArray3 = function(myNumbers){   ///univerzalni razeni cisel
         }
         
     })
-    }
+}
 
 sortsArray3(numbers)
 console.log(numbers[numbers.length-1])

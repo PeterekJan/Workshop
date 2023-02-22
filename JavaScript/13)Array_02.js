@@ -23,6 +23,9 @@ testArray.unshift("zeleny");
 //odstraneni prvniho prvku
 testArray.shift()
 
+//Kopirovaní hodnot pole
+var newArray = OldArray.slice();
+
 
 /////////////////////////////////////
 
