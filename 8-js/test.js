@@ -1,4 +1,4 @@
-var newArray = [-2,-3,-5,-6,8,15,-88,25,101,-95,10,1];
+var newArray = [-2,-3,-5,-6,8,15,15,-88,101,-95,10,1,5,5,5,4,18];
 
 newObject = {
     count: newArray.length,
@@ -107,11 +107,27 @@ sorting(sortedArray)
 console.log(`sortedArray ${sortedArray}`)
 //console.log(`newArray ${newArray}`)
 
-function modus(array){
-    
-}
+
+// function modus(array){
+
+// }
 
 
+var empty = []
+i = 0
+max = 0
+while (i<sortedArray.length){
+
+   if (sortedArray[i]==sortedArray[i+1]){
+       empty = sortedArray[i] 
+   i += 1
+    }else{
+      i +=1
+      }
+
+ }
+ 
+ console.log(empty)
 
 
 
