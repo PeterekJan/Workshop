@@ -108,26 +108,13 @@ console.log(`sortedArray ${sortedArray}`)
 //console.log(`newArray ${newArray}`)
 
 
-// function modus(array){
-
-// }
 
 
-var empty = []
-i = 0
-max = 0
-while (i<sortedArray.length){
+function mode(array){
+    var result = {};
 
-   if (sortedArray[i]==sortedArray[i+1]){
-       empty = sortedArray[i] 
-   i += 1
-    }else{
-      i +=1
-      }
+}
 
- }
- 
- console.log(empty)
 
 
 
@@ -158,3 +145,6 @@ newObject.median = median(sortedArray)
 
 
 console.log(newObject)
+
+
+

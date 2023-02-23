@@ -234,3 +234,70 @@ function getModes(array) {
     return modes;
   }
   console.log(getModes([3, 6, 1, 9, 2, 3, 6, 6, 3, 1, -8, 7]));
+
+  ///////////////////////////////////////////////////////////////////////////////////
+  function mode(numbers) {           //Neumi ze zaporných čísel !!
+    var modes = [];
+    var count = [];
+    var number = 0;
+    var maxIndex = 0;
+ 
+    for (var i = 0; i < numbers.length; i++) {
+        number = numbers[i];
+        count[number] = (count[number] || 0) + 1;
+        if (count[number] > maxIndex) {
+            maxIndex = count[number];  
+        };
+    };
+ 
+
+    for (i in count){                         //for (var i in count)
+        if (count.hasOwnProperty(i)){        //if(count[i] == maxIndex){
+            if (count[i] === maxIndex){     //modes.push(Number(i));
+                modes.push(Number(i));     // };
+            };                            // };
+        };
+    };
+ 
+    return modes;
+};
+
+
+
+// var modeArr = [3,3,3,2,2]
+// console.log(mode(modeArr))
+
+console.log(mode(newArray))
+
+
+/////////////////////////////MODUS PEDRO/////////////////////////////////////////
+function modus(array) {
+  
+  // initiate temp variable, which will containt key:value = number:total_count
+  let temp = {};
+  
+  // loop through array
+  for(i=0;i<array.length;i++) {
+    let value = array[i];
+    
+    // if value is not set, initiate it with counter set to 1
+    if(typeof temp[value] == "undefined") {
+      temp[value] = 1;
+    } else {
+      temp[value]++;
+    }
+  }
+  
+  var modus = Object.keys(temp).reduce(function(a, b) {
+    return temp[a] > temp[b] ? a : b 
+  });
+  
+  var top = temp[modus];
+  
+  
+  
+  return modus;
+}
+
+console.log(modus([0,6,8,9,-9,-9,9,6,4,7,6,0,5,5]));
+

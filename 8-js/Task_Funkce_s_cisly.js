@@ -107,7 +107,7 @@ calculateGeometry(20,1)
 
 console.log("-------------RealNumbers-------------------")
 
-var newArray = [-2,-3,-5,-6,8,15,-88,25,101,-95,10,1];
+var newArray = [2,2,2,3,5,18,18,5,1,5];
 
 newObject = {
     count: newArray.length,
@@ -213,12 +213,8 @@ var sortedArray = newArray.slice();
 
 sorting(sortedArray)
 
-console.log(`sortedArray ${sortedArray}`)
+//console.log(`sortedArray ${sortedArray}`)
 //console.log(`newArray ${newArray}`)
-
-function modus(array){
-    
-}
 
 
 

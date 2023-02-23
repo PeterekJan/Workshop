@@ -15,7 +15,7 @@
 ///////////////////////////////////////////////////////// vypise hodnoty string z pole
 // let students = ['John', 'Sara', 'Jack'];
 
-// // using forEach
+// using forEach
 // students.forEach(myFunction);
 
 // function myFunction(item) {

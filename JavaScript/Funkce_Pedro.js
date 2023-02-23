@@ -81,3 +81,34 @@ var arr = [5,9.5,15,-6, "150"];
 // take first number from array as highest
 console.log("Highest: " + highest(arr));
 console.log("Highest simple: " + highestSimple(arr));
+
+//////////////////////////////////////MODUS/////////////////////
+function modus(array) {
+  
+  // initiate temp variable, which will containt key:value = number:total_count
+  let temp = {};
+  
+  // loop through array
+  for(i=0;i<array.length;i++) {
+    let value = array[i];
+    
+    // if value is not set, initiate it with counter set to 1
+    if(typeof temp[value] == "undefined") {
+      temp[value] = 1;
+    } else {
+      temp[value]++;
+    }
+  }
+  
+  var modus = Object.keys(temp).reduce(function(a, b) {
+    return temp[a] > temp[b] ? a : b 
+  });
+  
+  var top = temp[modus];
+  
+  
+  
+  return modus;
+}
+
+console.log(modus([0,6,8,9,-9,-9,9,6,4,7,6,0,5,5]));
