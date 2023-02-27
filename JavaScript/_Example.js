@@ -1,34 +1,30 @@
-var newArray = [3,3,3,5,2,2,2,8,17,17,8];
-
-function mode(array){
-    var mode = {};
-    var count = 0;
-    var item = 0;
+var array = [5,-5,5,5,2,2,2,10,101,10,-5]
 
 
-
-    for(var i = 0;i < array.lenght; i++){
-
+function getMode(array) {
+  var frequency = []; // array of frequency.
+  var maxFreq = 0; // holds the max frequency.
+  var modes = [];
+  for (var i in array) {
+    frequency[array[i]] = (frequency[array[i]] || 0) + 1; // increment frequency.
+    if (frequency[array[i]] > maxFreq) { // is this frequency > max so far ?
+      maxFreq = frequency[array[i]]; // update max.
     };
-
-
-
+  };
+  for (var k in frequency) {
+    if (frequency[k] == maxFreq) {
+      modes.push(k);
+    };
+    //console.log(maxFreq)
+    //console.log(frequency[k],[k])
+    
+    //console.log(modes)
+  };
+  return modes;
 };
 
+  var newArray = [];
+  newArray = getMode(array).sort()
 
-list = [1,2,3,4,5,6,7,7,7,-5,-5]
+  //console.log(newArray)
 
-var counts = {};
-list.forEach(function(a){
-  if(counts[a] === undefined){
-    counts[a] = 0;  
-  }
-  counts[a] += 1
-
-});
-
-console.log(counts)
-
-
-
-  

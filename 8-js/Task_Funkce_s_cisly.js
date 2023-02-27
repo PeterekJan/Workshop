@@ -213,9 +213,49 @@ var sortedArray = newArray.slice();
 
 sorting(sortedArray)
 
-//console.log(`sortedArray ${sortedArray}`)
+console.log(`sortedArray ${sortedArray}`)
 //console.log(`newArray ${newArray}`)
 
+
+function count(array){
+    var counter = {};
+    array.forEach(function(a){
+        //console.log("iteration ["+a+"]")
+        if(counter[a] === undefined){       //podminka k vytvoreni promenné
+            counter[a] = 0;                 //deklarace počateční hodnoty
+            //console.log("declaration ["+a+"]")
+        };   
+        counter[a] += 1;  //navyseni hodnoty pri nalezeni stejneho prvku
+    });
+    return counter;
+};
+//console.log(count(newArray));
+
+//var countedArr = {};
+var countedArr = count(newArray)
+console.log(countedArr)
+
+const getMax = object => {
+    return Object.keys(object).filter(x => {
+         return object[x] == Math.max.apply(null, 
+         Object.values(object));
+   });
+};
+
+newObject.modus = getMax(countedArr)
+
+
+
+
+
+// for (var k in counter) {
+//     if (counter[k] == maxFreq) {
+//       modes.push(k);
+//     };
+//     //console.log([k])
+//     console.log(frequency[k],[k])
+//   };
+//   return modes;
 
 
 
