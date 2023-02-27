@@ -11,7 +11,7 @@ function greetings(){
 console.log(text)
  
 }
-greetings()
+greetings('Anakin')
 
 // 3. Návratová hodnota 
 //    - funkci z předchozího bodu upravte tak aby nevypisovala do konzolze hodnotu promenné ``text``, ale aby ji vrátila
@@ -89,7 +89,7 @@ var greeting = "Hello world";
 
 /////////////////////////////////////////////
 
-   ///WTF :D //   
-   (() => {
-    //Your code goes here
-    })()
+//    ///WTF :D //   
+//    (() => {
+//     //Your code goes here
+//     })()

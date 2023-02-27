@@ -91,7 +91,7 @@ console.log("---------------Podminky a cykly-----------------")
 //    - ``if`` a ``else``
 //    - ``else if``
 //    - ``switch``
-
+console.log("---------------Dog-----------------")
 var pet = "dog";
  
 switch (pet) {
@@ -114,7 +114,7 @@ switch (pet) {
     console.log("I don't own a pet");
     break;
 }
-
+console.log("---------------Ireland-----------------")
 
 var country = "Ireland";
 switch (country) {
@@ -128,7 +128,7 @@ switch (country) {
   default:
     console.log("This country is not in Europe.");
 }
-
+console.log("---------------Going Shopping-END-----------------")
 
 var errand = "Going Shopping";
 switch (errand) {
@@ -149,7 +149,7 @@ switch (errand) {
 }
 
 // 2. Nastudujte si, co je to ternární operátor a jak se používá
-
+console.log("---------------ChceckWinner-----------------")
 function checkWinner (win){
     
     win ? console.log("You win!") : console.log("You lose")
@@ -164,7 +164,7 @@ return age >= 21 ? "you get beer!" : "you get juice"
 }
 console.log(checkAge(17));
 
-
+console.log("---------------number = 5-----------------")
 
 var number = 5;
 let result;
@@ -202,7 +202,7 @@ console.log("---------------cykly-----------------")
 //    - ``for``
 //    - ``foreach``
 //    - ``while``
-
+console.log("---------------John,Sara,Jack-----------------")
 let students = ['John', 'Sara', 'Jack'];
 
 // using forEach
@@ -214,13 +214,13 @@ function myFunction(item) {
 }
 
 console.log(students)
-
+console.log("---------------aaa,bb,cc-----------------")
 /////////for//////////
 var names = ["aaa","bb", "cc" ];
 for(name2 of names){
   console.log(name2)
 }
-
+console.log("---------------item1,item2,item3-----------------")
 /////////for//////////
 const arrayItems = ['item1', 'item2', 'item3'];
 const copyItems = [];
@@ -231,6 +231,7 @@ for (let i = 0; i < arrayItems.length; i++) {
 }
 
 console.log(copyItems);
+console.log("---------------Cart $-----------------")
 
 ////////////////////forEach///////////////////////////
 var total = 0;
@@ -245,6 +246,7 @@ function checkOut(element, index, array){ //index vypise cislo indexu
 cart.forEach(checkOut);
 
 console.log("Your total is $" +total)
+console.log("---------------Letters-----------------")
 
 /////////////////////////////////////////////
 
@@ -262,7 +264,7 @@ function consoleItem(item, index, arr){
 console.log(count)
 
 /////////////////////////////////////////////
-
+console.log("---------------while-----------------")
 var count = 0;
 console.log("Starting Loop ");
          
