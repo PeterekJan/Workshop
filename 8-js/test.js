@@ -215,29 +215,22 @@
 // console.log(maxKey)
 
 ////////////////////////Vypise vsechny nejvetši hodnoty jako pole////////////////////////////////
-const obj = {apples: 1, bananas: 1, pears: 1 };
-
-const getMax = object => {
-    return Object.keys(object).filter(x => {
-         return object[x] == Math.max.apply(null, 
-Object.values(object));
-   });
+var obj = {
+    apples: 2,
+    bananas: 2,
+    pears: 1 
 };
 
-console.log(getMax(test))
+// function getMax(object){
+//     return Object.keys(object).filter(function(x) {
+//          return object[x] == Math.max.apply(null, Object.values(object));
+//    });
+// };
+
+// console.log(getMax(obj))
+
+//console.log(Math.max.apply(null,Object.keys(obj)))
 
 
 /////////////////////////////Vypise vsechny nejvetši hodnoty jako pole////////////////////////////////////////////
 
-
-const getMax2 = object => {
-    let max = Math.max(...Object.values(object))
-    return Object.keys(object).filter(key => object[key]==max)
-  }
-  
-  let obj3 = {a: 12, b: 11, c: 12};
-  getMax2(obj3)
-
-  console.log(getMax2(obj3))
-
-  /////////////////////////////////Vypise vsechny nejvetši hodnoty jako pole///////////////////////////////////

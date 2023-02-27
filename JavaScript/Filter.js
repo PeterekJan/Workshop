@@ -114,5 +114,10 @@ var result = object.filter(function(availableStatus){
 console.log(result)
 
 
+////////////////////////////////////////////////////////////////
+
+
+
+
 
 

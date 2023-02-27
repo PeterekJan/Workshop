@@ -1,3 +1,12 @@
+//Vypise vsechny object KEYS
+console.log(Object.keys(object))
+//Vypise vsechny object VALUES
+console.log(Object.values(object))
+
+
+
+
+
 var employees = ["David", "Jane", "Diana"];
 
 

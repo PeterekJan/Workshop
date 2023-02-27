@@ -107,7 +107,7 @@ calculateGeometry(20,1)
 
 console.log("-------------RealNumbers-------------------")
 
-var newArray = [2,2,2,3,5,18,18,5,1,5];
+var newArray = [2,2,2,3,5,18,18,5,1,5,-5,-5,-8,-5,-5,0.1,-0,5];
 
 newObject = {
     count: newArray.length,
@@ -232,13 +232,12 @@ function count(array){
 //console.log(count(newArray));
 
 //var countedArr = {};
-var countedArr = count(newArray)
+var countedArr = count(newArray)  //create object with highest values count
 console.log(countedArr)
 
-const getMax = object => {
-    return Object.keys(object).filter(x => {
-         return object[x] == Math.max.apply(null, 
-         Object.values(object));
+function getMax(object){
+    return Object.keys(object).filter(function(x) {
+         return object[x] == Math.max.apply(null, Object.values(object));
    });
 };
 
@@ -287,3 +286,4 @@ newObject.median = median(sortedArray)
 
 
 console.log(newObject)
+
