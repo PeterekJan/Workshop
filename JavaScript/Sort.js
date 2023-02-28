@@ -61,7 +61,7 @@ var books = [
     //////////////////////////////////////////////najdi nejvyšši číslo v poli
     var numbers = [5,15,22,-8,25,358,48,55,98,78,]
 
-var sortsArray3 = function(myNumbers){   ///univerzalni razeni cisel
+var sortsArray3 = function(myNumbers){   ///univerzalni razeni cisel a STRING!!!!!!!
     myNumbers.sort(function(a, b){
         if(a < b){
             return -1
@@ -78,7 +78,22 @@ sortsArray3(numbers)
 console.log(numbers[numbers.length-1])
 
 
-////////////////////////////srovnani cisel do rady///////////////////////////////////
+/////////////////////jiny zapis///////////////////////
+
+function sorr(any){   ///univerzalni razeni cisel
+    any.sort(function(a, b){
+        if(a < b){
+            return -1
+        } else if (b < a){
+            return 1
+        } else {
+            return 0
+        }
+        
+    })
+}
+
+////////////////////////////srovnani jen cisel do rady///////////////////////////////////
 
 var arr = [3,5,8,15,1,1.6]
 

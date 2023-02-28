@@ -31,26 +31,56 @@ contrary("HELLO!");
 function anagram(a,b){
     var word = a.split('');
     var anagram = b.split('');
-    var aa = [];
-    var bb = [];
-for(var i = 0;i < a.length;i++ ){
-    //console.log(word[i])
-    //console.log(anagram[i])
-    aa.push(word[i]);
-    bb.push(anagram[i]);
+
+word.sort(function(a, b){
+    if(a < b){
+        return -1
+    } else if (b < a){
+        return 1
+    } else {
+        return 0
     };
-    console.log(aa)
-    console.log(bb)
+    
+});
+anagram.sort(function(a, b){
+    if(a < b){
+        return -1
+    } else if (b < a){
+        return 1
+    } else {
+        return 0
+    };
+    
+});
 
-if(word[i] === anagram[i]){
-    console.log("TADAA")
+console.log(word)
+console.log(anagram)
+
+if(word.toString() === anagram.toString()){
+    return true
+    //console.log("aaaa")
 }
-
-
-
-
+//return true        
+else if(a == undefined || b == undefined){
+    return false
+    //console.log("bbb")
+}
+    // return false
+else{
+    return false
+    //console.log("NNNN")    
+//console.log(word.toString())
+}
 
 };
 anagram("silent","listen")
+
+
+// arr = [1,5,10,15,13,8,1,2]
+// arr2= ["a","c","e","a","f","d",]
+
+
+
+
 
 
