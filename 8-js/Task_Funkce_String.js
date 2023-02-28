@@ -32,6 +32,10 @@ contrary("HELLO!");
 
 console.log("--------Anagram---------")
 
+// 3. Napište funkci, která bude mít na vstupu 2 argumenty.
+// Tato funkce ověří, zda jeden string je anagram druhého.
+// Pokud ano, vrátí se ``true``, pokud ne, pak se vrátí ``false``
+
 function anagram(a,b){
     var word = a.split('');
     var anagram = b.split('');
@@ -75,6 +79,9 @@ if(word.toString() === anagram.toString()){
 };
 anagram("silent","listen")
 
+// 4. Napište funkci, která bude mít na vstupu 1 argument a zjistí, zda se jedná o palindrom.
+// Návratová hodnota bude typu ``Boolean``
+
 console.log("--------Palindrom---------")
 
 
@@ -99,6 +106,37 @@ palindrom("aba");
 
 console.log("--------iAmYourFather---------")
 
+// 5. Napiště funkci, která nám do konzole vypíše hezký komentář ve tvaru
+// (```I am your father``` je string z předané proměnné pomocí argumentu)
+
+
+console.log(`
+******************************************************
+**                                                  **
+**              12345678912345678911                **
+**                                                  **
+******************************************************`)
 
 
 
+
+console.log("--------Yoda---------")
+// 7. Napište fci ``yoda``, která bude mít na vstupu proměnnou typu ``string``.
+// Tato funkce vezme daný string, a obrátí pořadí slov.
+// Tedy na vstupu ``I am your father`` bude na výstupu ``father your am I``
+
+function yoda(a){
+
+var sign = a[a.length-1]
+if(a[a.length-1] == '.'||a[a.length-1] == ','||a[a.length-1] == '!'||a[a.length-1] == '?'){
+    var bbb = a.split(-1)
+    console.log(bbb)
+    
+
+
+
+
+
+}
+}
+yoda("Can i go to toilet!")
