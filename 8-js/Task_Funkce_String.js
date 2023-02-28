@@ -1,6 +1,7 @@
 // Napište funkci, která bude mít na vstupu 2 argumenty ``name`` a ``age``.
 // - Tato funkce na výstupu uživatele pozdraví a spočítá rok, kdy se narodil (nebereme v potaz datum, ale pouze rok)
 // -   Vítej ``name``. Narodil ses v roce ``year``.
+console.log("--------SayHello---------")
 
 function sayHallo(name, age){
     var today = new Date();
@@ -10,6 +11,7 @@ function sayHallo(name, age){
 
 sayHallo("Jan",30)
 
+console.log("--------Contrary---------")
 ///////////////////////////////////////////////////////////////////
 // Napište funkci, jejíž vstupním parametrem bude string a výstupním bude string pozpátku (tj z ``Hello!`` bude ``!olleH``)
 
@@ -27,6 +29,8 @@ function contrary(word){
     return       
 };
 contrary("HELLO!");
+
+console.log("--------Anagram---------")
 
 function anagram(a,b){
     var word = a.split('');
@@ -53,33 +57,47 @@ anagram.sort(function(a, b){
     
 });
 
-console.log(word)
-console.log(anagram)
+console.log(word);
+console.log(anagram);
 
 if(word.toString() === anagram.toString()){
     return true
-    //console.log("aaaa")
-}
-//return true        
-else if(a == undefined || b == undefined){
+//console.log("aaaa");  
+
+}else{
     return false
-    //console.log("bbb")
-}
-    // return false
-else{
-    return false
-    //console.log("NNNN")    
+};
+    
+//console.log("NNNN")    
 //console.log(word.toString())
-}
+
 
 };
 anagram("silent","listen")
 
-
-// arr = [1,5,10,15,13,8,1,2]
-// arr2= ["a","c","e","a","f","d",]
+console.log("--------Palindrom---------")
 
 
+function palindrom(any){
+    var array = any.split('');
+    var newArray = [];
+    
+
+    //console.log(array)
+for(var i = array.length -1; i >= 0; i--){
+    newArray.push(array[i])
+}
+//console.log(newArray)
+
+if(array.toString() === newArray.toString()){
+    //console.log("SAME")
+    return true
+};
+//console.log(newArray.toString())
+};
+palindrom("aba");
+
+console.log("--------iAmYourFather---------")
 
 
 
