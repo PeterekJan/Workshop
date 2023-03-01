@@ -108,15 +108,58 @@ console.log("--------iAmYourFather---------")
 
 // 5. Napiště funkci, která nám do konzole vypíše hezký komentář ve tvaru
 // (```I am your father``` je string z předané proměnné pomocí argumentu)
+//- String může být libovolně dlouhý (ale řekněme, že max délka může být 20 znaků
+//- String bude vždy vystředěn (tzn bude zarovnán na střed) (hint: počet mezer nalevo i napravo je shodný)
+
+function iAmYourFather(any){
+    var specialSign = "*";
+    var specialSign2 = " " 
+    var firstLine = [];
+    var secondLine = [];
+    var thirdLine = [];
+    var thirdLine2 = [];
+
+    var thirdLine3 = [];
+
+for(var i = 0;i < 50 + any.length ; i++){
+    firstLine.push(specialSign)
+}
+for(var i = 0;i < 46 + any.length ; i++){
+    secondLine.push(specialSign2)
+}
+
+for(var i = 0;i < 20 + any.length ; i++){
+    thirdLine2.push(specialSign2)
+
+}
+for(var i = 0;i < 26 - any.length ; i++){
+    thirdLine3.push(specialSign2)
+
+}
 
 
-console.log(`
-******************************************************
-**                                                  **
-**              12345678912345678911                **
-**                                                  **
-******************************************************`)
+var sss = firstLine.join('');
 
+secondLine.unshift(specialSign + specialSign)
+secondLine.push(specialSign + specialSign)
+var ddd = secondLine.join('');
+
+thirdLine2.unshift(specialSign + specialSign)
+thirdLine3.push(specialSign + specialSign)
+var thirdLine = thirdLine2.concat(any,thirdLine3)
+var eee = thirdLine.join('');
+
+//console.log(eee)
+
+console.log(sss)
+console.log(ddd)
+console.log(eee)
+console.log(ddd)
+console.log(sss)
+
+}
+
+iAmYourFather("aaaaaa")
 
 
 
