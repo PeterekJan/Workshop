@@ -128,15 +128,43 @@ console.log("--------Yoda---------")
 function yoda(a){
 
 var sign = a[a.length-1]
+
 if(a[a.length-1] == '.'||a[a.length-1] == ','||a[a.length-1] == '!'||a[a.length-1] == '?'){
-    var bbb = a.split(-1)
-    console.log(bbb)
-    
-
-
-
-
+    var withouSign = a.substr(0,a.length-1)
+    //var firstLower = withouSign[0].toLowerCase() + withouSign.slice(1)
+    //var sentence = firstLower.split(" ")
+    var sentence = withouSign.split(" ")
+    var yodaSentence = [];
+    for(i = sentence.length-1;i >=0; i--){
+        yodaSentence.push(sentence[i])
+    };
+   var yodaSentence2 = yodaSentence.join(" ")
+   var yodaSentence3 = yodaSentence2[0].toUpperCase() + yodaSentence2.slice(1) + sign
+   
+}else{
+    //var firstLower = a[0].toLowerCase() + a.slice(1)
+    //var sentence = firstLower.split(" ")
+    var sentence = a.split(" ")
+    var yodaSentence = [];
+    for(i = sentence.length-1;i >=0; i--){
+        yodaSentence.push(sentence[i])
+    };
+   var yodaSentence2 = yodaSentence.join(" ")
+   var yodaSentence3 = yodaSentence2[0].toUpperCase() + yodaSentence2.slice(1)
 
 }
-}
-yoda("Can i go to toilet!")
+console.log(yodaSentence3)
+
+// var ccc = yodaSentence.filter(function(any){
+//     var weTryfind = any.includes('i')
+//     return weTryfind
+// });
+
+// console.log(ccc)
+
+};
+yoda("I am your father.")
+
+
+
+
