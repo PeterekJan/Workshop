@@ -111,45 +111,59 @@ console.log("--------iAmYourFather---------")
 //- String může být libovolně dlouhý (ale řekněme, že max délka může být 20 znaků
 //- String bude vždy vystředěn (tzn bude zarovnán na střed) (hint: počet mezer nalevo i napravo je shodný)
 
-function iAmYourFather(any){
-    var specialSign = "*";
+function iAmYourFather(any,sign){
+    var specialSign = sign;
     var specialSign2 = " " 
     var firstLine = [];
+    var firstLine2 = [];
     var secondLine = [];
+    var secondLine2 = [];
+    var secondLine3 = [];
     var thirdLine = [];
-    var thirdLine2 = [];
 
-    var thirdLine3 = [];
 
-for(var i = 0;i < 50 + any.length ; i++){
+
+//firstLine
+for(var i = 0;i < 25; i++){
     firstLine.push(specialSign)
-}
-for(var i = 0;i < 46 + any.length ; i++){
+};
+
+//firstLine2
+for(var i = 0;i < any.length; i++){
+    firstLine2.push(specialSign)
+};
+
+
+
+//secondLine, thirdLine
+for(var i = 0;i < firstLine.length -2 ; i++){
     secondLine.push(specialSign2)
-}
+};
+//secondLine2,
+for(var i = 0;i < any.length ; i++){
+    secondLine2.push(specialSign2)
+};
+//secondLine3,thirdLine3
+for(var i = 0;i < firstLine.length -2 ; i++){
+    secondLine3.push(specialSign2)
+};
 
-for(var i = 0;i < 20 + any.length ; i++){
-    thirdLine2.push(specialSign2)
 
-}
-for(var i = 0;i < 26 - any.length ; i++){
-    thirdLine3.push(specialSign2)
-
-}
-
-
-var sss = firstLine.join('');
-
+// first line
+ var sss = firstLine.concat(firstLine2,firstLine)
+ var sss = sss.join('')
+ 
+// second line
 secondLine.unshift(specialSign + specialSign)
-secondLine.push(specialSign + specialSign)
-var ddd = secondLine.join('');
+secondLine3.push(specialSign + specialSign)
+var ddd = secondLine.concat(secondLine2,secondLine3)
+var ddd = ddd.join('');
 
-thirdLine2.unshift(specialSign + specialSign)
-thirdLine3.push(specialSign + specialSign)
-var thirdLine = thirdLine2.concat(any,thirdLine3)
+//third line
+thirdLine = secondLine.concat(any,secondLine3)
 var eee = thirdLine.join('');
 
-//console.log(eee)
+// //console.log(eee)
 
 console.log(sss)
 console.log(ddd)
@@ -157,9 +171,22 @@ console.log(eee)
 console.log(ddd)
 console.log(sss)
 
-}
+// console.log(`firstLine:${firstLine.length}`)
+// console.log(`firstLine2:${firstLine2.length}`)
+// console.log(`sss:${sss.length}`)
+// console.log(`secondLine:${secondLine.length}`)
+// console.log(`secondLine2:${secondLine2.length}`)
+// console.log(`secondLine3:${secondLine3.length}`)
+// console.log(`ddd:${ddd.length}`)
+// console.log(`thirdLine:${thirdLine.length}`)
+// console.log(`thirdLine2:${thirdLine2.length}`)
+// console.log(`thirdLine3:${thirdLine3.length}`)
+// console.log(`eee:${eee.length}`)
 
-iAmYourFather("aaaaaa")
+};
+
+iAmYourFather("aaaaaaaaaaaaaaaaaaaaaaaaaaaa","8")
+
 
 
 
