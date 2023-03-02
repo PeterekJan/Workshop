@@ -115,10 +115,10 @@ function iAmYourFather(any,sign){
     var specialSign = sign;
     var specialSign2 = " " 
     var firstLine = [];
-    var firstLine2 = [];
-    var secondLine = [];
-    var secondLine2 = [];
-    var secondLine3 = [];
+    var firstLineMid = [];
+    var secondLineLeft = [];
+    var secondLineMid = [];
+    var secondLineRight = [];
     var thirdLine = [];
 
 
@@ -128,64 +128,64 @@ for(var i = 0;i < 25; i++){
     firstLine.push(specialSign)
 };
 
-//firstLine2
+//firstLineMid
 for(var i = 0;i < any.length; i++){
-    firstLine2.push(specialSign)
+    firstLineMid.push(specialSign)
 };
 
 
 
-//secondLine, thirdLine
+//secondLineLeft, thirdLine
 for(var i = 0;i < firstLine.length -2 ; i++){
-    secondLine.push(specialSign2)
+    secondLineLeft.push(specialSign2)
 };
-//secondLine2,
+//secondLineMid,
 for(var i = 0;i < any.length ; i++){
-    secondLine2.push(specialSign2)
+    secondLineMid.push(specialSign2)
 };
-//secondLine3,thirdLine3
+//secondLineRight,thirdLine3
 for(var i = 0;i < firstLine.length -2 ; i++){
-    secondLine3.push(specialSign2)
+    secondLineRight.push(specialSign2)
 };
 
 
 // first line
- var sss = firstLine.concat(firstLine2,firstLine)
- var sss = sss.join('')
+ var firstLineFull = firstLine.concat(firstLineMid,firstLine)
+ var firstLineFull = firstLineFull.join('')
  
 // second line
-secondLine.unshift(specialSign + specialSign)
-secondLine3.push(specialSign + specialSign)
-var ddd = secondLine.concat(secondLine2,secondLine3)
-var ddd = ddd.join('');
+secondLineLeft.unshift(specialSign + specialSign)
+secondLineRight.push(specialSign + specialSign)
+var secondLineFull = secondLineLeft.concat(secondLineMid,secondLineRight)
+var secondLineFull = secondLineFull.join('');
 
 //third line
-thirdLine = secondLine.concat(any,secondLine3)
-var eee = thirdLine.join('');
+thirdLine = secondLineLeft.concat(any,secondLineRight)
+var thirdLineFull = thirdLine.join('');
 
-// //console.log(eee)
+//console.log(thirdLineFull)
 
-console.log(sss)
-console.log(ddd)
-console.log(eee)
-console.log(ddd)
-console.log(sss)
+console.log(firstLineFull)
+console.log(secondLineFull)
+console.log(thirdLineFull)
+console.log(secondLineFull)
+console.log(firstLineFull)
 
 // console.log(`firstLine:${firstLine.length}`)
-// console.log(`firstLine2:${firstLine2.length}`)
-// console.log(`sss:${sss.length}`)
-// console.log(`secondLine:${secondLine.length}`)
-// console.log(`secondLine2:${secondLine2.length}`)
-// console.log(`secondLine3:${secondLine3.length}`)
-// console.log(`ddd:${ddd.length}`)
+// console.log(`firstLineMid:${firstLineMid.length}`)
+// console.log(`firstLineFull:${firstLineFull.length}`)
+// console.log(`secondLineLeft:${secondLineLeft.length}`)
+// console.log(`secondLineMid:${secondLineMid.length}`)
+// console.log(`secondLineRight:${secondLineRight.length}`)
+// console.log(`secondLineFull:${secondLineFull.length}`)
 // console.log(`thirdLine:${thirdLine.length}`)
 // console.log(`thirdLine2:${thirdLine2.length}`)
 // console.log(`thirdLine3:${thirdLine3.length}`)
-// console.log(`eee:${eee.length}`)
+// console.log(`thirdLineFull:${thirdLineFull.length}`)
 
 };
 
-iAmYourFather("aaaaaaaaaaaaaaaaaaaaaaaaaaaa","8")
+iAmYourFather("I am your father","8")
 
 
 
