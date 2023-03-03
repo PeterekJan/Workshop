@@ -60,4 +60,17 @@ const getMax2 = object => {
 
   console.log(getMax2(obj3))
 
-  /////////////////////////////////Vypise vsechny nejvetši hodnoty jako pole///////////////////////////////////
+  /////////////////////////////////Vypise vsechny nejvetši hodnoty z obj///////////////////////////////////
+
+  var b = {
+    '1': 0.02,
+    '2': 0.87,
+    '3': 0.54,
+    '4': 0.09,
+    '5': 0.74
+  };
+  var highestVal = Math.max.apply(null, Object.values(b)),
+    val = Object.keys(b).find(function(a) {
+      return b[a] === highestVal;
+    });
+  console.log(val)

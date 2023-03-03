@@ -43,10 +43,10 @@ var david = new Person ("David", 1980, "Programator");
 
 class Car{
     constructor(make, model, year, color){
-        this.make = make,
-        this.model = model,
-        this.year = year,
-        this.color = color,
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.color = color
         
     }
 

@@ -175,6 +175,8 @@ var result4 = sum(newArray);
 newObject.total = result4;
 //console.log(sum(newArray));
 
+
+
 function total(number){
     var total = 0;
     for(var i = 0;i < number.length; i++ ){

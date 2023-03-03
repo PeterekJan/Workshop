@@ -5,6 +5,9 @@
 //    - ``brand``
 //    - ``model``
 //    - ``year``
+
+//3. Třída bude mít funkci s názvem ``output``, jejíž návratová hodnota bude "``brand``, ``model`` - rok výroby: ``year``"
+
 class Car{
     constructor(brand,model,year){
         this.brand = brand,
@@ -12,18 +15,14 @@ class Car{
         this.year = year
     };
 
-    output(brand,model,year){
-        return brand, model - year
+    output(){
+        //return console.log(`${this.brand}, ${this.model} - ${this.year}`)
+        return `${this.brand}, ${this.model} - ${this.year}`
     }
 };
 
+let car1 = new Car("Hundaj", "i50", 2200)
+
+console.log(car1.output())
 
 
-
-
-
-
-
-
-
-//3. Třída bude mít funkci s názvem ``output``, jejíž návratová hodnota bude "``brand``, ``model`` - rok výroby: ``year``"
