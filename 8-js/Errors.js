@@ -28,8 +28,8 @@ for(var y = 0; y < arr.length; y++){
     if( typeof arr[y] === 'string' ){
         console.log("Value in array can't be string")
   
-    }
-}
+    };
+};
 console.log(`The highest value is: ${arr[arr.length -1]}`)
 
 // //Neumim to lip udelat. Vypise nejvyšší čislo a i chybu
@@ -75,8 +75,8 @@ function highest(a,b){
         return "Value in array can't be string"
     }else if(typeof a === 'number'){
         return `The highest value is: ${arr[arr.length -1]}`
-    }
-}
+    };
+};
 
 console.log(arr)
 console.log(highest(arr))
