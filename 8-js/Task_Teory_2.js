@@ -6,19 +6,19 @@
 //    - vytvořte fci s názvem ``greetings`` a v jejím těle definujte proměnnou s názvem ``text`` a hodnotou ``Hello there!``.
 //Obsah této proměnné vypište do konzole (přímo v těle fce).
 
-function greetings(){
+function greetings() {
    var text = "Hallo there!"
 console.log(text)
  
-}
+};
 greetings('Anakin')
 
 // 3. Návratová hodnota 
 //    - funkci z předchozího bodu upravte tak aby nevypisovala do konzolze hodnotu promenné ``text``, ale aby ji vrátila
-function greetings2(){
+function greetings2() {
     var text = "Hallo there!"
     return text
-}
+};
 greetings2()
 
 // 4. Funkce bez argumentů
@@ -29,12 +29,10 @@ greetings2()
 //function functionName (Argument){
 
 //}
-function myfunc (){
+function myfunc () {
 
     var a = 10;
-
     var b = 20;
-
     var c = a + b;
 
     console.log("Total Number is : "+c+"");
@@ -43,7 +41,7 @@ myfunc();
 
 /////////////////////////////////////////
 // 5. Funkce s argumenty
-function naDruhou(number){
+function naDruhou(number) {
     //var result = number * number;
     return result = number * number;
 };
@@ -63,23 +61,23 @@ console.log(`čislo naDruhou je: ${naDruhou(2)}`);
 
 
 
-function greetings(name){
+function greetings(name) {
     console.log(`${name}, hello there!`)
     return
-}
+};
 greetings("Anakin")
 
 // 7. (optional) Anonymní funkce a jak je možné je zavolat automaticky bez jejich zavolání
 
-var deleni = function (a, b){
+var deleni = function (a, b) {
     return a / b; 
-   }
+};
    
 
    
-   var x = function(a,b,c,){
+var x = function(a,b,c,) {
     return a + b + c;
-   };
+};
    
 
 var greeting = "Hello world"; 

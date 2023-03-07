@@ -4,9 +4,11 @@ console.log("-----------Cisla---------");
 var a = 5;
 var b = 3;
 var c = 256.5;
+
 console.log(a + b);console.log(a - b);console.log(a / b);console.log(a * b);
 console.log(Number.isInteger(c));  //false
 console.log(10 % 9);  //vypocet zbytku
+
 console.log("-----------Pretypovai---------");
 // 2. Přetypování
 //    - naučte se přetypovávat číslo, které je jako string (``"10"``) na číslo (``10``)
@@ -15,6 +17,7 @@ console.log("-----------Pretypovai---------");
 var d = "10";
 var e = "15.786";
 var ee = ["aa", "bb"]
+
 console.log(Number(d));
 console.log(d + e);
 console.log("25" + "38");
@@ -72,9 +75,9 @@ console.log(j)
 var k = 'when grown up, there will be a day';
 
 var arr = k.split(" ");   
-for(var z = 0; z < arr.length; z++){
-    arr[z] = arr[z].charAt(0).toUpperCase() + arr[z].slice(1);
-};
+  for(var z = 0; z < arr.length; z++){
+      arr[z] = arr[z].charAt(0).toUpperCase() + arr[z].slice(1);
+  };
 var changedArr = arr.join(" ");
 console.log(changedArr)
 
@@ -150,18 +153,16 @@ switch (errand) {
 
 // 2. Nastudujte si, co je to ternární operátor a jak se používá
 console.log("---------------ChceckWinner-----------------")
-function checkWinner (win){
+function checkWinner (win){    
+  win ? console.log("You win!") : console.log("You lose")
+};
     
-    win ? console.log("You win!") : console.log("You lose")
-    
-    }
-    
-    checkWinner(true)
+checkWinner(true)
 
 function checkAge(age){
+  return age >= 21 ? "you get beer!" : "you get juice"
+};
 
-return age >= 21 ? "you get beer!" : "you get juice"
-}
 console.log(checkAge(17));
 
 console.log("---------------number = 5-----------------")
@@ -192,7 +193,7 @@ console.log(result);
 
 result = number === 0 ? "You have nothing" : (
     number < 10 ? "You have very little" : "You have a lot"
-)
+);
 
 console.log(result);
 
@@ -209,17 +210,16 @@ let students = ['John', 'Sara', 'Jack'];
 students.forEach(myFunction);
 
 function myFunction(item) {
-
-    console.log(item);
-}
+  console.log(item);
+};
 
 console.log(students)
 console.log("---------------aaa,bb,cc-----------------")
 /////////for//////////
 var names = ["aaa","bb", "cc" ];
-for(name2 of names){
-  console.log(name2)
-}
+  for(name2 of names){
+    console.log(name2)
+};
 console.log("---------------item1,item2,item3-----------------")
 /////////for//////////
 const arrayItems = ['item1', 'item2', 'item3'];
@@ -228,7 +228,7 @@ const copyItems = [];
 // using for loop
 for (let i = 0; i < arrayItems.length; i++) {
   copyItems.push(arrayItems[i]);
-}
+};
 
 console.log(copyItems);
 console.log("---------------Cart $-----------------")
@@ -238,10 +238,9 @@ var total = 0;
 var cart = [5,6,7,8,9];
 
 function checkOut(element, index, array){ //index vypise cislo indexu
+  total += element;
 
-    total += element;
-
-}
+};
 
 cart.forEach(checkOut);
 
@@ -269,10 +268,10 @@ var count = 0;
 console.log("Starting Loop ");
          
 while (count < 5) {
-console.log("Current Count : " + count );
-count++;
-console.log("provedeni cyklu")
-}
+  console.log("Current Count : " + count );
+  count++;
+  console.log("provedeni cyklu")
+};
 
 console.log("Loop stopped!");
 

@@ -2,16 +2,16 @@
 //    1. Vytvořte fci ```square```, která bude mít na vstupu parametr ```a``` 
 //      (číslo musí být větší než 0), vypočítá obsah čtverce a toto číslo vypište pomocí ```console.log()```
 console.log("------------square -----------")
-function square(a){
+function square(a) {
     if(a <= 0){
         console.log("Invalid value");
     }else if(typeof a === 'string'){
         console.log("Value can't be string")
     }else{
         console.log(`The result is: ${a * a}`)
-    }
+    };
    
-}
+};
 square(2)
 
 
@@ -30,16 +30,16 @@ square(2)
 //       (čísla musí být větší než 0), a která vypíše obsah obdélníku stejn ějako v předchozím bodě
 
 console.log("--------rectagle------------")
-function rectagle(i,j){
-    if(typeof i === 'string' || typeof j === 'string' ){
+function rectagle(i,j) {
+    if(typeof i === 'string' || typeof j === 'string' ) {
         console.log("Value can't be string")
-    }else if(typeof j === 'undefined'){
+    }else if(typeof j === 'undefined') {
         console.log("Value j can't be undefined")
     }else {
         console.log(`Value of rectagle's content is: ${i * j}`)
-    }
+    };
 
-}
+};
 
 rectagle(2,3)
 
@@ -51,17 +51,17 @@ rectagle(2,3)
 
 console.log("------------------highest----------------")
 
-function highest(number){
+function highest(number) {
    var max = number[0];
-   for(var i = 0; i < number.length; i++){
+   for(var i = 0; i < number.length; i++) {
         var element = number[i]
         if(element > max){
             max = element;
-        }
-    }
+        };
+    };
     return max;
-}
-var arr = [7,88,25,15,5,72,1.6,1,2,8]
+};
+    var arr = [7,88,25,15,5,72,1.6,1,2,8]
 
 
 console.log(`The highest elemenet is: ${highest(arr)}`)
@@ -80,11 +80,11 @@ function calculateGeometry(a,b){
     //a= Number(a)
     //b= Number(b)
     
-    if(!isNaN(a) && !isNaN(b)){
+    if(!isNaN(a) && !isNaN(b)) {
         console.log(`Content of rectagle is: ${(a * b).toFixed(2)}`)
-    }else if(!isNaN(a) && typeof b === 'undefined'){
+    }else if(!isNaN(a) && typeof b === 'undefined') {
         console.log(`Content of square is: ${(a * a).toFixed(2)}`); //odfiltrovani vsech stringu => typeof a,b === 'string'
-    }else if(isNaN(a) || isNaN(b)){
+    }else if(isNaN(a) || isNaN(b)) {
             console.log(`Value can't be string`);
     };
     
@@ -120,7 +120,7 @@ newObject = {
     
 };
 
-function minNum(number){
+function minNum(number) {
     var min = number[0];
     for(var i = 0; i < number.length; i++){
         var element = number[i];
@@ -138,7 +138,7 @@ var result = minNum(newArray);
 //console.log(result)
 newObject.min = result;
 
-function maxNum(number){
+function maxNum(number) {
     var max = number[0];
     for(var i = 0;i < number.length; i++){
         var element = number[i];
@@ -160,7 +160,7 @@ newObject.max = result2;
 //var result3 = Math.max.apply(null,newArray);
 //console.log(result3);
 
-function sum(number){
+function sum(number) {
     var total = 0;
     for(var i = 0; i < number.length; i++){
         total += number[i];
@@ -177,7 +177,7 @@ newObject.total = result4;
 
 
 
-function total(number){
+function total(number) {
     var total = 0;
     for(var i = 0;i < number.length; i++ ){
         total += number[i];
@@ -185,7 +185,7 @@ function total(number){
     return total;
 };
     
-function avg(number){
+function avg(number) {
     var avg = 0;
     avg = (total(number)/number.length).toFixed(2);
     avg = Number(avg);
@@ -197,7 +197,7 @@ var result5 = avg(newArray);
 newObject.avg = result5;
 
 
-function sorting(array){
+function sorting(array) {
     array.sort(function(a, b){
         if(a < b){
             return -1;
@@ -219,7 +219,7 @@ console.log(`sortedArray ${sortedArray}`)
 //console.log(`newArray ${newArray}`)
 
 
-function count(array){
+function count(array) {
     var counter = {};
     array.forEach(function(a){
         //console.log("iteration ["+a+"]")
@@ -263,7 +263,7 @@ newObject.modus = getMax(countedArr)
 
 
 
-function median(array){
+function median(array) {
     var median = 0;
     if(array.length % 2 !== 0){
         var median = array[(Math.floor((array.length)/2))]

@@ -123,45 +123,45 @@ function iAmYourFather(any,sign){
 
 
 
-//firstLine
-for(var i = 0;i < 25; i++){
-    firstLine.push(specialSign)
-};
+    //firstLine
+    for(var i = 0;i < 25; i++){
+        firstLine.push(specialSign)
+    };
 
-//firstLineMid
-for(var i = 0;i < any.length; i++){
-    firstLineMid.push(specialSign)
-};
-
-
-
-//secondLineLeft, thirdLine
-for(var i = 0;i < firstLine.length -2 ; i++){
-    secondLineLeft.push(specialSign2)
-};
-//secondLineMid,
-for(var i = 0;i < any.length ; i++){
-    secondLineMid.push(specialSign2)
-};
-//secondLineRight,thirdLine3
-for(var i = 0;i < firstLine.length -2 ; i++){
-    secondLineRight.push(specialSign2)
-};
+    //firstLineMid
+    for(var i = 0;i < any.length; i++){
+        firstLineMid.push(specialSign)
+    };
 
 
-// first line
- var firstLineFull = firstLine.concat(firstLineMid,firstLine)
- var firstLineFull = firstLineFull.join('')
- 
-// second line
-secondLineLeft.unshift(specialSign + specialSign)
-secondLineRight.push(specialSign + specialSign)
-var secondLineFull = secondLineLeft.concat(secondLineMid,secondLineRight)
-var secondLineFull = secondLineFull.join('');
 
-//third line
-thirdLine = secondLineLeft.concat(any,secondLineRight)
-var thirdLineFull = thirdLine.join('');
+    //secondLineLeft, thirdLine
+    for(var i = 0;i < firstLine.length -2 ; i++){
+        secondLineLeft.push(specialSign2)
+    };
+    //secondLineMid,
+    for(var i = 0;i < any.length ; i++){
+        secondLineMid.push(specialSign2)
+    };
+    //secondLineRight,thirdLine3
+    for(var i = 0;i < firstLine.length -2 ; i++){
+        secondLineRight.push(specialSign2)
+    };
+
+
+    // first line
+    var firstLineFull = firstLine.concat(firstLineMid,firstLine)
+    var firstLineFull = firstLineFull.join('')
+    
+    // second line
+    secondLineLeft.unshift(specialSign + specialSign)
+    secondLineRight.push(specialSign + specialSign)
+    var secondLineFull = secondLineLeft.concat(secondLineMid,secondLineRight)
+    var secondLineFull = secondLineFull.join('');
+
+    //third line
+    thirdLine = secondLineLeft.concat(any,secondLineRight)
+    var thirdLineFull = thirdLine.join('');
 
 //console.log(thirdLineFull)
 
@@ -195,34 +195,33 @@ console.log("--------Yoda---------")
 // Tato funkce vezme daný string, a obrátí pořadí slov.
 // Tedy na vstupu ``I am your father`` bude na výstupu ``father your am I``
 
-function yoda(a){
+function yoda(a) {
+    var sign = a[a.length-1]
 
-var sign = a[a.length-1]
+    if(a[a.length-1] == '.'||a[a.length-1] == ','||a[a.length-1] == '!'||a[a.length-1] == '?'){
+        var withouSign = a.substr(0,a.length-1)
+        //var firstLower = withouSign[0].toLowerCase() + withouSign.slice(1)
+        //var sentence = firstLower.split(" ")
+        var sentence = withouSign.split(" ")
+        var yodaSentence = [];
+        for(i = sentence.length-1;i >=0; i--){
+            yodaSentence.push(sentence[i])
+        };
+    var yodaSentence2 = yodaSentence.join(" ")
+    var yodaSentence3 = yodaSentence2[0].toUpperCase() + yodaSentence2.slice(1) + sign
+    
+    }else{
+        //var firstLower = a[0].toLowerCase() + a.slice(1)
+        //var sentence = firstLower.split(" ")
+        var sentence = a.split(" ")
+        var yodaSentence = [];
+        for(i = sentence.length-1;i >=0; i--){
+            yodaSentence.push(sentence[i])
+        };
+    var yodaSentence2 = yodaSentence.join(" ")
+    var yodaSentence3 = yodaSentence2[0].toUpperCase() + yodaSentence2.slice(1)
 
-if(a[a.length-1] == '.'||a[a.length-1] == ','||a[a.length-1] == '!'||a[a.length-1] == '?'){
-    var withouSign = a.substr(0,a.length-1)
-    //var firstLower = withouSign[0].toLowerCase() + withouSign.slice(1)
-    //var sentence = firstLower.split(" ")
-    var sentence = withouSign.split(" ")
-    var yodaSentence = [];
-    for(i = sentence.length-1;i >=0; i--){
-        yodaSentence.push(sentence[i])
-    };
-   var yodaSentence2 = yodaSentence.join(" ")
-   var yodaSentence3 = yodaSentence2[0].toUpperCase() + yodaSentence2.slice(1) + sign
-   
-}else{
-    //var firstLower = a[0].toLowerCase() + a.slice(1)
-    //var sentence = firstLower.split(" ")
-    var sentence = a.split(" ")
-    var yodaSentence = [];
-    for(i = sentence.length-1;i >=0; i--){
-        yodaSentence.push(sentence[i])
-    };
-   var yodaSentence2 = yodaSentence.join(" ")
-   var yodaSentence3 = yodaSentence2[0].toUpperCase() + yodaSentence2.slice(1)
-
-}
+    }
 console.log(yodaSentence3)
 
 // var ccc = yodaSentence.filter(function(any){
