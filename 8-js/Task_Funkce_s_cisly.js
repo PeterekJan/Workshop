@@ -109,17 +109,6 @@ console.log("-------------RealNumbers-------------------")
 
 var newArray = [2,2,2,3,5,18,18,5,1,5,-5,-5,-8,-5,-5,0.1,-0,5];
 
-newObject = {
-    count: newArray.length,
-    min: 0,
-    max: 0,
-    total:0,
-    avg: 0,
-    modus:[],
-    median:0
-    
-};
-
 function minNum(number) {
     var min = number[0];
     for(var i = 0; i < number.length; i++){
@@ -133,10 +122,6 @@ function minNum(number) {
     return min;
         
 };
-
-var result = minNum(newArray);
-//console.log(result)
-newObject.min = result;
 
 function maxNum(number) {
     var max = number[0];
@@ -152,11 +137,6 @@ function maxNum(number) {
     
 };
 
-var result2 = maxNum(newArray);
-//console.log(result2);
-newObject.max = result2;
-
-
 //var result3 = Math.max.apply(null,newArray);
 //console.log(result3);
 
@@ -171,11 +151,8 @@ function sum(number) {
     return total;
 };
 
-var result4 = sum(newArray);
-newObject.total = result4;
+
 //console.log(sum(newArray));
-
-
 
 function total(number) {
     var total = 0;
@@ -192,10 +169,6 @@ function avg(number) {
 
 return avg; 
 };
-
-var result5 = avg(newArray);
-newObject.avg = result5;
-
 
 function sorting(array) {
     array.sort(function(a, b){
@@ -218,7 +191,7 @@ sorting(sortedArray)
 console.log(`sortedArray ${sortedArray}`)
 //console.log(`newArray ${newArray}`)
 
-
+////////////////MODUS//////////////////////////////////
 function count(array) {
     var counter = {};
     array.forEach(function(a){
@@ -243,12 +216,6 @@ function getMax(object){
    });
 };
 
-newObject.modus = getMax(countedArr)
-
-
-
-
-
 // for (var k in counter) {
 //     if (counter[k] == maxFreq) {
 //       modes.push(k);
@@ -257,11 +224,6 @@ newObject.modus = getMax(countedArr)
 //     console.log(frequency[k],[k])
 //   };
 //   return modes;
-
-
-
-
-
 
 function median(array) {
     var median = 0;
@@ -281,11 +243,30 @@ function median(array) {
 };
 
 //median(sortedArray);
-newObject.median = median(sortedArray)
+
 //console.log(median(sortedArray))
 
 
 
 
-console.log(newObject)
+newObject = {
+    count: newArray.length,
+    min: 0,
+    max: 0,
+    total:0,
+    avg: 0,
+    modus:[],
+    median:0
+    
+};
 
+
+newObject.min = minNum(newArray)
+newObject.max = maxNum(newArray);
+newObject.total = sum(newArray);
+newObject.avg = avg(newArray);
+newObject.modus = getMax(countedArr)
+newObject.median = median(sortedArray)
+
+
+console.log(newObject)

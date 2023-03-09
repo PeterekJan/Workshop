@@ -25,22 +25,154 @@ let car1 = new Car("Hundaj", "i50", 2200)
 
 console.log(car1.output())
 
+
+console.log("------------------Class Statistics---------------")
+
 // 4. Vytvořte objekt ``Statistics``, který bude implementovat fce z bodu ``f6``. Plus jednu hlavní fci ``calculate``.
 // Ta bude mít jeden vstupní argument typu array a její návratová hodnota bude právě objekt viz ``f6``.
 // Volání potom proběhne jako ``var result = Statistics().calculate([5,9,-9,-16,4])``
 
 
 class Statistics{
-    constructor(count,min,max,total,avg,modus,median){
-        this.count = null,
-        this.min = null,
-        this.max = null,
-        this.total = null,
-        this.avg = null,
-        this.modus = null,
-        this.median = null,
 
+    array = [];
+    object = {
+        count:null,
+        min: null,
+        max: null,
+        total: null,
+        avg: null,
+        mode:[],
+        median:null
     };
+
+    constructor(array) {
+        this.array = array;
+
+    }
+    //Define Functions
+    getCount() {
+        var count = this.array.length;
+
+        return count
+    }
+
+    getMin() {
+        var min = this.array[0];
+        for(var i = 0; i < this.array.length; i++){
+            var element = this.array[i]
+            if(element < min){
+                min = element
+            };
+        };
+        return min;
+    }
+
+
+    getMax() {
+        var max = this.array[0];
+        for(var i = 0; i < this.array.length; i++){
+            var element = this.array[i];
+            if(element > max){
+                max = element
+            };
+        };
+        return max
+    }
+    
+
+    getTotal() {
+        var total = 0;
+        for(var i = 0;i < this.array.length; i++) {
+            total += this.array[i];
+        };
+        return total
+    }
+
+    getAvg() {
+        // var avg = 0;
+        // var total = 0;
+        // for(var i = 0; i < this.array.length; i++){
+        //     total += this.array[i]
+        // };
+        // avg = total/this.array.length´
+
+        var avg = this.getTotal()/this.getCount();
+
+        return avg        
+    }
+
+    getModus() {
+        var countArr = {};
+        this.array.forEach(function(a) {
+            if(countArr[a] === undefined) {
+                countArr[a] = 0;
+            }
+            countArr[a] += 1;
+        })
+                
+        var mode = Object.keys(countArr).filter(function(x) {
+            return countArr[x] == Math.max.apply(null, Object.values(countArr))
+        })
+
+        return mode;    
+
+    }
+
+    getMedian() {
+        //var sortedArr = [];
+        var median = 0;
+        var sortedArr = [];
+
+        sortedArr = this.array.sort(function(a,b){
+            return a - b;
+        })
+
+        if(this.array.length % 2 !== 0 ){    
+            median = sortedArr[Math.ceil(this.array.length/2)]
+
+            return median
+
+        }else{
+            var evenMedian = sortedArr[(sortedArr.length/2)-1]
+            var evenMedian2 = sortedArr[sortedArr.length/2]
+            median = (evenMedian + evenMedian2)/2
+
+            return median
+                
+        };
+        
+        
+    }
+
+ 
+  //Put values to Object
+  output() {
+
+    this.object.count = this.getCount();
+    this.object.min = this.getMin();
+    this.object.max = this.getMax();
+    this.object.total = this.getTotal();
+    this.object.avg = this.getAvg();
+    this.object.mode = this.getModus();
+    this.object.median = this.getMedian();
+   
+
+    return this.object;
+  }
+
+  printOutput(){
+    console.log(this.output())
+    //console.log(this.getMedian())
+  }
+
 };
 
-var result = Statistics().calculate([5,9,-9,-16,4])
+
+var result = new Statistics([8,15,-5,24,8,8,2,-1,-5,-5])
+
+result.printOutput()
+
+//console.log(result.output());
+
+//console.log(result.getMedian())

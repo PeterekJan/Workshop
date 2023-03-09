@@ -2,3 +2,9 @@
 // (arr[1]=== arr[2])???
 // (arr[i]=== arr[j])???
 
+
+
+//jak vypsat do konzole jednotlive promene z funkci? sortedArr
+
+
+
