@@ -134,9 +134,22 @@ class Statistics{
             return countArr[x] == Math.max.apply(null, Object.values(countArr))
         })
 
-        return mode;    
+        //Change array to single value if mode of arr is only one element
+        if(mode.length === 1){
+            var singleMode = 0;
 
+            mode.forEach(function(element){
+                singleMode = element
+            })                    
+            return singleMode
+
+        }else{
+
+            return mode;    
+        }
     }
+
+
 
     getMedian() {
         //var sortedArr = [];
@@ -188,7 +201,7 @@ class Statistics{
 };
 
 
-var result = new Statistics([8,15,-5,24,8,8,2,-1,-5,-5])
+var result = new Statistics([8,15,-5,24,8,8,2,2,2])
 
 result.printOutput()
 
