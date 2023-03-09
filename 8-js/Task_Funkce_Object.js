@@ -50,6 +50,25 @@ class Statistics{
         this.array = array;
 
     }
+    //Define Validation input
+
+    validate(...num) {
+        var result = true;
+
+        for(var i = 0; i < num.length; i++) {
+            var value = num[i];
+            if(typeof value === 'string') {
+                result = false;
+                break;
+            }
+
+        }
+        return result
+
+    }
+
+
+
     //Define Functions
     getCount() {
         var count = this.array.length;
