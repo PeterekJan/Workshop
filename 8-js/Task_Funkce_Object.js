@@ -48,16 +48,22 @@ class Statistics{
 
     constructor(array) {
         this.array = array;
+        //this.validate(this.array)
+        if(this.validate(this.array)){
+            console.log("OK")
+        }else{
+            console.log("Error")
+        }
 
     }
     //Define Validation input
 
-    validate(...num) {
+    validate(num) {
         var result = true;
 
         for(var i = 0; i < num.length; i++) {
             var value = num[i];
-            if(typeof value === 'string') {
+            if(isNaN(value)) {
                 result = false;
                 break;
             }
@@ -109,6 +115,9 @@ class Statistics{
     }
 
     getAvg() {
+
+        //second option
+
         // var avg = 0;
         // var total = 0;
         // for(var i = 0; i < this.array.length; i++){
@@ -138,10 +147,10 @@ class Statistics{
         if(mode.length === 1){
             var singleMode = 0;
 
-            mode.forEach(function(element){
-                singleMode = element
-            })                    
-            return singleMode
+            // mode.forEach(function(element){
+            //     singleMode = element
+            // })                    
+            return mode[0]
 
         }else{
 
@@ -163,16 +172,15 @@ class Statistics{
         if(this.array.length % 2 !== 0 ){    
             median = sortedArr[Math.ceil(this.array.length/2)]
 
-            return median
 
         }else{
             var evenMedian = sortedArr[(sortedArr.length/2)-1]
             var evenMedian2 = sortedArr[sortedArr.length/2]
-            median = (evenMedian + evenMedian2)/2
-
-            return median
-                
+            median = (evenMedian + evenMedian2)/2             
         };
+        
+        return median
+
         
         
     }
@@ -201,9 +209,12 @@ class Statistics{
 };
 
 
-var result = new Statistics([8,15,-5,24,8,8,2,2,2])
+var result = new Statistics([8,15,-5,24,8,8,'a'])
 
-result.printOutput()
+try {
+    result.printOutput()
+}
+
 
 //console.log(result.output());
 

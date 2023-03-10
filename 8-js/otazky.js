@@ -11,23 +11,23 @@
 
 
 
-// var arr = [5,-10,'a','5']
+var arr = [5,-10,'a','5']
 
-// function validate(...num) {
-//     var result = true;
+function validate(...num) {
+    var result = true;
 
-//     for(var i = 0; i < num.length; i++) {
-//         var value = num[i];
-//         if(typeof value === 'string') {
-//             result = false;
-//             break;
-//         }
+    for(var i = 0; i < num.length; i++) {
+        var value = num[i];
+        if(typeof value === 'string') {
+            result = false;
+            break;
+        }
         
-//     }
-//     return result
-// }
+    }
+    return result
+}
 
-// validate()
+validate()
 
 
 
@@ -54,18 +54,5 @@
 // }
 // console.log(sum)
 
-
-var total = 0;
-var cart = [5,6,7,8,9];
-
-function checkOut(element){ //index vypise cislo indexu
-
-    total = element;
-
-}
-
-cart.forEach(checkOut);
-
-console.log("Your total is $" +total)
 
 
