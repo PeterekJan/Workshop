@@ -50,9 +50,9 @@ class Statistics{
         this.array = array;
         //this.validate(this.array)
         if(this.validate(this.array)){
-            console.log("OK")
+            console.log(this.output())
         }else{
-            console.log("Error")
+            console.log("Error, array is with invalid input!")
         }
 
     }
@@ -209,13 +209,15 @@ class Statistics{
 };
 
 
-var result = new Statistics([8,15,-5,24,8,8,'a'])
+var result = new Statistics([8,15,-5,24,8,8])
 
-try {
-    result.printOutput()
-}
 
 
 //console.log(result.output());
+//result.printOutput()
 
 //console.log(result.getMedian())
+
+
+///////////////////////////////////////////////////////////////////////////////////
+
