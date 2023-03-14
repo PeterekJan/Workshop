@@ -92,3 +92,39 @@ console.log("Rectangle: " + stats.rectangle("6", "4"));
 console.log("Geometry (10,2): " + stats.geometry(10,2));
 console.log("Geometry (6): " + stats.geometry(6));
 console.log("Geometry (\"A\", 3): " + stats.geometry("A",3));
+
+
+
+////////////////////////////////v rámci objektu-konstruktoru zapis funkce ktera pak udela validaci dat/////////////////////////////////////////
+//task_funkce_Object.js
+/*
+constructor(array) {
+  this.array = array;
+  //this.validate(this.array)
+  if(this.validate(this.array)){
+      console.log(this.output())
+  }else{
+      console.log("Error, array is with invalid input!")
+  }
+
+}
+//Define Validation input
+
+validate(num) {
+  var result = true;
+
+  for(var i = 0; i < num.length; i++) {
+      var value = num[i];
+      if(isNaN(value)) {
+          result = false;
+          break;
+      }
+
+  }
+  return result
+
+}
+
+*/
+
+

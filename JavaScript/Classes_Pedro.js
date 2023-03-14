@@ -105,3 +105,97 @@ class Statistics {
   var st = new Stats([8,3,0,-9]);
   //console.log(st.output());
   st.printOutput();
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+
+
+class Transaction {
+  
+  ratio = 26.50;
+  
+  amount = 0;
+  currency = "";
+  type = "";
+  date = null;
+
+  constructor(amount, currency, type) {
+    
+    if(currency != "CZK" && currency != "EUR") {
+      throw "Only CZK and EUR is supported";
+    }
+    
+    if(type != "credit" && type != "debit") {
+      throw "Only credit and debit transactions are allowed";
+    }
+    
+    this.amount = amount;
+    this.currency = currency;
+    this.type = type;
+    this.date = Date();
+  }
+  
+  get inEUR() {
+    return this.currency == "CZK" ? this.amount / this.ratio : this.amount;
+  }
+  
+  get inCZK() {
+    return this.currency == "CZK" ? this.amount : this.amount * this.ratio;
+  }
+  
+  toString() {
+    return this.amount + this.currency;
+  }
+}
+
+class InternetBanking {
+  
+  transactions = [];
+  
+  constructor() {}
+  
+  get totalEur() {
+    
+    let self = this;
+    
+    return this.transactions.reduce(function(total, transaction) {
+      
+      if(transaction.type == "credit") {
+        return total + transaction.inEUR;
+      } else {
+        return total - transaction.inEUR;
+      }
+      
+    }, 0).toFixed(2);
+  }
+  
+  credit(amount, currency) {
+    this.transactions.push(new Transaction(amount, currency, "credit"));
+  }
+  
+  debit(amount, currency) {
+    this.transactions.push(new Transaction(amount, currency, "debit"));
+  }
+  
+  compareTransactions(transactionA, transactionB) {
+    
+    // read computed properties :)
+    return transactionA.inCZK == transactionB.inCZK;
+  }
+}
+
+let banking = new InternetBanking();
+
+banking.credit(10, "EUR");
+banking.credit(1, "EUR");
+banking.debit(5, "CZK");
+
+console.log(banking.transactions);
+console.log("Total in EUR: " + banking.totalEur);
+
+let transactionA = new Transaction(5, "EUR", "credit");
+let transactionB = new Transaction(132.5, "CZK", "credit");
+let transactionC = new Transaction(5, "CZK", "credit");
+
+console.log("Is equal: " + transactionA.toString() + " == "+ transactionB.toString() +": " + banking.compareTransactions(transactionA, transactionB));
+console.log("Is equal: " + transactionA.toString() + " == "+ transactionC.toString() +": " + banking.compareTransactions(transactionA, transactionC));

@@ -1,63 +1,94 @@
-class Chair {
-    constructor(color, seatHeight, recliningAngle, backSupport, headSupport, padding, armRests, seatSize, isHeightAdjustable, isMovable){
-        //Defaults which can be changed by the subclass class.
-        this.color = color;
-        this.seatHeight = seatHeight;
-        this.recliningAngle = recliningAngle;
-        this.backSupport = true;
-        this.headSupport = false;
-        this.padding = "3 inch";
-        this.armRests = true;
-        this.seatSize = "16 inch";
-        this.isHeightAdjustable = false;
-        this.isMovable = false;
-        this.type = "Chair";
-    }
+class InternetBanking {
+
+    ratio = 26.50
+    accounBalance = null;
+    all_payment = [];
+    debit_payment = [];
+    credit_payment = [];
+    comparison = null;
     
-    adjustableHeight() {};
-    adjustAngle(){};
-    moveChair(){};    
+    
+    constructor(count,currency) {
+
+        //this.timestamp = timestamp;
+        this.count = count;
+        this.currency = currency;
+
+
+    }
+
+    toCZK (){
+        
+    }
+
+    creditPayment(count,currency){
+        if(currency == 'CZK'){
+            this.all_payment.push(count);
+            this.credit_payment.push(count);
+        }else if(currency == 'EU'){
+            this.all_payment.push(count*this.ratio);
+            this.credit_payment.push(count*this.ratio);
+        };
+    }
+    debitPayment(count,currency){
+        if(currency == 'CZK'){
+            this.all_payment.push(-count);
+            this.debit_payment.push(-count);
+        }else if(currency == 'EU'){
+            this.all_payment.push(-count*this.ratio);
+            this.debit_payment.push(-count*this.ratio);
+        };
+    }
+
+    countAll(){
+        var suma = 0;
+        for(var i = 0; i < this.all_payment.length; i++){
+            suma += this.all_payment[i] 
+        }
+        this.accounBalance = suma
+
+    }
+
+    // comparison(count,currency,count2,currency2){
+    //     var count = 0
+    //     var count2 = 0
+        
+    //     if(currency == "EU" ){
+    //         count = count* this.ratio
+    //     }
+    //     if(currency2 == "EU" ){
+    //         count2 = count2 * this.ratio
+    //     };
+
+    //     if(count === count2){
+    //         return true
+    //     }else{
+    //         return false
+    //     }
+        
+
+
+
+
+   // }
+
+    
+
+    
 }
 
-const newChair = new Chair();
-
-newChair;
 
 
-class OfficeChair extends Chair{
-    constructor(color, isHeightAdjustable, seatHeight, recliningAngle){
-        super();
-        this.type = "Office Chair";
-        this.color = color;
-        this.isHeightAdjustable = isHeightAdjustable;
-        this.seatHeight = seatHeight;
-        this.recliningAngle = recliningAngle;
-        this.isMovable = true;
-    }
-    
-    adjustableHeight(height){
-        if(height > this.seatHeight){
-            console.log(`Chair height changed to ${height}`);        
-        } else {
-            console.log(`Height cannot be decreased more than the seat height ${this.seatHeight}`);
-        }
-    }
-    
-    adjustAngle(angle){
-        if(angle >= this.recliningAngle){
-            console.log(`Chair angle changed to ${angle}`);        
-        } else {
-            console.log(`Angle cannot be decreased more than the min reclining angle ${this.recliningAngle}`);
-        }
-    }
-    
-    moveChair(x,y){
-        console.log(`Chair moved to co-ordinates = (${x}, ${y})`);
-    }
-}
 
-const newOfficeChair = new OfficeChair("Red", true, 30, 30);
+var result = new InternetBanking()
 
-console.log(newOfficeChair.adjustableHeight(31));
-console.log(newOfficeChair.adjustAngle(40));
-console.log(newOfficeChair.moveChair(10,20));
+result.creditPayment(20,"CZK")
+result.creditPayment(20,"EU")
+result.debitPayment(15,"CZK")
+result.debitPayment(20,"EU")
+
+//result.comparison(20,"EU",20,"EU")
+
+
+result.countAll()
+console.log(result)
