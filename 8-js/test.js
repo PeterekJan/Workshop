@@ -1,92 +1,65 @@
-class Transaction {
-    
-    ratio = 26.50
-
-    constructor(count,currency){
-        //podminky
-
-
-    this.count = count;
-    this.currency = currency;
-
-
-    }
-
-
-
-    
-
-
-    }
-
-
-
-
-
 class InternetBanking {
-
+    exchangeRate = 26.50 
+    transactions = [];
    
-    accounBalance = null;
-    all_payment = [];
-    debit_payment = [];
-    credit_payment = [];
-    comparison = null;
+    accountBalance = {
+        CZK: 0
+    }; 
     
-    
-    constructor(count,currency) {
+    constructor() {
 
-        //this.timestamp = timestamp;
-        this.count = count;
-        this.currency = currency;
+    };
 
 
-    }
-
-    toCZK (){
-        
-    }
-
-    creditPayment(count,currency){
-        if(currency == 'CZK'){
-            this.all_payment.push(count);
-            this.credit_payment.push(count);
-        }else if(currency == 'EU'){
-            this.all_payment.push(count*this.ratio);
-            this.credit_payment.push(count*this.ratio);
+    creditPayment(timestamp, amount, currency) {
+        if(currency === 'EUR') {
+            amount = amount * this.exchangeRate
         };
-    }
-    debitPayment(count,currency){
-        if(currency == 'CZK'){
-            this.all_payment.push(-count);
-            this.debit_payment.push(-count);
-        }else if(currency == 'EU'){
-            this.all_payment.push(-count*this.ratio);
-            this.debit_payment.push(-count*this.ratio);
-        };
-    }
 
-    countAll(){
-        var suma = 0;
-        for(var i = 0; i < this.all_payment.length; i++){
-            suma += this.all_payment[i] 
+        this.transactions.push({
+            ID: this.generateID(),
+            type: "Credit",
+            timestamp,
+            amount,
+            currency
+        })
+        this.accountBalance["CZK"] += amount
+
+    }
+    debitPayment(timestamp, amount, currency) {
+        if(currency === 'EUR') {
+            amount = amount * this.exchangeRate
         }
-        this.accounBalance = suma
 
+        this.transactions.push({
+            ID: this.generateID(),
+            type: "Debit",
+            timestamp,
+            amount,
+            currency
+        })        
+        this.accountBalance["CZK"] -= amount
     }
+    generateID(){
+        var uniqueID = Math.floor(Math.random() * Date.now()).toString(16)
+        return uniqueID
+    }
+    compareAmounts(anount, currency, amount2, currency2){
+        
+
+    } 
 
 
 }
 
 
-var result = new InternetBanking()
+let banking = new InternetBanking();
 
-result.creditPayment(20,"CZK")
-result.creditPayment(20,"EU")
-result.debitPayment(15,"CZK")
-result.debitPayment(20,"EU")
+banking.creditPayment("22.12.2005", 10, "EUR");
+banking.creditPayment('5.5.2555', 0, "CZK");
+banking.debitPayment('4.4.2045', 20, "EUR");
+banking.debitPayment('1.1.2058', 5, "CZK");
 
-//result.comparison(20,"EU",20,"EU")
+console.log(banking);
 
 
-result.countAll()
-console.log(result)
