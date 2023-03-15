@@ -311,26 +311,36 @@ class InternetBanking {
 
     }
 
-    comparison(count,currency,count2,currency2){
-        var count = 0
-        var count2 = 0
+    // comparison(count,currency,count2,currency2){
+    //     var count = 0
+    //     var count2 = 0
         
-        if(currency == "EU" ){
-            count = count* this.ratio
-        }
-        if(currency2 == "EU" ){
-            count2 = count2 * this.ratio
-        };
+    //     if(currency == "EU" ){
+    //         count = count* this.ratio
+    //     }
+    //     if(currency2 == "EU" ){
+    //         count2 = count2 * this.ratio
+    //     };
 
-        if(count === count2){
-            return true
-        }else{
-            return false
-        }
+    //     if(count === count2){
+    //         return true
+    //     }else{
+    //         return false
+    //     }
         
-    }
-  
+
+
+
+
+   // }
+
+    
+
+    
 }
+
+
+
 
 var result = new InternetBanking()
 
@@ -339,7 +349,8 @@ result.creditPayment(20,"EU")
 result.debitPayment(15,"CZK")
 result.debitPayment(20,"EU")
 
-result.comparison(20,"EU",20,"EU")
+//result.comparison(20,"EU",20,"EU")
+
 
 result.countAll()
 console.log(result)

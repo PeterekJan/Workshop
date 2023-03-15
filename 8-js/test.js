@@ -1,6 +1,31 @@
+class Transaction {
+    
+    ratio = 26.50
+
+    constructor(count,currency){
+        //podminky
+
+
+    this.count = count;
+    this.currency = currency;
+
+
+    }
+
+
+
+    
+
+
+    }
+
+
+
+
+
 class InternetBanking {
 
-    ratio = 26.50
+   
     accounBalance = null;
     all_payment = [];
     debit_payment = [];
@@ -49,35 +74,8 @@ class InternetBanking {
 
     }
 
-    // comparison(count,currency,count2,currency2){
-    //     var count = 0
-    //     var count2 = 0
-        
-    //     if(currency == "EU" ){
-    //         count = count* this.ratio
-    //     }
-    //     if(currency2 == "EU" ){
-    //         count2 = count2 * this.ratio
-    //     };
 
-    //     if(count === count2){
-    //         return true
-    //     }else{
-    //         return false
-    //     }
-        
-
-
-
-
-   // }
-
-    
-
-    
 }
-
-
 
 
 var result = new InternetBanking()

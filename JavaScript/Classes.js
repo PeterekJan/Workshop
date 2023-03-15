@@ -160,14 +160,6 @@ console.log(newOfficeChair.moveChair(10,20));
 
 //////////////////////////////////////////////////////////////////////
 
-class Rectangle {
-    constructor(){
-        console.log("Rectangle is being created")
-    }
-}
 
-
-
-let myRectangle1 =
 
 
