@@ -108,9 +108,6 @@ class Statistics {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  
-
-
-
 class Transaction {
   
   ratio = 26.50;
@@ -120,7 +117,6 @@ class Transaction {
   currency = "";
   type = "";
   date = null;
-  comparable = {};
 
   constructor(amount, currency, type) {
     
@@ -140,11 +136,11 @@ class Transaction {
   }
   
   // computed properties - not visible in console :-)
-  get inEUR() {
+  get EUR() {
     return this.currency == "CZK" ? this.amount / this.ratio : this.amount;
   }
   
-  get inCZK() {
+  get CZK() {
     return this.currency == "CZK" ? this.amount : this.amount * this.ratio;
   }
   
@@ -167,41 +163,51 @@ class Transaction {
 
 class InternetBanking {
   
+  owner = "";
   transactions = [];
   
-  constructor() {}
+  constructor(owner) {
+    this.owner = owner;
+  }
   
   get totalEur() {
-    
-    let self = this;
-    
+    return this.getTotal("EUR");
+  }
+  
+  get totalCzk() {
+    return this.getTotal("CZK");
+  }
+  
+  getTotal(currency) {
     return this.transactions.reduce(function(total, transaction) {
       
       if(transaction.type == "credit") {
-        return total + transaction.inEUR;
+        return total + transaction[currency];
       } else {
-        return total - transaction.inEUR;
+        return total - transaction[currency];
       }
       
     }, 0).toFixed(2);
   }
   
+  pushTransaction(transaction) {
+    
+    this.transactions.push(transaction);
+  }
+  
   credit(amount, currency) {
-    this.transactions.push(new Transaction(amount, currency, "credit"));
+    
+    this.pushTransaction(new Transaction(amount, currency, "credit"));
   }
   
   debit(amount, currency) {
-    this.transactions.push(new Transaction(amount, currency, "debit"));
-  }
-  
-  pushTransaction(transaction) {
-    this.transactions.push(transaction);
+    this.pushTransaction(new Transaction(amount, currency, "debit"));
   }
   
   compareTransactions(transactionA, transactionB) {
     
     // read computed properties :)
-    return transactionA.inCZK == transactionB.inCZK
+    return transactionA.CZK == transactionB.CZK
   }
   
   compareTransactionsbyID(idA, idB) {
@@ -214,16 +220,20 @@ class InternetBanking {
       return item.id == idB;
     });
     
+    // transakce musí být právě 1 - nemůže být 0 (žádnou nenašel) a nemůže jich být ani více (v reálněm světě se asi nestane mít duplicitní ID)
     if(transactionA.length != 1 || transactionB.length != 1) {
       throw "Error while looking for transactions by ID"
     }
     
     // transactions are arrays, take first index
+    // return transactionA[0].inCZK == transactionB[0].inCZK; - ale nechci mít ten stejný kód na více místech
     return this.compareTransactions(transactionA[0], transactionB[0]);
   }
 }
 
-let banking = new InternetBanking();
+/* *************************************** */
+
+let banking = new InternetBanking("Jan Peterek");
 
 banking.credit(10, "EUR");
 banking.credit(1, "EUR");
@@ -231,6 +241,7 @@ banking.debit(5, "CZK");
 
 //console.log(banking.transactions);
 console.log("Total in EUR: " + banking.totalEur);
+console.log("Total in CZK: " + banking.totalCzk);
 
 let transactionA = new Transaction(5, "EUR", "credit");
 let transactionB = new Transaction(132.5, "CZK", "credit");
@@ -238,19 +249,18 @@ let transactionC = new Transaction(5, "CZK", "credit");
 
 console.log("============== COMPARE TRANSACTIONS ==============");
 
-console.log("Is equal: " + transactionA.toString() + " == "+ transactionB.toString() +": " + banking.compareTransactions(transactionA, transactionB));
-console.log("Is equal: " + transactionA.toString() + " == "+ transactionC.toString() +": " + banking.compareTransactions(transactionA, transactionC));
+//console.log("Is equal: " + transactionA.toString() + " == "+ transactionB.toString() +": " + banking.compareTransactions(transactionA, transactionB));
+//console.log("Is equal: " + transactionA.toString() + " == "+ transactionC.toString() +": " + banking.compareTransactions(transactionA, transactionC));
 
 
 console.log("============== COMPARE TRANSACTIONS ==============");
-
 banking.pushTransaction(transactionA);
 banking.pushTransaction(transactionB);
 banking.pushTransaction(transactionC);
 
-console.log(banking.transactions);
+//console.log(banking.transactions);
 
 // Tu to je trochu komplikované, jelikož ty IDčka se pokaždé vygenerují nová, takže se na ně musím odkazovat před již vytvořené instance
 
-console.log("Is equal: #" + transactionA.id + " (" + transactionA.toString() + ") == #" + transactionB.id + " (" + transactionB.toString() + "): " + banking.compareTransactionsbyID(transactionA.id, transactionB.id));
-console.log("Is equal: #" + transactionA.id + " (" + transactionA.toString() + ") == #" + transactionC.id + " (" + transactionC.toString() + "): " + banking.compareTransactionsbyID(transactionA.id, transactionC.id));
+//console.log("Is equal: #" + transactionA.id + " (" + transactionA.toString() + ") == #" + transactionB.id + " (" + transactionB.toString() + "): " + banking.compareTransactionsbyID(transactionA.id, transactionB.id));
+//console.log("Is equal: #" + transactionA.id + " (" + transactionA.toString() + ") == #" + transactionC.id + " (" + transactionC.toString() + "): " + banking.compareTransactionsbyID(transactionA.id, transactionC.id));
