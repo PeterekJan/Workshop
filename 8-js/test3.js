@@ -97,12 +97,34 @@ class InternetBanking {
         });
       }
     }
+
+    printCreditOperations() {
+      console.log('Kreditní operace:');
+      this.transactions.filter(function(transaction) {
+          return transaction.type === 'credit';
+      }).forEach(function(transaction) {
+          console.log(transaction.timestamp + ' - ' + transaction.amount + ' ' + transaction.currency);
+      });
+    }
+
+
+
+
+
+
+
     
     // Použití objektu InternetBanking
     const bank = new InternetBanking();
     
     // Přidání několika transakcí
     bank.addCreditOperation('2022-01-01 10:00:00', 1000, 'CZK');
-    bank.addCreditOperation('2022-01-02 11:00:00', 10, 'EUR');
+    bank.addCreditOperation('2022-01-02 11:00:00', 1000, 'EUR');
+
+    bank.printAllTransactions()
+    bank.printBalance()
+    bank.printCreditOperations()
+
+    bank.compareAmounts()
   
-    console.log(bank)
+    //console.log(bank)

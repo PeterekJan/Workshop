@@ -1,0 +1,1 @@
+//jde sahnout si primo na transaction.type --> 'credit'? kdyz je to v nekolik obj v poli? 
