@@ -324,7 +324,6 @@ class InternetBanking {
     }
 
     returnTransactionId() {
-        
         var allTransactionIDs = this.transactions.map(function(transaction) {
             return transaction.ID
         });
@@ -332,7 +331,6 @@ class InternetBanking {
     }
 
     compareByID(array) {
-        
         array = this.returnTransactionId();
         var isDuplicate = array.some(function(item, index) { //some return true, if is same index
             return index !== array.indexOf(item)
