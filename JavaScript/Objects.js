@@ -192,4 +192,7 @@ let bookInfo = function(book){
 let result = bookInfo(firstBook)
 console.log(result)
 console.log(result.basicInfo)
-console.log(result.publishing)
+console.log(result.publishing)´
+
+
+

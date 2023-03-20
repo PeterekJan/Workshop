@@ -265,7 +265,8 @@ class InternetBanking {
     transactions = [];
    
     accountBalance = {
-        CZK: 0
+        inCZK: 0,
+        inEUR: 0
     };     
     constructor() {
 
@@ -284,7 +285,7 @@ class InternetBanking {
         if(currency == "EUR"){
             value = value * this.exchangeRate
         }
-        this.accountBalance["CZK"] += value
+        this.accountBalance["inCZK"] += value
 
     }
     debitPayment(timestamp, amount, currency) {
@@ -299,91 +300,111 @@ class InternetBanking {
         if(currency == "EUR"){
             value = value * this.exchangeRate;
         }
-        this.accountBalance["CZK"] -= value;
+        this.accountBalance["inCZK"] -= value;
 
 
     }
 
-    generateID(){
+    generateID() {
         var uniqueID = Math.floor(Math.random() * Date.now()).toString(16);
         return uniqueID
     }
-    compareAmounts(amount, currency, amount2, currency2){
-        if(currency == 'CZK' && currency2 == 'EUR'){
+
+    accountBalanceInEur() {
+        var value = this.accountBalance.inCZK / this.exchangeRate;
+        this.accountBalance["inEUR"] = value;
+        return value
+    }
+
+    compareAmounts(amount, currency, amount2, currency2) {
+        if(currency == 'CZK' && currency2 == 'EUR') {
             amount2 = amount2 * this.exchangeRate;
         }
-        if(currency == 'EUR' && currency2 == 'CZK'){
+        if(currency == 'EUR' && currency2 == 'CZK') {
             amount = amount * this.exchangeRate;
         }
         return amount == amount2        
 
     }
-    printAllTransaction(){
+
+    returnTransactionId() {
+        
+        var allTransactionIDs = this.transactions.map(function(transaction) {
+            return transaction.ID
+        });
+        return allTransactionIDs
+    }
+
+    compareByID(array) {
+        
+        array = this.returnTransactionId();
+        var isDuplicate = array.some((item, index) => index !== array.indexOf(item));
+
+        if (!isDuplicate) {
+            return "Array doesn't contain duplicates.";
+        } else {
+            return "Array contains duplicates.";
+        };
+    }
+
+    printcompareByID() {
+        console.log("Compare transaction by ID: ");
+        console.log(this.compareByID());
+    }
+
+    printAllTransaction() {
         console.log("List of all transactions:");
         console.log(this.transactions);
     }
 
-    printAllCreditTransaction(){
+    printAllCreditTransaction() {
         console.log("List of all credit transactions:");
-        this.transactions.filter(transaction => transaction.type === "Credit").forEach(transaction => {
-            console.log(`${transaction.timestamp} - ${transaction.amount} ${transaction.currency}`);
-        });
-
-
-        this.transactions.forEach(function(transaction){             //vybere hodnoty, ale nevrati je
-            if(transaction.type == "Credit"){
-                console.log(`${transaction.timestamp} - ${transaction.amount} ${transaction.currency}`)
-            }
-        })
-      
-    }
-    getCreditTransactions(){ //vrati hodnoty, ale nevytiskne je. Lepsi pro dalsi zpracovani dat
-        return this.transaction.filter(function(transaction){
-            return transaction.type == "Credit"
+        this.transactions.forEach(function(transaction) {             //vybere hodnoty, ale nevrati je
+            if(transaction.type == "Credit") {
+                console.log(`${transaction.timestamp} - ${transaction.amount} ${transaction.currency}`);
+            };
         })
     }
 
-    printCreditTransactions(){
-        console.log(this.getCreditTransactions());
-    }
-
-    printAllDebitTransaction(){
+    printAllDebitTransaction() {
         console.log("List of all debit transactions:");
         this.transactions.filter(transaction => transaction.type === "Debit").forEach(transaction => {
           console.log(`${transaction.timestamp} - ${transaction.amount} ${transaction.currency}`);
         });
-      
     }
 
-    printAccountBalance(){
+    printAccountBalance() {
         console.log("Account balance:");
         console.log(this.accountBalance);
 
     }
     
-
-
 }
-
-
-
 let banking = new InternetBanking();
 
-banking.creditPayment("22.12.2005", 10, "EUR");
-banking.creditPayment('5.5.2555', 10, "CZK");
-banking.debitPayment('4.4.2045', 10, "EUR");
+
+
+
+banking.creditPayment("22.12.2005", 12, "EUR");
+banking.creditPayment('5.5.2555', 1500, "CZK");
+banking.debitPayment('4.4.2045', 20, "EUR");
 banking.debitPayment('1.1.2058', 5, "CZK");
+banking.debitPayment('1.1.2058', 0, "CZK");
 
 
-banking.compareAmounts(10,"EUR", 10, "EUR");
-//console.log(banking.compareAmounts(10,"EUR", 10, "EUR"))
+
+//banking.compareAmounts(10,"EUR", 50, "CZK")
+
+banking.accountBalanceInEur()
+banking.compareByID()
 
 banking.printAllTransaction()
 banking.printAccountBalance()
-//banking.printAllCreditTransaction()
-//banking.printAllDebitTransaction()
+banking.printAllCreditTransaction()
+banking.printAllDebitTransaction()
+banking.printcompareByID()
 
-
+console.log(banking.compareAmounts(10,"EUR", 2650, "CZK"))
 
 
 //console.log(banking);
