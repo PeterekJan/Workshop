@@ -334,7 +334,9 @@ class InternetBanking {
     compareByID(array) {
         
         array = this.returnTransactionId();
-        var isDuplicate = array.some((item, index) => index !== array.indexOf(item));
+        var isDuplicate = array.some(function(item, index) { //some return true, if is same index
+            return index !== array.indexOf(item)
+        });
 
         if (!isDuplicate) {
             return "Transaction IDs doesn't contain duplicates.";
