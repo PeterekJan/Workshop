@@ -366,9 +366,11 @@ class InternetBanking {
 
     printAllDebitTransaction() {
         console.log("List of all debit transactions:");
-        this.transactions.filter(transaction => transaction.type === "Debit").forEach(transaction => {
-          console.log(`${transaction.timestamp} - ${transaction.amount} ${transaction.currency}`);
-        });
+        this.transactions.forEach(function(transaction) {
+            if(transaction.type === "Debit") {
+                console.log(`${transaction.timestamp} - ${transaction.amount} ${transaction.currency}`);
+            };
+        })
     }
 
     printAccountBalance() {
