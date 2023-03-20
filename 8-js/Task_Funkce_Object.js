@@ -269,7 +269,6 @@ class InternetBanking {
         inEUR: 0
     };     
     constructor() {
-
     };
 
 
@@ -286,8 +285,8 @@ class InternetBanking {
             value = value * this.exchangeRate
         }
         this.accountBalance["inCZK"] += value
-
     }
+
     debitPayment(timestamp, amount, currency) {
         let value = amount
         this.transactions.push({
@@ -301,8 +300,6 @@ class InternetBanking {
             value = value * this.exchangeRate;
         }
         this.accountBalance["inCZK"] -= value;
-
-
     }
 
     generateID() {
@@ -324,7 +321,6 @@ class InternetBanking {
             amount = amount * this.exchangeRate;
         }
         return amount == amount2        
-
     }
 
     returnTransactionId() {
@@ -341,9 +337,9 @@ class InternetBanking {
         var isDuplicate = array.some((item, index) => index !== array.indexOf(item));
 
         if (!isDuplicate) {
-            return "Array doesn't contain duplicates.";
+            return "Transaction IDs doesn't contain duplicates.";
         } else {
-            return "Array contains duplicates.";
+            return "Transaction IDs contains duplicates.";
         };
     }
 
@@ -376,13 +372,11 @@ class InternetBanking {
     printAccountBalance() {
         console.log("Account balance:");
         console.log(this.accountBalance);
-
     }
     
 }
+
 let banking = new InternetBanking();
-
-
 
 
 banking.creditPayment("22.12.2005", 12, "EUR");
@@ -390,8 +384,6 @@ banking.creditPayment('5.5.2555', 1500, "CZK");
 banking.debitPayment('4.4.2045', 20, "EUR");
 banking.debitPayment('1.1.2058', 5, "CZK");
 banking.debitPayment('1.1.2058', 0, "CZK");
-
-
 
 //banking.compareAmounts(10,"EUR", 50, "CZK")
 
@@ -404,7 +396,7 @@ banking.printAllCreditTransaction()
 banking.printAllDebitTransaction()
 banking.printcompareByID()
 
-console.log(banking.compareAmounts(10,"EUR", 2650, "CZK"))
+console.log(`Compare two amounts: ${banking.compareAmounts(10,"EUR", 265, "CZK")}`)
 
 
 //console.log(banking);
