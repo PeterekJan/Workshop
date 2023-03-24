@@ -330,7 +330,7 @@ class InternetBanking {
         return allTransactionIDs
     }
 
-    compareByID(array) {
+    isDuplicateByID(array) {
         array = this.returnTransactionId();
         var isDuplicate = array.some(function(item, index) { //some return true, if is same index
             return index !== array.indexOf(item)
@@ -343,9 +343,9 @@ class InternetBanking {
         };
     }
 
-    printcompareByID() {
-        console.log("Compare transaction by ID: ");
-        console.log(this.compareByID());
+    printIsDuplicateByID() {
+        console.log("if transactions is duplicate by ID: ");
+        console.log(this.isDuplicateByID());
     }
 
     printAllTransaction() {
@@ -362,6 +362,13 @@ class InternetBanking {
         })
     }
 
+    printCreditOperations() {
+        console.log('Kreditní operace:');
+        this.transactions.filter(transaction => transaction.type === 'credit').forEach(transaction => {
+          console.log(`${transaction.timestamp} - ${transaction.amount} ${transaction.currency}`);
+        });
+      }
+
     printAllDebitTransaction() {
         console.log("List of all debit transactions:");
         this.transactions.forEach(function(transaction) {
@@ -371,6 +378,11 @@ class InternetBanking {
         })
     }
 
+    printCompareAmounts(amount, currency, amount2, currency2){
+        console.log("Compare two payment: ")
+        console.log(` ${this.compareAmounts(amount, currency, amount2, currency2)}`)
+    }
+    
     printAccountBalance() {
         console.log("Account balance:");
         console.log(this.accountBalance);
@@ -390,15 +402,20 @@ banking.debitPayment('1.1.2058', 0, "CZK");
 //banking.compareAmounts(10,"EUR", 50, "CZK")
 
 banking.accountBalanceInEur()
-banking.compareByID()
+banking.isDuplicateByID()
 
 banking.printAllTransaction()
 banking.printAccountBalance()
 banking.printAllCreditTransaction()
 banking.printAllDebitTransaction()
-banking.printcompareByID()
+banking.printIsDuplicateByID()
 
-console.log(`Compare two amounts: ${banking.compareAmounts(10,"EUR", 265, "CZK")}`)
+    
+    
+banking.printCompareAmounts()
+banking.compareAmounts(10,"EUR", 265, "CZK")
+
+//console.log(`Compare two amounts: ${banking.compareAmounts(10,"EUR", 265, "CZK")}`)
 
 
 //console.log(banking);
