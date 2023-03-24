@@ -131,7 +131,7 @@ class InternetBanking {
              
         let firstTransaction = transactions[0];
         let allTransactionsAreEqual = transactions.every(function(t){
-            return this.compareTransactions(t, firstTransaction)
+            return this.compareTransactions(t, firstTransaction) //Pokud není nalezena žádná transakce se zadaným ID, tak proměnná t si zachová hodnotu null. Na konci funkce se pak zkontroluje, zda proměnná t má hodnotu různou od null. Pokud ano, znamená to, že byla nalezena transakce se zadaným ID
         },this); //pri šipkove metodě neni potřeba mit toto this
       
         if (allTransactionsAreEqual) {
