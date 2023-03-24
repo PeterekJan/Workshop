@@ -158,8 +158,6 @@ class InternetBanking {
         console.log(this.transactions);
     }
 
-
-
 }
 
 let banking = new InternetBanking();
@@ -189,4 +187,3 @@ banking.compareByIds(3,4)
 
 //console.log(banking.totalEur)
 
-//banking.compareByIds(79c3110049, e000980018, 2afe673d2)
