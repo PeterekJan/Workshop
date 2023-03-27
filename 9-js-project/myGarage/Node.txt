@@ -1,0 +1,6 @@
+1) po vytvoreni ukolove složky zadat do konzole npm init
+2) instal npm install express       //mozna npm install express --save
+2) instal npm install body-parser
+3)dopsat "type": "module",
+4)dopsat "start": "node index.js",
+5)zkontrolovat kde se nachazi "description": "",
