@@ -1,3 +1,5 @@
+import { isValid, validateNumber } from "./Helpers.js";
+
 export class Car {
 
     id;
@@ -8,9 +10,10 @@ export class Car {
 
     price;
 
-
-
 	constructor(id, brand, model, year, price) {
+
+        isValid(id, brand, model, year, price);
+        validateNumber(id, model, year, price)
 	
         this.id = id;
 
