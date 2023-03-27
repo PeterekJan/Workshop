@@ -223,41 +223,7 @@ console.log("(-----------------InternetBanking------------------)")
 ///////////////////////////////////////////////////////////////////////////////////
 
 
-// class InternetBanking{
-//     number = 0;
-//     newObject = {
-//         Currency: null
 
-
-//     };
-//     constructor(number){
-//        this.number = number
-//     }
-
-//     kredit(){
-//         var array = [];
-//         array.push(this.number)
-
-        
-
-//         return array
-
-//     }
-
-//     output(){
-//         this.newObject.Currency = this.kredit()
-
-//         return this.newObject
-//     }
-//     printOutput(){
-//         console.log(this.output())
-//     }
-
-    
-// }
-// var result2 = new InternetBanking (25)
-
-// result2.printOutput()
 
 
 class InternetBanking {
