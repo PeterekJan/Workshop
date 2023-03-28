@@ -49,7 +49,7 @@ app.post("/buy-car", function(req, res) {
 
     try {
 
-        garage.buyCar(new Car(body.id, body.brand, bodel.model, body.year, body.price));
+        garage.buyCar(new Car(garage.getNewCarId(), body.brand, body.model, body.year, body.price));
 
         res.send({
             cars: garage.cars,
@@ -59,11 +59,9 @@ app.post("/buy-car", function(req, res) {
     } catch (e) {
 
         res.status(400).send(error(400, e));
+        
     }
-
-
-})
-
+});
 
 app.listen(3000, function(){  //naslouchaní na portu 3000, vypsani do konzole pro usnadněni
     console.log("Example app server listening on localhost port 3000. Try http://localhost:3000");

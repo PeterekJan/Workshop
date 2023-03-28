@@ -4,3 +4,12 @@
 3)dopsat "type": "module",
 4)dopsat "start": "node index.js",
 5)zkontrolovat kde se nachazi "description": "",
+
+
+
+
+
+
+
+
+//načitani a ukladani do souboru

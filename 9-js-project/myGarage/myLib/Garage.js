@@ -5,6 +5,8 @@ export class Garage {
     owner;
     cars = [];
 
+    #currentId = 1; //privatni atribut
+
     constructor(owner) {
 
 
@@ -30,6 +32,12 @@ export class Garage {
         }
 
         this.cars.push(car);
+        this.#currentId++;
+    }
+
+    getNewCarId() {
+
+        return this.#currentId;
     }
 
 
