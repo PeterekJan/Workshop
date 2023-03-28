@@ -23,8 +23,6 @@ app.get("/", function(req, res) {    //
     }
 });
 
-
-
 app.post("/create-garage", function(req, res){ 
 
     let body = req.body;
