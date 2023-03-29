@@ -8,7 +8,7 @@ export class Transaction {
     type;
     
     
-    constructor(date,amount, currency, type) {
+    constructor(id,date,amount, currency, type) {
     
         this.id = id;
         this.date = date;
@@ -20,7 +20,7 @@ export class Transaction {
     };
 
     get output() {
-        return "#" + this.id + " " + this.date + " " + this.amount + " "+ this.currency +" " +  this.type 
+        return "#" + this.id + " " + this.date + " " + this.amount + " "+ this.currency + " " +  this.type 
     }
 
 

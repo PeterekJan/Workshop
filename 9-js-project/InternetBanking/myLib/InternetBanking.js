@@ -23,7 +23,7 @@ export class InternetBanking {
     }
 
 
-    this.array.push(this.transactions);
+    this.transactions.push(array);
     
 }
 
