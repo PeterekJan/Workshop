@@ -11,6 +11,24 @@ Content-Type: application/json
 
 ###
 
+POST http://localhost:3000/credit HTTP/1.1 
+Content-Type: application/json
+
+{
+        "id": 1,
+        "date": "2.2.2022",
+        "amount": 20,
+        "currency": "CZK",
+        "type": "debit"
+}
+
+###
+
+
+
+
+
+
 GET http://localhost:3000 HTTP/1.1  
 
 ###

@@ -1,7 +1,7 @@
 import { InternetBanking } from "./myLib/InternetBanking.js";
-//import { Transaction } from "./myLib/Transaction.js";
+import { Transaction } from "./myLib/Transaction.js";
 //import { Helpers } from "./myLib/Helpers.js";
-//import { Owner } from "../myGarage/myLib/Owner.js";
+import { Owner } from "../myGarage/myLib/Owner.js";
 
 import express from "express";
 import bodyParser from "body-parser";
@@ -28,40 +28,19 @@ app.get("/", function(req, res) {
 });
 
 
-app.post("/transactions", function(req, res){ 
+try {
 
-    let body = req.body;
+    let internetBanking = new InternetBanking(new Owner("Jan Peterek", 1000000))
 
-    try {
+    let transaction = new Transaction(1,"22.2.2022",20, "CZK", "credit")
 
-        transactions = new InternetBanking(body.transactions);
 
-        res.sendStatus(201);
+    internetBanking.transaction(transaction)
 
-    } catch (e) {
+    console.log(internetBanking)
 
-        res.status(400).send(error(400,e));
-    }
-
-});
-
-app.post("/credit"), function(req,res) {
-
-    let body = req.body;
-
-    try {
-
-        transactions = new InternetBanking(credit());
-
-        res.sendStatus(201);
-
-    } catch(e) {
-    
-
-        res.status(400).send(error(400,e));
-
-    }
-
+} catch(e) {
+    console.log(e)
 }
 
 
