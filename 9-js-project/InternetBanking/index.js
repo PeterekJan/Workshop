@@ -1,19 +1,21 @@
 import { InternetBanking } from "./myLib/InternetBanking.js";
 import { Transaction } from "./myLib/Transaction.js";
-//import { Helpers } from "./myLib/Helpers.js";
+import { error } from "./myLib/Helpers.js";
 import { Owner } from "./myLib/Owner.js";
 
 import express from "express";
 import bodyParser from "body-parser";
 
-// const app = express();  //ulozena konfigurace serveru
-// app.use(bodyParser.json()); //automaticke parsovani do json v restovém rozhraní
+const app = express();  //ulozena konfigurace serveru
+app.use(bodyParser.json()); //automaticke parsovani do json v restovém rozhraní
 
-// app.get("/Hello", function(req, res) {    
+app.get("/Hello", function(req, res) {    
 
-//     res.send({result: "Hello"})  //vytvoření endpointu, zkouškove poslaní zpravy
+    res.send({result: "Hello"})  //vytvoření endpointu, zkouškove poslaní zpravy
 
-// });
+});
+
+
 
 
 //let transactions = [];
@@ -27,22 +29,30 @@ import bodyParser from "body-parser";
 //     }
 // });
 
+/*
+
+let internetBanking = null;
+let moneyAvaiable = 10
 
 try {
 
-    let internetBanking = new InternetBanking(new Owner("Jan Peterek", 1000000))
+    internetBanking = new InternetBanking(new Owner("Jan Peterek", moneyAvaiable))
 
     let transaction = new Transaction(1,"22.2.2022",20, "CZK", "credit")
+    //let transaction2 = new Transaction(2,"24.2.2022",22, "CZK", "credit")
 
     internetBanking.transaction(transaction)
+    //internetBanking.transaction(transaction2)
 
     console.log(internetBanking)
 
 } catch(e) {
 
     console.log(e)
+    //console.log(internetBanking)
 }
 
+*/
 
 
 

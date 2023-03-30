@@ -3,17 +3,17 @@ import { Transaction } from "./Transaction.js";
 
 export class InternetBanking {
 
-  owner;
+  owners;
 
   transactions = [];
 
-  constructor(owner) {
+  constructor(owners) {
 
-    if( !(owner instanceof Owner)){
+    if( !(owners instanceof Owner)){
       throw "Owner must be instance of class Owner.";
     }
 
-    this.owner = owner;
+    this.owners = owners;
 
   }
 
