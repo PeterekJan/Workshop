@@ -3,33 +3,36 @@ import { Transaction } from "./Transaction.js";
 
 export class InternetBanking {
 
-  owners;
+    owner;
+    transactions = [];
+    total;
 
-  transactions = [];
+    constructor(owner) {
 
-  constructor(owners) {
+        if (!(owner instanceof Owner)) {
+            throw "Owner must be instance of class Owner.";
+        }
 
-    if( !(owners instanceof Owner)){
-      throw "Owner must be instance of class Owner.";
+        this.owner = owner;
+
     }
 
-    this.owners = owners;
+    pushTransaction(item) {
+        if (!(item instanceof Transaction)) {
+            throw "Transaction must be instance of class Transaction."
+        }
 
-  }
+        this.transactions.push(item);
 
-  transaction(array) {
-    if (!(array instanceof Transaction)) {
-        throw "Transaction must be instance of class Transaction."
     }
 
+    //zde udelat validaci amount == kladne
+    credit(amount, currency) {
+        this.pushTransaction(new Transaction(amount, currency, "credit"));
+    }
 
-    this.transactions.push(array);
-    
-}
-
-        
-      
-
-
+    debit(amount, currency) {
+        this.pushTransaction(new Transaction(amount, currency, "debit"));
+    }
 
 }

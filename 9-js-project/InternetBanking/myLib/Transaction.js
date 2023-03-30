@@ -1,5 +1,5 @@
 export class Transaction {
-    
+
     exchangeRate = 26.50;
     ranking;
     id;
@@ -7,12 +7,13 @@ export class Transaction {
     amount;
     currency;
     type;
-    
-    
-    constructor(id,date,amount, currency, type) {
+
+
+    constructor(amount, currency, type) {
+
         this.ranking = this.generateSimpleID();
         this.id = this.generateID();
-        this.date = date;
+        this.date = Date();
         this.amount = amount;
         this.currency = currency;
         this.type = type;
@@ -20,9 +21,9 @@ export class Transaction {
 
     };
 
-    generateSimpleID(){
+    generateSimpleID() {
         if (!Transaction.ranking) { //if transaction.id not exist
-        Transaction.ranking = 0;
+            Transaction.ranking = 0;
         }
 
         Transaction.ranking++;

@@ -3,37 +3,118 @@ import { Transaction } from "./myLib/Transaction.js";
 import { error } from "./myLib/Helpers.js";
 import { Owner } from "./myLib/Owner.js";
 
-import express from "express";
+import express, { response } from "express";
 import bodyParser from "body-parser";
 
 const app = express();  //ulozena konfigurace serveru
 app.use(bodyParser.json()); //automaticke parsovani do json v restovém rozhraní
 
-app.get("/Hello", function(req, res) {    
+app.get("/Hello", function (req, res) {
 
-    res.send({result: "Hello"})  //vytvoření endpointu, zkouškove poslaní zpravy
+    res.send({ result: "Hello" })  //vytvoření endpointu, zkouškove poslaní zpravy
 
+});
+
+/*******************************/
+
+let internetBanking = null;
+
+app.get("/", function (req, res) {
+
+    if (internetBanking == null) {
+        res.status(400).send(error(400, "You need to create internet banking first."))
+    } else {
+        res.send(internetBanking)
+    }
+});
+
+
+app.post("/create-IB", function (req, res) {
+
+    let body = req.body;
+
+    try {
+
+        let owner = new Owner(body.name, body.money)
+        internetBanking = new InternetBanking(owner)
+
+        res.sendStatus(201)
+
+    } catch (e) {
+
+        res.status(400).send({ error: e })
+    }
+});
+
+app.post("/credit", function (req, res) {
+
+    let body = req.body;
+
+    if (internetBanking == null) {
+        res.status(400).send(error(400, "You need to create internet banking first."))
+    } else {
+
+        //validace pro body.amount == kladne cislo
+        let newCredit = new Transaction(body.amount, body.currency, "credit")
+
+        internetBanking.pushTransaction(newCredit)
+
+        res.send(internetBanking)
+    }
+});
+
+app.post("/credit-2", function (req, res) {
+
+    let body = req.body;
+
+    if (internetBanking == null) {
+        res.status(400).send(error(400, "You need to create internet banking first."))
+    } else {
+
+        //validace pro body.amount == kladne cislo
+        internetBanking.credit(body.amount, body.currency)
+
+        res.send(internetBanking)
+    }
+});
+
+app.post("/debit", function (req, res) {
+    let body = req.body
+
+    if (internetBanking == null) {
+        res.status(400).send(error(400, "You need to create internet banking first."))
+
+    } else {
+
+        internetBanking.debit(body.amount, body.currency)
+
+        res.send(internetBanking)
+    }
 });
 
 
 
 
-//let transactions = [];
 
-// app.get("/", function(req, res) { 
+// app.post("/create-transactions", function(req,res){
 
-//     if(transactions == null){
-//         res.status(400).send(error(400,"You need to create transactions first."))
-//     } else {
-//         res.send(transactions)
+//     let body = req.body;
+
+//     try {
+
+//         internetBanking = new InternetBanking(new Owner(body.name, body.money))
+
+//         res.sendStatus(201)
+
+//     } catch (e) {
+
+//         res.status(400).send(error(400,e));
 //     }
-// });
+// })
+
+
 
 /*
-
-let internetBanking = null;
-let moneyAvaiable = 10
-
 try {
 
     internetBanking = new InternetBanking(new Owner("Jan Peterek", moneyAvaiable))
@@ -58,6 +139,6 @@ try {
 
 
 
-// app.listen(3000, function(){  //naslouchaní na portu 3000, vypsani do konzole pro usnadněni
-//     console.log("Example app server listening on localhost port 3000. Try http://localhost:3000");
-// });
+app.listen(3000, function () {  //naslouchaní na portu 3000, vypsani do konzole pro usnadněni
+    console.log("Example app server listening on localhost port 3000. Try http://localhost:3000");
+});

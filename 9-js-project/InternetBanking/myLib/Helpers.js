@@ -11,9 +11,9 @@
 
 export function isUndefined(...arg) {
 
-    arg.forEach(function(value) {
+    arg.forEach(function (value) {
 
-        if(typeof value === "undefined") {
+        if (typeof value === "undefined") {
 
             throw "Missing argument";
         }
@@ -22,33 +22,33 @@ export function isUndefined(...arg) {
 
 export function isValid(...arg) {
 
-    arg.forEach(function(value) {
+    arg.forEach(function (value) {
 
-        if(typeof value === "undefined" || value.length === 0) {
+        if (typeof value === "undefined" || value.length === 0) {
 
             throw "Missing argument.";
         }
     });
 }
 
-export function validateNumber (...arg) {
+export function validateNumber(...arg) {
 
-    arg.forEach(function(value) {
+    arg.forEach(function (value) {
         if (isNaN(value)) {
 
             throw "Value has to be numeric.";
         }
-        if(value < 0 ){
+        if (value < 0) {
 
             throw "Value can't be negative"
         }
     });
 }
 
-export function validateString (...arg) {
+export function validateString(...arg) {
 
-    arg.forEach(function(value) {
-        if(typeof value !== 'string') {
+    arg.forEach(function (value) {
+        if (typeof value !== 'string') {
 
             throw "Value has to be string.";
         }
