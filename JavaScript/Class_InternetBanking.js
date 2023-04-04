@@ -116,10 +116,10 @@ banking.debitPayment('1.1.2058', 7, "CZK");
 banking.compareAmounts(10,"EUR", 10, "EUR");
 //console.log(banking.compareAmounts(10,"EUR", 10, "EUR"))
 
-//banking.printAllTransaction()
-//banking.printAccountBalance()
+banking.printAllTransaction()
+banking.printAccountBalance()
 banking.printAllCreditTransaction()
-//banking.printAllDebitTransaction()
+banking.printAllDebitTransaction()
 
 
 

@@ -1,14 +1,3 @@
-
-// //transaction
-// if(currency != "CZK" && currency != "EUR") {
-//     throw "Only CZK and EUR is supported";
-// };
-
-// if(type != "credit" && type != "debit") {
-//     throw "Only credit and debit transaction are allowed";
-// };
-
-
 export function isUndefined(...arg) {
 
     arg.forEach(function (value) {
@@ -63,3 +52,4 @@ export function error(status, msg) {  //error handling, pro opakovani error msg
 
     return err;
 }
+

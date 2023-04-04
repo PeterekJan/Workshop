@@ -1,6 +1,6 @@
 import { InternetBanking } from "./myLib/InternetBanking.js";
 import { Transaction } from "./myLib/Transaction.js";
-import { error } from "./myLib/Helpers.js";
+import { error, validateString, validateNumber } from "./myLib/Helpers.js";
 import { Owner } from "./myLib/Owner.js";
 
 import express, { response } from "express";
@@ -18,6 +18,7 @@ app.get("/Hello", function (req, res) {
 /*******************************/
 
 let internetBanking = null;
+let transactions = null;
 
 app.get("/", function (req, res) {
 
@@ -46,23 +47,6 @@ app.post("/create-IB", function (req, res) {
     }
 });
 
-app.post("/credit", function (req, res) {
-
-    let body = req.body;
-
-    if (internetBanking == null) {
-        res.status(400).send(error(400, "You need to create internet banking first."))
-    } else {
-
-        //validace pro body.amount == kladne cislo
-        let newCredit = new Transaction(body.amount, body.currency, "credit")
-
-        internetBanking.pushTransaction(newCredit)
-
-        res.send(internetBanking)
-    }
-});
-
 app.post("/credit-2", function (req, res) {
 
     let body = req.body;
@@ -72,6 +56,24 @@ app.post("/credit-2", function (req, res) {
     } else {
 
         //validace pro body.amount == kladne cislo
+        validateNumber(body.amount)
+        validateString(body.currency)
+        let newCredit = new Transaction(body.amount, body.currency, "credit")
+
+        internetBanking.pushTransaction(newCredit)
+
+        res.send(internetBanking)
+    }
+});
+
+app.post("/credit", function (req, res) {
+
+    let body = req.body;
+
+    if (internetBanking == null) {
+        res.status(400).send(error(400, "You need to create internet banking first."))
+    } else {
+
         internetBanking.credit(body.amount, body.currency)
 
         res.send(internetBanking)
@@ -92,25 +94,36 @@ app.post("/debit", function (req, res) {
     }
 });
 
-
-
-
-
-// app.post("/create-transactions", function(req,res){
-
+// app.get("/total", function (req, res) {
 //     let body = req.body;
+//     //transactions = new InternetBanking(transactions)
 
-//     try {
+//     if (internetBanking == null) {
+//         res.status(400).send(error(400, "You need to create internet banking first."))
 
-//         internetBanking = new InternetBanking(new Owner(body.name, body.money))
+//     } else {
 
-//         res.sendStatus(201)
+//         internetBanking.getTotal()
 
-//     } catch (e) {
-
-//         res.status(400).send(error(400,e));
+//         res.send(internetBanking)
 //     }
+
 // })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
