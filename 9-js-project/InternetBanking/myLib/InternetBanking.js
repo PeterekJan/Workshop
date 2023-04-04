@@ -74,4 +74,22 @@ export class InternetBanking {
         }
     }
 
+    compareTransactionIds(transaction1, transaction2) {
+
+
+        
+        if(transaction1.id === transaction2.id) {
+            console.log(`Transaction ${transaction1.id} is the same for both payments.`);
+        } else {
+            console.log(`Transaction IDs for the two payments are different.`);
+        };
+    }
+
+
+
+
+
+
+
+
 }

@@ -13,8 +13,7 @@ Content-Type: application/json
 
 {
     "name": "Jan Peterek",
-    "money": 0
-
+    //"money": 0
 }
 
 ###
@@ -40,7 +39,17 @@ Content-Type: application/json
 
 ###
 
+//Compare 2 transactions by ID
 
+GET http://localhost:3000/compareTransactionIds HTTP/1.1 
+Content-Type: application/json
+
+{
+        "transaction1.id":,
+        "transaction2.id":,      
+
+
+}
 
 
 

@@ -3,16 +3,16 @@ import { isValid, validateNumber, validateString } from "./Helpers.js";
 export class Owner {
 
     name;
-    money;
+   // money;
 
-    constructor(name,money) {
+    constructor(name) {
 
         isValid(name);
         validateString(name);
-        validateNumber(money);
+       // validateNumber(money);
 
         this.name = name;
-        this.money = money;
+       // this.money = money;
 
 
 
