@@ -53,7 +53,3 @@ export function error(status, msg) {  //error handling, pro opakovani error msg
     return err;
 }
 
-export function validateTransaction() {
-    
-}
-

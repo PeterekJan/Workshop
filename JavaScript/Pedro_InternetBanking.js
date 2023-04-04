@@ -129,7 +129,7 @@ banking.credit(10, "EUR");
 banking.credit(1, "EUR");
 banking.debit(5, "CZK");
 
-//console.log(banking.transactions);
+console.log(banking.transactions);
 console.log("Total in EUR: " + banking.totalEur);
 console.log("Total in CZK: " + banking.totalCzk);
 

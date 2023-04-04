@@ -94,6 +94,24 @@ app.post("/debit", function (req, res) {
     }
 });
 
+// app.get("/compareByIds", function (req, res) {
+
+//     let body = req.body;
+
+//     if (internetBanking == null) {
+//         res.status(400).send(error(400, "You need to create internet banking first."))
+//     if (transactions == null) {
+//             res.status(400).send(error(400, "You need to create transactions first."))
+//     } else {
+
+        
+//         res.send(internetBanking)
+       
+//         }
+//     }
+// });
+
+
 // app.get("/total", function (req, res) {
 //     let body = req.body;
 //     //transactions = new InternetBanking(transactions)
