@@ -13,7 +13,7 @@ Content-Type: application/json
 
 {
     "name": "Jan Peterek",
-    "money": 0
+    //"money": 0
 }
 
 ###

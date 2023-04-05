@@ -32,7 +32,7 @@ export class InternetBanking {
 
     }
 
-    //zde udelat validaci amount == kladne
+    
     credit(amount, currency) {
         validateNumber(amount)
         validateString(currency)

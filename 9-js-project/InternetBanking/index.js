@@ -36,7 +36,7 @@ app.post("/create-IB", function (req, res) {
 
     try {
 
-        let owner = new Owner(body.name, body.money)
+        let owner = new Owner(body.name) //body.money
         internetBanking = new InternetBanking(owner)
 
         res.sendStatus(201)
