@@ -38,7 +38,32 @@ Content-Type: application/json
 
 ###
 
+//Compare transactions by ID
+POST http://localhost:3000//compareByIds HTTP/1.1  
+Content-Type: application/json
 
+{
+
+        "transactions.id": [2,25,8]
+
+}
+
+
+###
+POST http://localhost:3000/compareByIds HTTP/1.1
+Content-Type: application/json
+
+{
+  "transactions": [
+    {"id": "14817f628d6"},
+    {"id": "c4fdab132f"},
+    {"id": "1373ef9ae35"}
+  ]
+}
+
+
+
+###
 
 
 
