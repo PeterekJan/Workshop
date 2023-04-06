@@ -1,5 +1,6 @@
 export class Transaction {
 
+    
     #exchangeRate = 26.50;
     ranking;
     id;

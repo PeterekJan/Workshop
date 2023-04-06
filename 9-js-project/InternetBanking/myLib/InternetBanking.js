@@ -46,9 +46,9 @@ export class InternetBanking {
     }
 
     getTotal() {
-        let total = 0;
+
         return this.transactions.reduce(function (total, transaction) {
-            if (transaction.currency == currency) {
+            if (transaction.currency == currency) { //neni přiřazena currency k dane hodnote 
                 if (transaction.type == "debit") {
                     return total - transaction.amount;
                 } else if (transaction.type == "credit") {
@@ -74,7 +74,9 @@ export class InternetBanking {
         }
     }
 
-    compareByIds(...ids) {
+    compareByIds(ids) {
+
+        //napsat znova funkci comapre(vyfiltrovani IDs a validace)
 
         let transactions = ids.map(function (id) {
             return this.transactions.find(function (t) {
@@ -82,7 +84,7 @@ export class InternetBanking {
             }, this);
         }, this);
 
-        
+        //validace  podminka delka pole ids == delka transactions
         let firstTransaction = transactions[0];
         let allTransactionsAreEqual = transactions.every(function (t) {
             return this.compareTransactions(t, firstTransaction) //Pokud není nalezena žádná transakce se zadaným ID, tak proměnná t si zachová hodnotu null. Na konci funkce se pak zkontroluje, zda proměnná t má hodnotu různou od null. Pokud ano, znamená to, že byla nalezena transakce se zadaným ID

@@ -21,8 +21,8 @@ POST http://localhost:3000/credit HTTP/1.1
 Content-Type: application/json
 
 {
-        "amount": 20,
-        "currency": "EUR"
+        "amount": 200,
+        "currency": "CZK"
 }
 
 ###
@@ -33,31 +33,24 @@ Content-Type: application/json
 
 {
         "amount": 100,
-        "currency": "CZK"
+        "currency": "EUR"
 }
+
+###
+
+
+
 
 ###
 
 //Compare transactions by ID
-POST http://localhost:3000//compareByIds HTTP/1.1  
-Content-Type: application/json
-
-{
-
-        "transactions.id": [2,25,8]
-
-}
-
-
-###
 POST http://localhost:3000/compareByIds HTTP/1.1
 Content-Type: application/json
 
 {
-  "transactions": [
-    {"id": "daf134243"},
-    {"id": "daf134243"},
-    {"id": "daf134243"}
+  "ids": [
+    {"id": "a0f04e04d"},
+    {"id": "17bd120ce5d"}
   ]
 }
 
@@ -67,6 +60,15 @@ Content-Type: application/json
 
 
 
+//Validace accountBallance < 0
+
+//jenom jedna měna na učet == automaticky přepočet na CZK do EUR
+//rozdil mezi fci map a filter
+// opravit porovnani plateb tak aby bylo 1E == 26,5 CZK ve stejnem typu
+//opravit simple generator ID .. jinak bez staticke promenné
+
+//statické promenné
+//FORM forming objection .. maping
 
 
 
@@ -74,6 +76,19 @@ Content-Type: application/json
 
 
 
+
+
+
+
+# //Compare transactions by ID
+# POST http://localhost:3000//compareByIds HTTP/1.1  
+# Content-Type: application/json
+
+# 
+
+#  [2,25,8]
+
+# 
 
 //credit payment
 # POST http://localhost:3000/credit-2 HTTP/1.1 

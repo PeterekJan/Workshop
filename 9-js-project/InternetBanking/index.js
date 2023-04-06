@@ -18,7 +18,7 @@ app.get("/Hello", function (req, res) {
 /*******************************/
 
 let internetBanking = null;
-let transactions = null;
+
 
 app.get("/", function (req, res) {
 
@@ -95,16 +95,17 @@ app.post("/debit", function (req, res) {
 });
 
 app.post("/compareByIds", function (req, res) {
-    let ids = req.body.ids;
-    transactions = new InternetBanking(transactions)
+    let ids = req.body;
   
     if (internetBanking == null) {
       res.status(400).send(error(400, "You need to create internet banking first."))
-    } else if (transactions == null) {
-      res.status(400).send(error(400, "You need to create transactions first."))
+    } else if (internetBanking.transactions.length < 2 ) {
+      res.status(400).send(error(400, "You need to create at least 2 transactions first."))
     } else {
-      let result = internetBanking.compareByIds(...ids);
+      let result = internetBanking.compareByIds(ids);
       res.send(result);
+
+      //res.send(req)
     }
   });
   
