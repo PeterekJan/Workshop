@@ -96,6 +96,7 @@ app.post("/debit", function (req, res) {
 
 app.post("/compareByIds", function (req, res) {
     let ids = req.body.ids;
+    transactions = new InternetBanking(transactions)
   
     if (internetBanking == null) {
       res.status(400).send(error(400, "You need to create internet banking first."))
