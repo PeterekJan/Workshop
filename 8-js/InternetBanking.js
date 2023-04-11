@@ -1,11 +1,12 @@
 class Transaction {
-
+    
     exchangeRate = 26.50;
-    id;
+    id = 0;
     date = null;
     amount = 0;
     currency = "";
     type = "";
+    
 
 
     constructor(date, amount, currency, type) {
@@ -20,7 +21,7 @@ class Transaction {
 
 
 
-        this.id = this.generateSimpleID();
+        this.id = this.generateSimpleId();
         this.date = date;
         this.amount = amount;
         this.currency = currency;
@@ -53,16 +54,13 @@ class Transaction {
         var uniqueID = Math.floor(Math.random() * Date.now()).toString(16);
         return uniqueID;
     }
-
-    generateSimpleID() {
-        
-        var newId = 0;
-        for(var i = 0; i < 20; i++)
-        
-        
-        return newId
+    generateSimpleId(){
+        Transaction.lastId = (Transaction.lastId || 0) + 1;
+    return Transaction.lastId;
 
     }
+
+
 }
 
 
@@ -101,6 +99,7 @@ class InternetBanking {
 
     credit(date, amount, currency) {
         this.pushTransaction(new Transaction(date, amount, currency, "credit"));
+        
     }
 
     debit(date, amount, currency) {
@@ -115,40 +114,47 @@ class InternetBanking {
         };
     }
 
-    compareByIds(...ids) {
-        if (ids.length < 2) {
-            console.log("Chybí ID transakcí k porovnání.");
-            return;
-        }
+    
+       
+    
+       
+     
+    
 
-        let transactions = ids.map(function (id) {
-            return this.transactions.find(function (t) {
-                return t.id === id;
-            }, this);
-        }, this);
+    // compareByIds(...ids) {
+    //     if (ids.length < 2) {
+    //         console.log("Chybí ID transakcí k porovnání.");
+    //         return;
+    //     }
 
-        //let transactions = ids.map(id => this.transactions.find(t => t.id === id));
+    //     let transactions = ids.map(function (id) {
+    //         return this.transactions.find(function (t) {
+    //             return t.id === id;
+    //         }, this);
+    //     }, this);
 
-        let firstTransaction = transactions[0];
-        let allTransactionsAreEqual = transactions.every(function (t) {
-            return this.compareTransactions(t, firstTransaction) //Pokud není nalezena žádná transakce se zadaným ID, tak proměnná t si zachová hodnotu null. Na konci funkce se pak zkontroluje, zda proměnná t má hodnotu různou od null. Pokud ano, znamená to, že byla nalezena transakce se zadaným ID
-        }, this); //pri šipkove metodě neni potřeba mit toto this
+    //     //let transactions = ids.map(id => this.transactions.find(t => t.id === id));
 
-        if (allTransactionsAreEqual) {
-            console.log(`Všechny transakce s ID ${ids.join(", ")} jsou stejné.`);
-        } else {
-            console.log(`Transakce s ID ${ids.join(", ")} se liší.`);
-        };
-    }
+    //     let firstTransaction = transactions[0];
+    //     let allTransactionsAreEqual = transactions.every(function (t) {
+    //         return this.compareTransactions(t, firstTransaction) //Pokud není nalezena žádná transakce se zadaným ID, tak proměnná t si zachová hodnotu null. Na konci funkce se pak zkontroluje, zda proměnná t má hodnotu různou od null. Pokud ano, znamená to, že byla nalezena transakce se zadaným ID
+    //     }, this); //pri šipkove metodě neni potřeba mit toto this
 
-    compareTransactions(transaction1, transaction2) {
-        return (
-            transaction1.amount === transaction2.amount &&
-            transaction1.currency === transaction2.currency &&
-            transaction1.date === transaction2.date &&
-            transaction1.type === transaction2.type
-        );
-    }
+    //     if (allTransactionsAreEqual) {
+    //         console.log(`Všechny transakce s ID ${ids.join(", ")} jsou stejné.`);
+    //     } else {
+    //         console.log(`Transakce s ID ${ids.join(", ")} se liší.`);
+    //     };
+    // }
+
+    // compareTransactions(transaction1, transaction2) {
+    //     return (
+    //         transaction1.amount === transaction2.amount &&
+    //         transaction1.currency === transaction2.currency &&
+    //         transaction1.date === transaction2.date &&
+    //         transaction1.type === transaction2.type
+    //     );
+    // }
 
 
 
@@ -181,9 +187,13 @@ banking.printAllTransaction()
 //console.log(transaction1.EUR)
 //console.log(transaction1.CZK)
 
+
 //banking.compareTransactionIds(transaction1, transaction2);
 
-banking.compareByIds(3, 4)
+//banking.compareByIds(3, 4)
 
 //console.log(banking.totalEur)
 
+console.log("------------------------------")
+
+console.log(banking.transactions[0])
