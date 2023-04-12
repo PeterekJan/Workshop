@@ -191,6 +191,8 @@ console.log("----------- výpis zůstatku na účtu (v obou měnách) ----------
 console.log("------------------------------------------------------")
 //banking.everyID()
 //console.log(banking.transactions[5].amount)
-console.log(transaction.exchangeRate)
+console.
+
+console.log(banking.transactions[1].exchangeRate)
 
 //console.log(banking.transactions[0])
