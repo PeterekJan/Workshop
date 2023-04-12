@@ -58,6 +58,9 @@ class Transaction {
         this.ranking = ranking;
     }
 
+    aaa() {
+        console.log(this.exchangeRate)
+    }
 
 
 }
@@ -66,7 +69,6 @@ class Transaction {
 class InternetBanking {
 
     transactions = [];
-    #currentId = 0;
 
     get totalEur() {
         //console.log("------------------------get totalEur--------------------")
@@ -80,7 +82,7 @@ class InternetBanking {
 
     getTotal(currency) {
         return this.transactions.reduce(function (total, transaction) {
-            console.log(transaction[currency])
+            //console.log(transaction[currency])
             if (transaction.type == "credit") {
                 return total + transaction[currency];
             } else {
@@ -104,15 +106,41 @@ class InternetBanking {
         this.pushTransaction(new Transaction(date, amount, currency, "debit"));
     }
 
-    compareTransactionById(index1, index2) {
-        if (this.transactions[index1].amount == this.transactions[index2].amount ) {
-            console.log(`Transaction ${this.transactions[index1], this.transactions[index2]} is the same for both payments.`);
+    sameTransactionsByRanking(index1, index2) {
+        if (this.transactions.length < 2) {
+            throw console.log("Chybí ID transakcí k porovnání.");
+        }
+
+        if (this.transactions[index1].amount === this.transactions[index2].amount &&
+            this.transactions[index1].currency === this.transactions[index1].currency &&
+            this.transactions[index1].date === this.transactions[index1].date &&
+            this.transactions[index1].type === this.transactions[index1].type) {
+            console.log("Transactions with ranking:" + " " + index1 + " and " + index2 + " is the same.");
         } else {
             console.log(`Transaction IDs for the two payments are different.`);
         };
     }
 
-  
+    compareTransactions(index1, index2) {
+
+        if (this.transactions.currency == "EUR") {
+            this.transactions.amount / Transaction.exchangeRate
+
+
+            if (this.transactions[index1].amount == this.transactions[index2].amount &&
+                this.transactions[index1].type == this.transactions[index1].type) {
+                console.log("Transactions with ranking:" + " " + index1 + " and " + index2 + " is the same.");
+            } else {
+                console.log(`Transaction IDs for the two payments are different.`);
+            };
+        }
+
+    }
+   
+
+
+
+
     printAllTransaction() {
         console.log("List of all transactions:");
         console.log(this.transactions);
@@ -126,12 +154,14 @@ class InternetBanking {
 }
 
 let banking = new InternetBanking();
+let transaction = new Transaction();
 
 
 banking.credit("22.2.2022", 20, "CZK");
 banking.credit("22.2.2024", 5, "EUR");
 banking.credit("22.2.2025", 5, "EUR");
 banking.credit("22.2.2025", 5, "EUR");
+banking.credit("22.2.2025", 132.5, "CZK");
 banking.debit("22.2.2024", 10, "CZK");
 banking.debit("22.2.2025", 1, "EUR");
 banking.debit("22.2.2025", 1, "EUR");
@@ -140,21 +170,27 @@ banking.debit("22.2.2025", 1, "EUR");
 //console.log(banking)
 
 console.log("---------------Compare Transaction---------------")
-let transaction1 = new Transaction("22.2.2022", 20, "CZK", "credit");
-let transaction2 = new Transaction("22.2.2023", 5, "EUR", "credit");
+// let transaction1 = new Transaction("22.2.2022", 20, "CZK", "credit");
+// let transaction2 = new Transaction("22.2.2023", 5, "EUR", "credit");
 
+console.log("--------------vypis všech transakci--------------")
 banking.printAllTransaction()
-//console.log(transaction1.EUR)
-//console.log(transaction1.CZK)
 
-banking.compareTransactionById(2, 3);
+console.log("-------- porovnani dvou existujicich (identickych) transakcí podle 'ranking' --------")
+//banking.sameTransactionsByRanking(2, 3);
 
-//banking.compareByIds(3, 4)
 
-//console.log(banking.totalEur)
+console.log("-------- porovnani dvou existujicich (s prepoctem) transakci podle 'ranking' -------- ")
+//banking.compareTransactions(3,4)
 
-console.log("------------------------------")
+
+console.log("----------- výpis zůstatku na účtu (v obou měnách) -----------")
+//console.log("EUR: " + banking.totalEur)
+//console.log("CZK: " + banking.totalCzk)
+
+console.log("------------------------------------------------------")
 //banking.everyID()
-console.log(banking.transactions[4].amount)
+//console.log(banking.transactions[5].amount)
+console.log(transaction.exchangeRate)
 
 //console.log(banking.transactions[0])
