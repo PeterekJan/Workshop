@@ -29,7 +29,7 @@ export function validateNumber(...arg) {
         }
         if (value < 0) {
 
-            throw "Value can't be negative"
+            throw "Value cant be negative"
         }
     });
 }
@@ -52,4 +52,6 @@ export function error(status, msg) {  //error handling, pro opakovani error msg
 
     return err;
 }
+
+
 

@@ -2,7 +2,7 @@ export class Transaction {
 
     
     #exchangeRate = 26.50;
-    ranking;
+    ranking = 0;
     id;
     date;
     amount;
@@ -12,7 +12,7 @@ export class Transaction {
 
     constructor(amount, currency, type) {
 
-        this.ranking = this.generateSimpleID();
+        this.ranking = this.setRanking(0);
         this.id = this.generateID();
         this.date = Date();
         this.amount = amount;
@@ -22,20 +22,23 @@ export class Transaction {
 
     };
 
-    generateSimpleID() {
-        if (!Transaction.ranking) { //if transaction.id not exist
-            Transaction.ranking = 0;
-        }
+    // generateSimpleID() {
+    //     if (!Transaction.ranking) { //if transaction.id not exist
+    //         Transaction.ranking = 0;
+    //     }
 
-        Transaction.ranking++;
-        return Transaction.ranking;
-    }
+    //     Transaction.ranking++;
+    //     return Transaction.ranking;
+    // }
 
     generateID() {
         var uniqueID = Math.floor(Math.random() * Date.now()).toString(16);
         return uniqueID;
     }
-
+    
+    setRanking(ranking) {
+        this.ranking = ranking;
+    }
 
 
 

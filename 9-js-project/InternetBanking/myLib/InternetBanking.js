@@ -2,14 +2,17 @@ import { validateString, validateNumber } from "./Helpers.js";
 import { Owner } from "./Owner.js";
 import { Transaction } from "./Transaction.js";
 
+
 export class InternetBanking {
 
     owner;
     accountBalance = {
-        totalEur: 0,
-        totalCzk: 0
+        totalCzk: 0,
+        totalEur: 0
     };
+
     transactions = [];
+    #exchangeRate = 26.50;
 
 
 
@@ -22,13 +25,23 @@ export class InternetBanking {
         this.owner = owner;
     }
 
+    get getTotalCzk() {
+        return Math.round(this.accountBalance.totalCzk * 100) / 100;
+    }
+
+    get getTotalEur() {
+        return Math.round(this.accountBalance.totalEur * 100) / 100;
+    }
+
     pushTransaction(item) {
         if (!(item instanceof Transaction)) {
             throw "Transaction must be instance of class Transaction."
         }
 
+        item.setRanking(this.transactions.length + 1); //při pushovani transakce zvyší ranking v transakci +1 ( +1 je pouse start přičítani od 1)
         this.transactions.push(item);
         this.writeTotal(item.currency, item.type, item.amount);
+        
 
     }
 
@@ -44,72 +57,56 @@ export class InternetBanking {
         validateString(currency)
         this.pushTransaction(new Transaction(amount, currency, "debit"));
     }
-
-    getTotal() {
-
-        return this.transactions.reduce(function (total, transaction) {
-            if (transaction.currency == currency) { //neni přiřazena currency k dane hodnote 
-                if (transaction.type == "debit") {
-                    return total - transaction.amount;
-                } else if (transaction.type == "credit") {
-                    return total + transaction.amount;
-                }
-            }
-        }, 0);
-    }
+    
 
     writeTotal(currency, type, amount) {
-        if (currency == "EUR") {
-            if (type == "debit") {
-                this.accountBalance.totalEur -= amount;
-            } else if (type == "credit") {
-                this.accountBalance.totalEur += amount;
-            }
-        } else if (currency == "CZK") {
+       // validateNumber(this.accountBalance.totalCzk);
+        // validateNumber(this.accountBalance.totalEur);
+
+        if (currency == "CZK") {
             if (type == "debit") {
                 this.accountBalance.totalCzk -= amount;
+                this.accountBalance.totalEur -= amount / this.#exchangeRate;
+                //this.accountBalance.totalEur = Number(this.accountBalance.totalEur.toFixed(2));
             } else if (type == "credit") {
                 this.accountBalance.totalCzk += amount;
+                this.accountBalance.totalEur += amount / this.#exchangeRate;
+                //this.accountBalance.totalEur = Number(this.accountBalance.totalEur.toFixed(2));
+            }
+            
+
+        } else if (currency == "EUR") {
+            if (type == "debit") {
+                this.accountBalance.totalEur -= amount;
+                this.accountBalance.totalCzk -= amount * this.#exchangeRate;
+                //this.accountBalance.totalCzk = Number(this.accountBalance.totalEur.toFixed(2));
+
+            } else if (type == "credit") {
+                this.accountBalance.totalEur += amount;
+                this.accountBalance.totalCzk += amount * this.#exchangeRate;
+                //this.accountBalance.totalCzk = Number(this.accountBalance.totalCzk.toFixed(2));
+
             }
         }
     }
+    
+    sameTransactionsByRanking(index1, index2) {
+        if (this.transactions.length < 2) {
+            throw "Chybí ID transakcí k porovnání.";
+        }
 
-    compareByIds(ids) {
-
-        //napsat znova funkci comapre(vyfiltrovani IDs a validace)
-
-        let transactions = ids.map(function (id) {
-            return this.transactions.find(function (t) {
-                return t.id === id;
-            }, this);
-        }, this);
-
-        //validace  podminka delka pole ids == delka transactions
-        let firstTransaction = transactions[0];
-        let allTransactionsAreEqual = transactions.every(function (t) {
-            return this.compareTransactions(t, firstTransaction) //Pokud není nalezena žádná transakce se zadaným ID, tak proměnná t si zachová hodnotu null. Na konci funkce se pak zkontroluje, zda proměnná t má hodnotu různou od null. Pokud ano, znamená to, že byla nalezena transakce se zadaným ID
-        }, this); 
-
-        if (allTransactionsAreEqual) {
-            return `Všechny transakce s ID ${ids.join(", ")} jsou stejné.`;
+        if (this.transactions[index1].amount === this.transactions[index2].amount &&
+            this.transactions[index1].currency === this.transactions[index1].currency &&
+            this.transactions[index1].date === this.transactions[index1].date &&
+            this.transactions[index1].type === this.transactions[index1].type) {
+            console.log("Transactions with ranking:" + " " + index1 + " and " + index2 + " is the same.");
         } else {
-            return `Transakce s ID ${ids.join(", ")} se liší.`;
+            console.log(`Transaction IDs for the two payments are different.`);
         };
     }
-
-    compareTransactions(transaction1, transaction2) {
-        return (
-            transaction1.amount === transaction2.amount &&
-            transaction1.currency === transaction2.currency &&
-            transaction1.date === transaction2.date &&
-            transaction1.type === transaction2.type
-        );
-    }
-
-
-
 
 
 
 
 }
+
