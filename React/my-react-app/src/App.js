@@ -3,7 +3,7 @@ import Book from "./components/Book.js";
 
 const App = () => {
   return (
-    <div>
+    <div className="all-books">
       <Book />
       <Book />
       <Book />

@@ -171,9 +171,9 @@ class InternetBanking {
             return;
         }
 
-        let transactions = ids.map(function (id) {
+        let transactions = ids.map(function (ranking) {
             return this.transactions.find(function (t) {
-                return t.id === id;
+                return t.ranking === ranking;
             }, this);
         }, this);
 

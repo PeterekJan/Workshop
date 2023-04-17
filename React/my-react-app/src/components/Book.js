@@ -3,7 +3,7 @@ import OrderButton from "./OrderButton"
 
 const Book = () => {
     return (
-        <div>
+        <div className="one-book">
             <h2 className="main-heading">Název knihy</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Nobis quia cumque fuga laboriosam dolores eius blanditiis accusamus
