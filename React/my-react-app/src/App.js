@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Book from "./components/Book.js";
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+
     </div>
   );
 }
 
-export default App;
+export default App
+
+
+
+// JSX - javascript XML
+
+//komponenta je funkce
+// komponenta má stejný název jako je název souboru
+// komponenta obsahuje return
+// na konci souboru musí být řádek s exportem
+// v return musí něco být
+//umi vratit jen jeden tag
