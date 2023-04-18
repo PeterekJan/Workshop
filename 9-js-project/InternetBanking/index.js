@@ -1,4 +1,4 @@
-import { InternetBanking} from "./myLib/InternetBanking.js";
+import { InternetBanking } from "./myLib/InternetBanking.js";
 import { Transaction } from "./myLib/Transaction.js";
 import { error, validateString, validateNumber, isValid } from "./myLib/Helpers.js";
 import { Owner } from "./myLib/Owner.js";
@@ -97,24 +97,26 @@ app.post("/debit", function (req, res) {
 
 
 
-app.post("/sameTransactionsByRanking", function(req, res) {
-        
+app.post("/compareTransactions3", function (req, res) {
+    let ids = req.body;
+
     try {
-        if(internetBanking == null) {
-            throw "Need to create internetBanking first"
+        if (internetBanking == null) {
+            res.status(400).send(error(400, "Need to create internetBanking first"));
+        } else if (internetBanking.transactions.length == 0) {
+            res.status(400).send(error(400, "Need to create at least 2 transactions first"));
+
         }
+        //res.send(ids)
+        res.send({ result: internetBanking.compareTransactions3(ids) });
 
-        let ids = req.body;
+    } catch (e) {
 
-        res.send({result: internetBanking.sameTransactionsByRanking(ranking)});
-
-    } catch(e){
-
-        res.status(400).send(error(400,e))
+        res.status(400).send(error(400, e))
     }
-    
-  });
-  
+
+});
+
 
 
 
@@ -140,7 +142,7 @@ app.post("/sameTransactionsByRanking", function(req, res) {
 
 //         internetBanking.compareByIds(...ids);
 //         res.send(internetBanking);
-       
+
 //         }
 //     }
 // });

@@ -44,11 +44,10 @@ Content-Type: application/json
 ###
 
 //Compare transactions by ID
-POST http://localhost:3000/sameTransactionsByRanking HTTP/1.1
+POST http://localhost:3000/compareTransactions3 HTTP/1.1
 Content-Type: application/json
 
-[
-  
+[3,5
 ]
 
 

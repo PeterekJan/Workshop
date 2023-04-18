@@ -164,41 +164,100 @@ class InternetBanking {
 
         }
     }
+    //funkcni pro node, ne pro API
 
-    compareByIds(...ids) {
-        if (ids.length < 2) {
-            console.log("Chybí ID transakcí k porovnání.");
-            return;
+    // compareByIds(...ids) {
+    //     if (ids.length < 2) {
+    //         console.log("Chybí ID transakcí k porovnání.");
+    //         return;
+    //     }
+
+    //     let transactions = ids.map(function (ranking) {
+    //         return this.transactions.find(function (t) {
+    //             return t.ranking === ranking;
+    //         }, this);
+    //     }, this);
+
+    //     //let transactions = ids.map(id => this.transactions.find(t => t.id === id));
+
+    //     let firstTransaction = transactions[0];
+    //     let allTransactionsAreEqual = transactions.every(function (t) {
+    //         return this.compareTransactions2(t, firstTransaction) //Pokud není nalezena žádná transakce se zadaným ID, tak proměnná t si zachová hodnotu null. Na konci funkce se pak zkontroluje, zda proměnná t má hodnotu různou od null. Pokud ano, znamená to, že byla nalezena transakce se zadaným ID
+    //     }, this); //pri šipkove metodě neni potřeba mit toto this
+
+    //     if (allTransactionsAreEqual) {
+    //         console.log(`Všechny transakce s ID ${ids.join(", ")} jsou stejné.`);
+    //     } else {
+    //         console.log(`Transakce s ID ${ids.join(", ")} se liší.`);
+    //     };
+    // }
+
+    // compareTransactions2(transaction1, transaction2) {
+    //     return (
+    //         transaction1.amount === transaction2.amount &&
+    //         transaction1.currency === transaction2.currency &&
+    //         transaction1.date === transaction2.date &&
+    //         transaction1.type === transaction2.type
+    //     );
+    // }
+
+    filterTransactionsByRanking(rankings) {
+        return this.transactions.filter(function (transaction) {
+            return rankings.includes(transaction.ranking);
+        });
+    }
+
+    compareTransactions(rankings) {
+        let filteredTransactions = this.filterTransactionsByRanking(rankings);
+
+        let comparedTransactions = [];
+
+        for (let i = 0; i < filteredTransactions.length - 1; i++) {
+            let currentTransaction = filteredTransactions[i];
+            let nextTransaction = filteredTransactions[i + 1];
+
+            if (currentTransaction.amount === nextTransaction.amount &&
+                currentTransaction.currency === nextTransaction.currency &&
+                currentTransaction.type === nextTransaction.type) {
+                comparedTransactions.push([currentTransaction, nextTransaction]);
+            }
         }
 
-        let transactions = ids.map(function (ranking) {
-            return this.transactions.find(function (t) {
-                return t.ranking === ranking;
-            }, this);
-        }, this);
+        return comparedTransactions;
+    }
 
-        //let transactions = ids.map(id => this.transactions.find(t => t.id === id));
+    compareTransactions3(rankings) {
+        let matchingRankings = [];
+        let nonMatchingRankings = [];
 
-        let firstTransaction = transactions[0];
-        let allTransactionsAreEqual = transactions.every(function (t) {
-            return this.compareTransactions2(t, firstTransaction) //Pokud není nalezena žádná transakce se zadaným ID, tak proměnná t si zachová hodnotu null. Na konci funkce se pak zkontroluje, zda proměnná t má hodnotu různou od null. Pokud ano, znamená to, že byla nalezena transakce se zadaným ID
-        }, this); //pri šipkove metodě neni potřeba mit toto this
+        // filtrujeme transakce podle zadaných rankingů
+        let filteredTransactions = this.transactions.filter(function (transaction) {
+            return rankings.includes(transaction.ranking);
+        });
 
-        if (allTransactionsAreEqual) {
-            console.log(`Všechny transakce s ID ${ids.join(", ")} jsou stejné.`);
+        // porovnáváme a ukládáme rankingy shodných a neshodných transakcí
+        for (let i = 0; i < filteredTransactions.length - 1; i++) {
+            let currentTransaction = filteredTransactions[i];
+            for (let j = i + 1; j < filteredTransactions.length; j++) {
+                let comparedTransaction = filteredTransactions[j];
+                if (currentTransaction.amount == comparedTransaction.amount
+                    && currentTransaction.type == comparedTransaction.type
+                    && currentTransaction.currency == comparedTransaction.currency) {
+                    matchingRankings.push(currentTransaction.ranking, comparedTransaction.ranking);
+                } else {
+                    nonMatchingRankings.push(currentTransaction.ranking, comparedTransaction.ranking);
+                }
+            }
+        }
+
+        // vracíme výsledek
+        if (matchingRankings.length > 0) {
+            return (`Transaction are same : ${matchingRankings}`);
         } else {
-            console.log(`Transakce s ID ${ids.join(", ")} se liší.`);
-        };
+            return (`Transaction are different${nonMatchingRankings}`);
+        }
     }
 
-    compareTransactions2(transaction1, transaction2) {
-        return (
-            transaction1.amount === transaction2.amount &&
-            transaction1.currency === transaction2.currency &&
-            transaction1.date === transaction2.date &&
-            transaction1.type === transaction2.type
-        );
-    }
 
     printAllTransaction() {
         console.log("List of all transactions:");
@@ -243,11 +302,11 @@ let transaction2 = new Transaction("22.2.2023", 5, "EUR", "credit");
 
 
 console.log("-------- porovnani dvou existujicich (identickych) transakcí podle 'ranking' --------")
-banking.sameTransactionsByRanking(2, 3);
+//banking.sameTransactionsByRanking(2, 3);
 
 
 console.log("-------- porovnani dvou existujicich (s prepoctem) transakci podle 'ranking' -------- ")
-banking.compareTransactions(4, 5)
+//banking.compareTransactions(4, 5)
 
 
 console.log("----------- výpis zůstatku na účtu (v obou měnách) -----------")
@@ -255,8 +314,12 @@ console.log("----------- výpis zůstatku na účtu (v obou měnách) ----------
 //console.log("CZK: " + banking.totalCzk)
 
 
+console.log("-----------------porovnani transakci podle pole hodnot rankings---------------------")
+//banking.compareTransactions([5, 4]);
+console.log(banking.compareTransactions3([1, 2, 5, 4]))
+
 console.log("----------------compareByIds------------")
-banking.compareByIds(3,4)
+//banking.compareByIds(3,4)
 
 console.log("------------------------------------------------------")
 //banking.everyID()
