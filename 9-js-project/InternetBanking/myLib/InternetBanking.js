@@ -6,10 +6,9 @@ import { Transaction } from "./Transaction.js";
 export class InternetBanking {
 
     owner;
-    accountBalance = {
-        totalCzk: 0,
-        totalEur: 0
-    };
+    totalCzk = 0;
+    totalEur = 0;
+
 
     transactions = [];
     #exchangeRate = 26.50;
@@ -23,14 +22,17 @@ export class InternetBanking {
         }
 
         this.owner = owner;
+
     }
 
+
+
     get getTotalCzk() {
-        return Math.round(this.accountBalance.totalCzk * 100) / 100;
+        return Math.round(this.totalCzk * 100) / 100;
     }
 
     get getTotalEur() {
-        return Math.round(this.accountBalance.totalEur * 100) / 100;
+        return Math.round(this.totalEur * 100) / 100;
     }
 
     pushTransaction(item) {
@@ -44,7 +46,6 @@ export class InternetBanking {
 
 
     }
-
 
     credit(amount, currency) {
         validateNumber(amount)
@@ -65,25 +66,25 @@ export class InternetBanking {
 
         if (currency == "CZK") {
             if (type == "debit") {
-                this.accountBalance.totalCzk -= amount;
-                this.accountBalance.totalEur -= amount / this.#exchangeRate;
+                this.totalCzk -= amount;
+                this.totalEur -= amount / this.#exchangeRate;
                 //this.accountBalance.totalEur = Number(this.accountBalance.totalEur.toFixed(2));
             } else if (type == "credit") {
-                this.accountBalance.totalCzk += amount;
-                this.accountBalance.totalEur += amount / this.#exchangeRate;
+                this.totalCzk += amount;
+                this.totalEur += amount / this.#exchangeRate;
                 //this.accountBalance.totalEur = Number(this.accountBalance.totalEur.toFixed(2));
             }
 
 
         } else if (currency == "EUR") {
             if (type == "debit") {
-                this.accountBalance.totalEur -= amount;
-                this.accountBalance.totalCzk -= amount * this.#exchangeRate;
+                this.totalEur -= amount;
+                this.totalCzk -= amount * this.#exchangeRate;
                 //this.accountBalance.totalCzk = Number(this.accountBalance.totalEur.toFixed(2));
 
             } else if (type == "credit") {
-                this.accountBalance.totalEur += amount;
-                this.accountBalance.totalCzk += amount * this.#exchangeRate;
+                this.totalEur += amount;
+                this.totalCzk += amount * this.#exchangeRate;
                 //this.accountBalance.totalCzk = Number(this.accountBalance.totalCzk.toFixed(2));
 
             }
@@ -105,60 +106,27 @@ export class InternetBanking {
         };
     }
 
-    compareTransactions3(rankings) {
-        let matchingRankings = [];
-        let nonMatchingRankings = [];
+    compareTransactions5(rankings) {
 
         // filtrujeme transakce podle zadaných rankingů
         let filteredTransactions = this.transactions.filter(function (transaction) {
             return rankings.includes(transaction.ranking);
         });
 
-        // porovnáváme a ukládáme rankingy shodných a neshodných transakcí
-        for (let i = 0; i < filteredTransactions.length - 1; i++) {
-            let currentTransaction = filteredTransactions[i];
-            for (let j = i + 1; j < filteredTransactions.length; j++) {
-                let comparedTransaction = filteredTransactions[j];
-                if (currentTransaction.amount == comparedTransaction.amount
-                    && currentTransaction.type == comparedTransaction.type
-                    && currentTransaction.currency == comparedTransaction.currency) {
-                    matchingRankings.push(currentTransaction.ranking, comparedTransaction.ranking);
-                } else {
-                    nonMatchingRankings.push(currentTransaction.ranking, comparedTransaction.ranking);
-                }
-            }
-        }
+        return filteredTransactions.slice(1).every(function (transaction) {
+            return transaction.getHash() == filteredTransactions[0].getHash()
+        })
 
-        // vracíme výsledek
-        if (matchingRankings.length > 0) {
-            return (`Transaction are same : ${matchingRankings}`);
-        } else {
-            return (`Transaction are different${nonMatchingRankings}`);
-        }
+
     }
-    filterTransactionsByRanking(rankings) {
-        return this.transactions.filter(function (transaction) {
-            return rankings.includes(transaction.ranking);
-        });
-    }
-    //vypise stejne cele transakce
-    compareTransactions4(rankings) {
-        let filteredTransactions = this.filterTransactionsByRanking(rankings);
 
-        let comparedTransactions = [];
-
-        for (let i = 0; i < filteredTransactions.length - 1; i++) {
-            let currentTransaction = filteredTransactions[i];
-            let nextTransaction = filteredTransactions[i + 1];
-
-            if (currentTransaction.amount === nextTransaction.amount &&
-                currentTransaction.currency === nextTransaction.currency &&
-                currentTransaction.type === nextTransaction.type) {
-                comparedTransactions.push([currentTransaction, nextTransaction]);
-            }
+    getOutputData() {
+        return {
+            owner: this.owner,
+            transactions: this.transactions,
+            CzkBalance: this.getTotalCzk,
+            EurBalance: this.getTotalEur
         }
-
-        return comparedTransactions;
     }
 
 

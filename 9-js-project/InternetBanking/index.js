@@ -25,7 +25,7 @@ app.get("/", function (req, res) {
     if (internetBanking == null) {
         res.status(400).send(error(400, "You need to create internet banking first."))
     } else {
-        res.send(internetBanking)
+        res.send(internetBanking.getOutputData())
     }
 });
 
@@ -61,7 +61,7 @@ app.post("/credit-2", function (req, res) {
 
         internetBanking.pushTransaction(newCredit)
 
-        res.send(internetBanking)
+        res.send(internetBanking.getOutputData())
     }
 });
 
@@ -76,7 +76,7 @@ app.post("/credit", function (req, res) {
 
         internetBanking.credit(body.amount, body.currency)
 
-        res.send(internetBanking)
+        res.send(internetBanking.getOutputData())
     }
 });
 
@@ -90,7 +90,7 @@ app.post("/debit", function (req, res) {
 
         internetBanking.debit(body.amount, body.currency)
 
-        res.send(internetBanking)
+        res.send(internetBanking.getOutputData())
     }
 });
 
@@ -130,6 +130,27 @@ app.post("/compareTransactions4", function (req, res) {
         }
         //res.send(ids)
         res.send({ result: internetBanking.compareTransactions4(ids) });
+
+    } catch (e) {
+
+        res.status(400).send(error(400, e))
+    }
+
+});
+
+
+app.post("/compareTransactions5", function (req, res) {
+    let ids = req.body;
+
+    try {
+        if (internetBanking == null) {
+            res.status(400).send(error(400, "Need to create internetBanking first"));
+        } else if (internetBanking.transactions.length == 0) {
+            res.status(400).send(error(400, "Need to create at least 2 transactions first"));
+
+        }
+        //res.send(ids)
+        res.send({ result: internetBanking.compareTransactions5(ids) });
 
     } catch (e) {
 

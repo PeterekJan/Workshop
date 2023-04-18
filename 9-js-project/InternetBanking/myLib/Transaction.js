@@ -40,6 +40,10 @@ export class Transaction {
         this.ranking = ranking;
     }
 
+    getHash() {
+        return this.amount + this.currency + this.type;
+    }
+
 
 
 
