@@ -206,7 +206,7 @@ class InternetBanking {
             return rankings.includes(transaction.ranking);
         });
     }
-
+    //vypise stejne transakce
     compareTransactions(rankings) {
         let filteredTransactions = this.filterTransactionsByRanking(rankings);
 

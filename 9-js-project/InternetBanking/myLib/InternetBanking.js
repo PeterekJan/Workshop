@@ -41,7 +41,7 @@ export class InternetBanking {
         item.setRanking(this.transactions.length + 1); //při pushovani transakce zvyší ranking v transakci +1 ( +1 je pouse start přičítani od 1)
         this.transactions.push(item);
         this.writeTotal(item.currency, item.type, item.amount);
-        
+
 
     }
 
@@ -57,10 +57,10 @@ export class InternetBanking {
         validateString(currency)
         this.pushTransaction(new Transaction(amount, currency, "debit"));
     }
-    
+
 
     writeTotal(currency, type, amount) {
-       // validateNumber(this.accountBalance.totalCzk);
+        // validateNumber(this.accountBalance.totalCzk);
         // validateNumber(this.accountBalance.totalEur);
 
         if (currency == "CZK") {
@@ -73,7 +73,7 @@ export class InternetBanking {
                 this.accountBalance.totalEur += amount / this.#exchangeRate;
                 //this.accountBalance.totalEur = Number(this.accountBalance.totalEur.toFixed(2));
             }
-            
+
 
         } else if (currency == "EUR") {
             if (type == "debit") {
@@ -89,7 +89,7 @@ export class InternetBanking {
             }
         }
     }
-    
+
     sameTransactionsByRanking(index1, index2) {
         if (this.transactions.length < 2) {
             throw "Chybí ID transakcí k porovnání.";
@@ -103,40 +103,6 @@ export class InternetBanking {
         } else {
             console.log(`Transaction IDs for the two payments are different.`);
         };
-    }
-
-    compareByIds(...ids) {
-        if (ids.length < 2) {
-            console.log("Chybí ID transakcí k porovnání.");
-            return;
-        }
-
-        let transactions = ids.map(function (ranking) {
-            return this.transactions.find(function (t) {
-                return t.ranking === ranking;
-            }, this);
-        }, this);
-
-        //let transactions = ids.map(id => this.transactions.find(t => t.id === id));
-
-        let firstTransaction = transactions[0];
-        let allTransactionsAreEqual = transactions.every(function (t) {
-            return this.compareTransactions2(t, firstTransaction) //Pokud není nalezena žádná transakce se zadaným ID, tak proměnná t si zachová hodnotu null. Na konci funkce se pak zkontroluje, zda proměnná t má hodnotu různou od null. Pokud ano, znamená to, že byla nalezena transakce se zadaným ID
-        }, this); //pri šipkove metodě neni potřeba mit toto this
-
-        if (allTransactionsAreEqual) {
-            console.log(`Všechny transakce s ID ${ids.join(", ")} jsou stejné.`);
-        } else {
-            console.log(`Transakce s ID ${ids.join(", ")} se liší.`);
-        };
-    }
-
-    compareTransactions2(transaction1, transaction2) {
-        return (
-            transaction1.amount === transaction2.amount &&
-            transaction1.currency === transaction2.currency &&
-            transaction1.type === transaction2.type
-        );
     }
 
     compareTransactions3(rankings) {
@@ -169,6 +135,30 @@ export class InternetBanking {
         } else {
             return (`Transaction are different${nonMatchingRankings}`);
         }
+    }
+    filterTransactionsByRanking(rankings) {
+        return this.transactions.filter(function (transaction) {
+            return rankings.includes(transaction.ranking);
+        });
+    }
+    //vypise stejne cele transakce
+    compareTransactions4(rankings) {
+        let filteredTransactions = this.filterTransactionsByRanking(rankings);
+
+        let comparedTransactions = [];
+
+        for (let i = 0; i < filteredTransactions.length - 1; i++) {
+            let currentTransaction = filteredTransactions[i];
+            let nextTransaction = filteredTransactions[i + 1];
+
+            if (currentTransaction.amount === nextTransaction.amount &&
+                currentTransaction.currency === nextTransaction.currency &&
+                currentTransaction.type === nextTransaction.type) {
+                comparedTransactions.push([currentTransaction, nextTransaction]);
+            }
+        }
+
+        return comparedTransactions;
     }
 
 
