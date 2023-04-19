@@ -44,7 +44,8 @@ export function validateString(...arg) {
     });
 }
 
-export function error(status, msg) {  //error handling, pro opakovani error msg
+//error handling, pro opakovani error msg
+export function error(status, msg) {
     var err = new Error();
 
     err.status = status;
