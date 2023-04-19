@@ -14,7 +14,6 @@ export class InternetBanking {
     #exchangeRate = 26.50;
 
 
-
     constructor(owner) {
 
         if (!(owner instanceof Owner)) {
@@ -22,16 +21,15 @@ export class InternetBanking {
         }
 
         this.owner = owner;
-
     }
 
     get getTotalCzk() {
-        validateNumber(this.totalCzk)
+        validateNumber(this.totalCzk);
         return Math.round(this.totalCzk * 100) / 100;
     }
 
     get getTotalEur() {
-        validateNumber(this.totalEur)
+        validateNumber(this.totalEur);
         return Math.round(this.totalEur * 100) / 100;
     }
 
@@ -82,21 +80,31 @@ export class InternetBanking {
         };
     }
 
-    sameTransactionsByRanking(index1, index2) {
-        if (this.transactions.length < 2) {
-            throw "Chybí ID transakcí k porovnání.";
-        }
-
-        if (this.transactions[index1].amount == this.transactions[index2].amount &&
-            this.transactions[index1].currency == this.transactions[index1].currency &&
-            this.transactions[index1].date == this.transactions[index1].date &&
-            this.transactions[index1].type == this.transactions[index1].type) {
-            console.log("Transactions with ranking:" + " " + index1 + " and " + index2 + " is the same.");
-        } else {
-            console.log(`Transaction IDs for the two payments are different.`);
-        };
+    filterTransactionsByRanking(rankings) {
+        return this.transactions.filter(function (transaction) {
+            return rankings.includes(transaction.ranking);
+        });
     }
 
+    compareTransactions3(rankings) {
+        let filteredTransactions = this.filterTransactionsByRanking(rankings);
+
+        let comparedTransactions = [];
+
+        for (let i = 0; i < filteredTransactions.length - 1; i++) {
+            let currentTransaction = filteredTransactions[i];
+            let nextTransaction = filteredTransactions[i + 1];
+
+            if (currentTransaction.amount === nextTransaction.amount &&
+                currentTransaction.currency === nextTransaction.currency &&
+                currentTransaction.type === nextTransaction.type) {
+                comparedTransactions.push([currentTransaction, nextTransaction]);
+            }
+        }
+        return comparedTransactions;
+    }
+
+    //porovnani 1Transakce s každou transakci
     compareTransactions5(rankings) {
 
         // filtrujeme transakce podle zadaných rankingů
@@ -105,13 +113,11 @@ export class InternetBanking {
         });
         // slice vybere 2 člen aby netestoval 0. s 0. indexem
         return filteredTransactions.slice(1).every(function (transaction) {
-            return transaction.getHash() == filteredTransactions[0].getHash()
-        })
+            return transaction.getHash() == filteredTransactions[0].getHash();
+        });
     }
 
     getOutputData() {
-        // validateNumber(CzkBalance)
-        // validateNumber(EurBalance)
         return {
             owner: this.owner,
             CzkBalance: this.getTotalCzk,

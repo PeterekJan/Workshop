@@ -94,9 +94,7 @@ app.post("/debit", function (req, res) {
     }
 });
 
-
-
-//porovnani při vstupu ranking
+//porovnani transakci a nasledny jejich vypis
 app.post("/compareTransactions3", function (req, res) {
     let ids = req.body;
 
@@ -117,28 +115,7 @@ app.post("/compareTransactions3", function (req, res) {
 
 });
 
-//porovnani transakci a nasledny jejich vypis
-app.post("/compareTransactions4", function (req, res) {
-    let ids = req.body;
-
-    try {
-        if (internetBanking == null) {
-            res.status(400).send(error(400, "Need to create internetBanking first"));
-        } else if (internetBanking.transactions.length == 0) {
-            res.status(400).send(error(400, "Need to create at least 2 transactions first"));
-
-        }
-        //res.send(ids)
-        res.send({ result: internetBanking.compareTransactions4(ids) });
-
-    } catch (e) {
-
-        res.status(400).send(error(400, e))
-    }
-
-});
-
-
+//porovnani 1. transakce s ostatnimi
 app.post("/compareTransactions5", function (req, res) {
     let ids = req.body;
 

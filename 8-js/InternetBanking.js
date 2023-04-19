@@ -97,7 +97,7 @@ class InternetBanking {
         this.pushTransaction(new Transaction(date, amount, currency, "debit"));
     }
 
-    //porovnani dvou existujicich (identickych) transakcí podle 'ranking'
+    //porovnani dvou existujicich (identickych) transakcí zadaním 'ranking'
     sameTransactionsByRanking(index1, index2) {
         if (this.transactions.length < 2) {
             throw "Chybí ID transakcí k porovnání.";
@@ -138,6 +138,11 @@ class InternetBanking {
         };
     }
 
+    compareTransactions(transaction1, transaction2) {
+
+        return transaction1.CZK == transaction2.CZK
+      }
+
     compareTransactions2(transaction1, transaction2) {
         return (
             transaction1.amount === transaction2.amount &&
@@ -147,13 +152,14 @@ class InternetBanking {
         );
     }
 
+    //filtruje transakce podle zadaneho pole hodnot ranking
     filterTransactionsByRanking(rankings) {
         return this.transactions.filter(function (transaction) {
             return rankings.includes(transaction.ranking);
         });
     }
     //vypise stejne transakce
-    compareTransactions(rankings) {
+    compareTransactions3(rankings) {
         let filteredTransactions = this.filterTransactionsByRanking(rankings);
 
         let comparedTransactions = [];
