@@ -11,17 +11,30 @@
 
 
 class Person {
-    static count = 0;
-    constructor(name) {
-      this.name = name;
-      Person.count++;
-    }
+  static count = 0;
+  constructor(name) {
+    this.name = name;
+    Person.count++;
   }
-  
-  const person1 = new Person("John");
-  const person2 = new Person("Jane");
-  
-  console.log(Person.count); // vypíše "2"
+}
+
+const person1 = new Person("John");
+const person2 = new Person("Jane");
+
+console.log(Person.count); // vypíše "2"
 
 
-  
+
+  //////////////////////////////////////
+ //generuje count pomoci staticke promenné
+
+   // generateSimpleID() {
+    //     if (!Transaction.ranking) { //if transaction.id not exist
+    //         Transaction.ranking = 0;
+    //     }
+
+    //     Transaction.ranking++;
+    //     return Transaction.ranking;
+    // }
+
+

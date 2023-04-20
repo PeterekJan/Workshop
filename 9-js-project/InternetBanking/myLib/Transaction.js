@@ -22,15 +22,6 @@ export class Transaction {
 
     };
 
-    // generateSimpleID() {
-    //     if (!Transaction.ranking) { //if transaction.id not exist
-    //         Transaction.ranking = 0;
-    //     }
-
-    //     Transaction.ranking++;
-    //     return Transaction.ranking;
-    // }
-
     generateID() {
         var uniqueID = Math.floor(Math.random() * Date.now()).toString(16);
         return uniqueID;
