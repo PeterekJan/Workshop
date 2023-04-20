@@ -44,8 +44,4 @@ export class Transaction {
         return this.amount + this.currency + this.type;
     }
 
-
-
-
-
 }
