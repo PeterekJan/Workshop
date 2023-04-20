@@ -58,6 +58,9 @@ class Transaction {
     setRanking(ranking) {
         this.ranking = ranking;
     }
+    getHash() {
+        return this.amount + this.currency + this.type;
+    }
 }
 
 
@@ -210,34 +213,36 @@ banking.debit("22.2.2025", 1, "EUR");
 
 //console.log(banking)
 
-console.log("--------------vypis všech transakci--------------")
+console.log("------------------------------- vypis všech transakci ----------------------------")
 banking.printAllTransaction()
 
-console.log("---------------Compare two Transaction---------------")
-let transaction1 = new Transaction("22.2.2022", 20, "CZK", "credit");
-let transaction2 = new Transaction("22.2.2023", 5, "EUR", "credit");
+console.log("----------------------------- Compare two Transaction -----------------------------")
+let transaction1 = new Transaction("22.2.2022", 26.5, "CZK", "credit");
+let transaction2 = new Transaction("22.2.2023", 1, "EUR", "credit");
 
-//console.log("transaction1 to EUR: " + transaction1.EUR)
-//console.log("transaction2 to CZK: " + transaction2.CZK)
+console.log("transaction1 to EUR: " + transaction1.EUR)
+console.log("transaction2 to CZK: " + transaction2.CZK)
 
-//console.log("Is same " + transaction1 + " and " + transaction2 + " => " + banking.compareTransactionsAmounts(transaction1, transaction2))
+console.log("------------------------ Porovnání dvou hodnot v jiné měně ------------------------")
+
+console.log("Is same " + transaction1 + " and " + transaction2 + " => " + banking.compareTransactions(transaction1, transaction2))
 
 
 
-console.log("-------- porovnani dvou existujicich (identickych) transakcí podle 'ranking' --------")
-//banking.sameTransactionsByRanking(2, 3);
+console.log("------- porovnani dvou existujicich (identickych) transakcí podle 'ranking' -------")
+banking.sameTransactionsByRanking(2, 3);
 
-console.log("----------- výpis zůstatku na účtu (v obou měnách) -----------")
-//console.log("EUR: " + banking.totalEur)
-//console.log("CZK: " + banking.totalCzk)
+console.log("---------------------- výpis zůstatku na účtu (v obou měnách) ----------------------")
+console.log("EUR: " + banking.totalEur)
+console.log("CZK: " + banking.totalCzk)
 
 
 console.log("-----------------porovnani transakci podle pole hodnot rankings---------------------")
-//banking.compareTransactions([5, 4]);
+
 console.log(banking.compareTransactions5([1, 2, 5, 4]))
 
-console.log("----------------compareByIds------------")
-//banking.compareByIds(3,4)
+console.log("------------------------------------- compareByIds ---------------------------------")
+banking.compareByIds(3,4)
 
 
 

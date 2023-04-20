@@ -8,3 +8,20 @@
 
 // Snadnější přístup k datům třídy: Pokud chcete získat přístup k datům třídy zvnějšku třídy, můžete použít statické metody a statické proměnné. To může být užitečné v případě, kdy potřebujete vytvořit pomocné funkce
 // pro třídu, které nepotřebují přístup k instanci třídy.
+
+
+class Person {
+    static count = 0;
+    constructor(name) {
+      this.name = name;
+      Person.count++;
+    }
+  }
+  
+  const person1 = new Person("John");
+  const person2 = new Person("Jane");
+  
+  console.log(Person.count); // vypíše "2"
+
+
+  
