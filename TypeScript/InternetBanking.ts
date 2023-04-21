@@ -1,4 +1,4 @@
-class Transaction1 {
+class Transaction {
     exchangeRate = 26.50;
     ranking = 0;
     id: string;
@@ -56,8 +56,8 @@ class Transaction1 {
 }
 
 
-class InternetBanking1 {
-    transactions: Transaction1[] = [];
+class InternetBanking {
+    transactions: Transaction[] = [];
     #exchangeRate = 26.5;
 
     get totalEur(): string {
@@ -78,17 +78,17 @@ class InternetBanking1 {
         }, 0).toFixed(2);
     }
 
-    pushTransaction(transaction: Transaction1): void {
+    pushTransaction(transaction: Transaction): void {
         transaction.setRanking(this.transactions.length + 1);
         this.transactions.push(transaction);
     }
 
     credit(date: string, amount: number, currency: string): void {
-        this.pushTransaction(new Transaction1(date, amount, currency, "credit"));
+        this.pushTransaction(new Transaction(date, amount, currency, "credit"));
     }
 
     debit(date: string, amount: number, currency: string): void {
-        this.pushTransaction(new Transaction1(date, amount, currency, "debit"));
+        this.pushTransaction(new Transaction(date, amount, currency, "debit"));
     }
 
     sameTransactionsByRanking(index1: number, index2: number): void {
@@ -149,7 +149,7 @@ class InternetBanking1 {
 
         let transactions = rankings.map((ranking: number) =>
             this.transactions.find((t) => t.ranking === ranking)
-        ).filter((t): t is Transaction1 => t !== undefined);
+        ).filter((t): t is Transaction => t !== undefined);
 
         let firstTransaction = transactions[0];
         let allTransactionsAreEqual = transactions.every((t) =>
@@ -163,7 +163,7 @@ class InternetBanking1 {
         }
     }
 
-    compareTransactions2(transaction1: Transaction1, transaction2: Transaction1): boolean {
+    compareTransactions2(transaction1: Transaction, transaction2: Transaction): boolean {
         return (
             transaction1.amount === transaction2.amount &&
             transaction1.currency === transaction2.currency &&
@@ -183,7 +183,7 @@ class InternetBanking1 {
     }
 }
 
-let IB = new InternetBanking1();
+let IB = new InternetBanking();
 
 IB.credit("22.2.2022", 20, "CZK");
 IB.credit("22.2.2024", 5, "EUR");
